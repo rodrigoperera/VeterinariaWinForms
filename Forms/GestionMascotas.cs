@@ -69,7 +69,7 @@ namespace VeterianriaWinForms.Forms
             foreach (ListViewItem lista in listView1.SelectedItems)
             {
                 // TODO: NO ESTA FUNCIONADNO AHORA. VA A FUNCIONAR CUANDO TENGAMOS EL ID DE LA MASCOTA EN EL LISTADO
-                // YA QUE ESO ES LO QUE SE LE PASA AL ELIMINAR.
+                // YA QUE ESO ES LO QUE SE LE PASA AL ELIMINAR. 
                 int id = int.Parse(lista.Text); // es necesario que el primer campo sea el id de la mascota asi lo mandamos en el eliminar
                 try
                 {
