@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CrearVeterianaria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="voveterinaria" type="tns:VOVeterinaria" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VOVeterinaria">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Veterinarios" type="tns:ArrayOfVOVeterinario" />
+          <s:element minOccurs="0" maxOccurs="1" name="Clientes" type="tns:ArrayOfVOCliente" />
+          <s:element minOccurs="0" maxOccurs="1" name="Consultas" type="tns:ArrayOfVOConsulta" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVOVeterinario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VOVeterinario" nillable="true" type="tns:VOVeterinario" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VOVeterinario">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Cedula" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Horario" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVOCliente">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VOCliente" nillable="true" type="tns:VOCliente" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VOCliente">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Cedula" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Activo" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mascotas" type="tns:ArrayOfVOMascota" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVOMascota">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VOMascota" nillable="true" type="tns:VOMascota" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VOMascota">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="cedulaCliente" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Animal" type="tns:TipoAnimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Raza" type="tns:Raza" />
+          <s:element minOccurs="1" maxOccurs="1" name="Edad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VacunaAlDia" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarnetInscripcion" type="tns:VOCarnetInscripcion" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TipoAnimal">
+        <s:restriction base="s:string">
+          <s:enumeration value="Gato" />
+          <s:enumeration value="Perro" />
+          <s:enumeration value="Loro" />
+          <s:enumeration value="Huron" />
+          <s:enumeration value="Conejo" />
+          <s:enumeration value="Cobayo" />
+          <s:enumeration value="Hamster" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Raza">
+        <s:restriction base="s:string">
+          <s:enumeration value="Policia" />
+          <s:enumeration value="Golden" />
+          <s:enumeration value="Caniche" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="VOCarnetInscripcion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Expedido" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Foto" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVOConsulta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VOConsulta" nillable="true" type="tns:VOConsulta" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VOConsulta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Numero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Calificacion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mascota" type="tns:VOMascota" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CrearVeterianariaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditarVeterinaria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="voveterinaria" type="tns:VOVeterinaria" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditarVeterinariaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EliminarVeterinaria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numero" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarVeterinariaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerVeterinarios">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerVeterinariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerVeterinariosResult" type="tns:ArrayOfVOVeterinario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearVeterinario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="voveterinario" type="tns:VOVeterinario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearVeterinarioResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditarVeterinario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="voveterinario" type="tns:VOVeterinario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditarVeterinarioResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EliminarVeterinario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cedula" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarVeterinarioResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerVeterinario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cedula" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerVeterinarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerVeterinarioResult" type="tns:VOVeterinario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vocliente" type="tns:VOCliente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearClienteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vocliente" type="tns:VOCliente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditarClienteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EliminarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cedula" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarClienteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CrearMascota">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vomascota" type="tns:VOMascota" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearMascotaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditarMascota">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vomascota" type="tns:VOMascota" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditarMascotaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EliminarMascota">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numero" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarMascotaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="MemberMascota">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numero" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberMascotaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CrearCarnet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="foto" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearCarnetResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditarCarnet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vocarnet" type="tns:VOCarnetInscripcion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditarCarnetResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CrearConsulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="voconsulta" type="tns:VOConsulta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearConsultaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditarConsulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="voconsulta" type="tns:VOConsulta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditarConsultaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EliminarConsulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numero" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarConsultaResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CrearVeterianariaSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearVeterianaria" />
+  </wsdl:message>
+  <wsdl:message name="CrearVeterianariaSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearVeterianariaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditarVeterinariaSoapIn">
+    <wsdl:part name="parameters" element="tns:EditarVeterinaria" />
+  </wsdl:message>
+  <wsdl:message name="EditarVeterinariaSoapOut">
+    <wsdl:part name="parameters" element="tns:EditarVeterinariaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarVeterinariaSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarVeterinaria" />
+  </wsdl:message>
+  <wsdl:message name="EliminarVeterinariaSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarVeterinariaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerVeterinariosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerVeterinarios" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerVeterinariosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerVeterinariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearVeterinarioSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearVeterinario" />
+  </wsdl:message>
+  <wsdl:message name="CrearVeterinarioSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearVeterinarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditarVeterinarioSoapIn">
+    <wsdl:part name="parameters" element="tns:EditarVeterinario" />
+  </wsdl:message>
+  <wsdl:message name="EditarVeterinarioSoapOut">
+    <wsdl:part name="parameters" element="tns:EditarVeterinarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarVeterinarioSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarVeterinario" />
+  </wsdl:message>
+  <wsdl:message name="EliminarVeterinarioSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarVeterinarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerVeterinarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerVeterinario" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerVeterinarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerVeterinarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearCliente" />
+  </wsdl:message>
+  <wsdl:message name="CrearClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:EditarCliente" />
+  </wsdl:message>
+  <wsdl:message name="EditarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:EditarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarCliente" />
+  </wsdl:message>
+  <wsdl:message name="EliminarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearMascotaSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearMascota" />
+  </wsdl:message>
+  <wsdl:message name="CrearMascotaSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearMascotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditarMascotaSoapIn">
+    <wsdl:part name="parameters" element="tns:EditarMascota" />
+  </wsdl:message>
+  <wsdl:message name="EditarMascotaSoapOut">
+    <wsdl:part name="parameters" element="tns:EditarMascotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarMascotaSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarMascota" />
+  </wsdl:message>
+  <wsdl:message name="EliminarMascotaSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarMascotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="MemberMascotaSoapIn">
+    <wsdl:part name="parameters" element="tns:MemberMascota" />
+  </wsdl:message>
+  <wsdl:message name="MemberMascotaSoapOut">
+    <wsdl:part name="parameters" element="tns:MemberMascotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearCarnetSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearCarnet" />
+  </wsdl:message>
+  <wsdl:message name="CrearCarnetSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearCarnetResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditarCarnetSoapIn">
+    <wsdl:part name="parameters" element="tns:EditarCarnet" />
+  </wsdl:message>
+  <wsdl:message name="EditarCarnetSoapOut">
+    <wsdl:part name="parameters" element="tns:EditarCarnetResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearConsultaSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearConsulta" />
+  </wsdl:message>
+  <wsdl:message name="CrearConsultaSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditarConsultaSoapIn">
+    <wsdl:part name="parameters" element="tns:EditarConsulta" />
+  </wsdl:message>
+  <wsdl:message name="EditarConsultaSoapOut">
+    <wsdl:part name="parameters" element="tns:EditarConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarConsultaSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarConsulta" />
+  </wsdl:message>
+  <wsdl:message name="EliminarConsultaSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarConsultaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceVeterinariasSoap">
+    <wsdl:operation name="CrearVeterianaria">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para crear una veterinaria nueva</wsdl:documentation>
+      <wsdl:input message="tns:CrearVeterianariaSoapIn" />
+      <wsdl:output message="tns:CrearVeterianariaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarVeterinaria">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para modificar una veterinaria existente</wsdl:documentation>
+      <wsdl:input message="tns:EditarVeterinariaSoapIn" />
+      <wsdl:output message="tns:EditarVeterinariaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVeterinaria">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para eliminar una veterinaria existente</wsdl:documentation>
+      <wsdl:input message="tns:EliminarVeterinariaSoapIn" />
+      <wsdl:output message="tns:EliminarVeterinariaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVeterinarios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtener los veterinarios existentes</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerVeterinariosSoapIn" />
+      <wsdl:output message="tns:ObtenerVeterinariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearVeterinario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para crear un veterinario nuevo</wsdl:documentation>
+      <wsdl:input message="tns:CrearVeterinarioSoapIn" />
+      <wsdl:output message="tns:CrearVeterinarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarVeterinario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para modificar una veterinario existente</wsdl:documentation>
+      <wsdl:input message="tns:EditarVeterinarioSoapIn" />
+      <wsdl:output message="tns:EditarVeterinarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVeterinario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para eliminar una veterinario existente</wsdl:documentation>
+      <wsdl:input message="tns:EliminarVeterinarioSoapIn" />
+      <wsdl:output message="tns:EliminarVeterinarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVeterinario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtener un veterinario existente</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerVeterinarioSoapIn" />
+      <wsdl:output message="tns:ObtenerVeterinarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para crear un cliente nuevo</wsdl:documentation>
+      <wsdl:input message="tns:CrearClienteSoapIn" />
+      <wsdl:output message="tns:CrearClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para modificar un cliente existente</wsdl:documentation>
+      <wsdl:input message="tns:EditarClienteSoapIn" />
+      <wsdl:output message="tns:EditarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para eliminar un cliente existente</wsdl:documentation>
+      <wsdl:input message="tns:EliminarClienteSoapIn" />
+      <wsdl:output message="tns:EliminarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearMascota">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para crear una mascota nueva</wsdl:documentation>
+      <wsdl:input message="tns:CrearMascotaSoapIn" />
+      <wsdl:output message="tns:CrearMascotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarMascota">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para modificar una mascota existente</wsdl:documentation>
+      <wsdl:input message="tns:EditarMascotaSoapIn" />
+      <wsdl:output message="tns:EditarMascotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMascota">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para eliminar una mascota existente</wsdl:documentation>
+      <wsdl:input message="tns:EliminarMascotaSoapIn" />
+      <wsdl:output message="tns:EliminarMascotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberMascota">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para determinar si existe una mascota</wsdl:documentation>
+      <wsdl:input message="tns:MemberMascotaSoapIn" />
+      <wsdl:output message="tns:MemberMascotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearCarnet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para crear un carnet nuevo</wsdl:documentation>
+      <wsdl:input message="tns:CrearCarnetSoapIn" />
+      <wsdl:output message="tns:CrearCarnetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarCarnet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para modificar un carnet existente</wsdl:documentation>
+      <wsdl:input message="tns:EditarCarnetSoapIn" />
+      <wsdl:output message="tns:EditarCarnetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearConsulta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para crear una consulta nueva</wsdl:documentation>
+      <wsdl:input message="tns:CrearConsultaSoapIn" />
+      <wsdl:output message="tns:CrearConsultaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarConsulta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para modificar una consulta existente</wsdl:documentation>
+      <wsdl:input message="tns:EditarConsultaSoapIn" />
+      <wsdl:output message="tns:EditarConsultaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarConsulta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para eliminar una consulta existente</wsdl:documentation>
+      <wsdl:input message="tns:EliminarConsultaSoapIn" />
+      <wsdl:output message="tns:EliminarConsultaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceVeterinariasSoap" type="tns:WebServiceVeterinariasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearVeterianaria">
+      <soap:operation soapAction="http://tempuri.org/CrearVeterianaria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarVeterinaria">
+      <soap:operation soapAction="http://tempuri.org/EditarVeterinaria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVeterinaria">
+      <soap:operation soapAction="http://tempuri.org/EliminarVeterinaria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVeterinarios">
+      <soap:operation soapAction="http://tempuri.org/ObtenerVeterinarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearVeterinario">
+      <soap:operation soapAction="http://tempuri.org/CrearVeterinario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarVeterinario">
+      <soap:operation soapAction="http://tempuri.org/EditarVeterinario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVeterinario">
+      <soap:operation soapAction="http://tempuri.org/EliminarVeterinario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVeterinario">
+      <soap:operation soapAction="http://tempuri.org/ObtenerVeterinario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearCliente">
+      <soap:operation soapAction="http://tempuri.org/CrearCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarCliente">
+      <soap:operation soapAction="http://tempuri.org/EditarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCliente">
+      <soap:operation soapAction="http://tempuri.org/EliminarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearMascota">
+      <soap:operation soapAction="http://tempuri.org/CrearMascota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarMascota">
+      <soap:operation soapAction="http://tempuri.org/EditarMascota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMascota">
+      <soap:operation soapAction="http://tempuri.org/EliminarMascota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberMascota">
+      <soap:operation soapAction="http://tempuri.org/MemberMascota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearCarnet">
+      <soap:operation soapAction="http://tempuri.org/CrearCarnet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarCarnet">
+      <soap:operation soapAction="http://tempuri.org/EditarCarnet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearConsulta">
+      <soap:operation soapAction="http://tempuri.org/CrearConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarConsulta">
+      <soap:operation soapAction="http://tempuri.org/EditarConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarConsulta">
+      <soap:operation soapAction="http://tempuri.org/EliminarConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceVeterinariasSoap12" type="tns:WebServiceVeterinariasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearVeterianaria">
+      <soap12:operation soapAction="http://tempuri.org/CrearVeterianaria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarVeterinaria">
+      <soap12:operation soapAction="http://tempuri.org/EditarVeterinaria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVeterinaria">
+      <soap12:operation soapAction="http://tempuri.org/EliminarVeterinaria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVeterinarios">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerVeterinarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearVeterinario">
+      <soap12:operation soapAction="http://tempuri.org/CrearVeterinario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarVeterinario">
+      <soap12:operation soapAction="http://tempuri.org/EditarVeterinario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVeterinario">
+      <soap12:operation soapAction="http://tempuri.org/EliminarVeterinario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVeterinario">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerVeterinario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearCliente">
+      <soap12:operation soapAction="http://tempuri.org/CrearCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarCliente">
+      <soap12:operation soapAction="http://tempuri.org/EditarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCliente">
+      <soap12:operation soapAction="http://tempuri.org/EliminarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearMascota">
+      <soap12:operation soapAction="http://tempuri.org/CrearMascota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarMascota">
+      <soap12:operation soapAction="http://tempuri.org/EditarMascota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMascota">
+      <soap12:operation soapAction="http://tempuri.org/EliminarMascota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberMascota">
+      <soap12:operation soapAction="http://tempuri.org/MemberMascota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearCarnet">
+      <soap12:operation soapAction="http://tempuri.org/CrearCarnet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarCarnet">
+      <soap12:operation soapAction="http://tempuri.org/EditarCarnet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearConsulta">
+      <soap12:operation soapAction="http://tempuri.org/CrearConsulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarConsulta">
+      <soap12:operation soapAction="http://tempuri.org/EditarConsulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarConsulta">
+      <soap12:operation soapAction="http://tempuri.org/EliminarConsulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceVeterinarias">
+    <wsdl:port name="WebServiceVeterinariasSoap" binding="tns:WebServiceVeterinariasSoap">
+      <soap:address location="https://localhost:44360/WebServiceVeterinarias.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceVeterinariasSoap12" binding="tns:WebServiceVeterinariasSoap12">
+      <soap12:address location="https://localhost:44360/WebServiceVeterinarias.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
