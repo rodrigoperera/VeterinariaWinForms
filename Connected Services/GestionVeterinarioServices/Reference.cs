@@ -375,6 +375,22 @@ namespace VeterianriaWinForms.GestionVeterinarioServices {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        private long cedulaClienteField;
+        
+        private VeterianriaWinForms.GestionVeterinarioServices.TipoAnimal AnimalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        private VeterianriaWinForms.GestionVeterinarioServices.Raza RazaField;
+        
+        private int EdadField;
+        
+        private bool VacunaAlDiaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private VeterianriaWinForms.GestionVeterinarioServices.VOCarnetInscripcion CarnetInscripcionField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -382,6 +398,97 @@ namespace VeterianriaWinForms.GestionVeterinarioServices {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public long cedulaCliente {
+            get {
+                return this.cedulaClienteField;
+            }
+            set {
+                if ((this.cedulaClienteField.Equals(value) != true)) {
+                    this.cedulaClienteField = value;
+                    this.RaisePropertyChanged("cedulaCliente");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public VeterianriaWinForms.GestionVeterinarioServices.TipoAnimal Animal {
+            get {
+                return this.AnimalField;
+            }
+            set {
+                if ((this.AnimalField.Equals(value) != true)) {
+                    this.AnimalField = value;
+                    this.RaisePropertyChanged("Animal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public VeterianriaWinForms.GestionVeterinarioServices.Raza Raza {
+            get {
+                return this.RazaField;
+            }
+            set {
+                if ((this.RazaField.Equals(value) != true)) {
+                    this.RazaField = value;
+                    this.RaisePropertyChanged("Raza");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int Edad {
+            get {
+                return this.EdadField;
+            }
+            set {
+                if ((this.EdadField.Equals(value) != true)) {
+                    this.EdadField = value;
+                    this.RaisePropertyChanged("Edad");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public bool VacunaAlDia {
+            get {
+                return this.VacunaAlDiaField;
+            }
+            set {
+                if ((this.VacunaAlDiaField.Equals(value) != true)) {
+                    this.VacunaAlDiaField = value;
+                    this.RaisePropertyChanged("VacunaAlDia");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public VeterianriaWinForms.GestionVeterinarioServices.VOCarnetInscripcion CarnetInscripcion {
+            get {
+                return this.CarnetInscripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CarnetInscripcionField, value) != true)) {
+                    this.CarnetInscripcionField = value;
+                    this.RaisePropertyChanged("CarnetInscripcion");
+                }
             }
         }
         
@@ -404,6 +511,11 @@ namespace VeterianriaWinForms.GestionVeterinarioServices {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        private System.DateTime ExpedidoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] FotoField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -411,6 +523,32 @@ namespace VeterianriaWinForms.GestionVeterinarioServices {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.DateTime Expedido {
+            get {
+                return this.ExpedidoField;
+            }
+            set {
+                if ((this.ExpedidoField.Equals(value) != true)) {
+                    this.ExpedidoField = value;
+                    this.RaisePropertyChanged("Expedido");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public byte[] Foto {
+            get {
+                return this.FotoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FotoField, value) != true)) {
+                    this.FotoField = value;
+                    this.RaisePropertyChanged("Foto");
+                }
             }
         }
         
@@ -422,6 +560,46 @@ namespace VeterianriaWinForms.GestionVeterinarioServices {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TipoAnimal", Namespace="http://tempuri.org/")]
+    public enum TipoAnimal : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Gato = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Perro = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Loro = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Huron = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Conejo = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Cobayo = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Hamster = 6,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Raza", Namespace="http://tempuri.org/")]
+    public enum Raza : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Policia = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Golden = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Caniche = 2,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -541,6 +719,13 @@ namespace VeterianriaWinForms.GestionVeterinarioServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MemberMascota", ReplyAction="*")]
         System.Threading.Tasks.Task MemberMascotaAsync(int numero);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ObtenerMascotasResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerMascotas", ReplyAction="*")]
+        VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasResponse ObtenerMascotas(VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerMascotas", ReplyAction="*")]
+        System.Threading.Tasks.Task<VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasResponse> ObtenerMascotasAsync(VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento foto del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CrearCarnet", ReplyAction="*")]
@@ -1327,6 +1512,74 @@ namespace VeterianriaWinForms.GestionVeterinarioServices {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerMascotasRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerMascotas", Namespace="http://tempuri.org/", Order=0)]
+        public VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasRequestBody Body;
+        
+        public ObtenerMascotasRequest() {
+        }
+        
+        public ObtenerMascotasRequest(VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ObtenerMascotasRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public long cedula;
+        
+        public ObtenerMascotasRequestBody() {
+        }
+        
+        public ObtenerMascotasRequestBody(long cedula) {
+            this.cedula = cedula;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerMascotasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerMascotasResponse", Namespace="http://tempuri.org/", Order=0)]
+        public VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasResponseBody Body;
+        
+        public ObtenerMascotasResponse() {
+        }
+        
+        public ObtenerMascotasResponse(VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ObtenerMascotasResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public VeterianriaWinForms.GestionVeterinarioServices.VOMascota[] ObtenerMascotasResult;
+        
+        public ObtenerMascotasResponseBody() {
+        }
+        
+        public ObtenerMascotasResponseBody(VeterianriaWinForms.GestionVeterinarioServices.VOMascota[] ObtenerMascotasResult) {
+            this.ObtenerMascotasResult = ObtenerMascotasResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CrearCarnetRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CrearCarnet", Namespace="http://tempuri.org/", Order=0)]
@@ -1924,6 +2177,31 @@ namespace VeterianriaWinForms.GestionVeterinarioServices {
         
         public System.Threading.Tasks.Task MemberMascotaAsync(int numero) {
             return base.Channel.MemberMascotaAsync(numero);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasResponse VeterianriaWinForms.GestionVeterinarioServices.WebServiceVeterinariasSoap.ObtenerMascotas(VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasRequest request) {
+            return base.Channel.ObtenerMascotas(request);
+        }
+        
+        public VeterianriaWinForms.GestionVeterinarioServices.VOMascota[] ObtenerMascotas(long cedula) {
+            VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasRequest inValue = new VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasRequest();
+            inValue.Body = new VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasRequestBody();
+            inValue.Body.cedula = cedula;
+            VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasResponse retVal = ((VeterianriaWinForms.GestionVeterinarioServices.WebServiceVeterinariasSoap)(this)).ObtenerMascotas(inValue);
+            return retVal.Body.ObtenerMascotasResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasResponse> VeterianriaWinForms.GestionVeterinarioServices.WebServiceVeterinariasSoap.ObtenerMascotasAsync(VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasRequest request) {
+            return base.Channel.ObtenerMascotasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasResponse> ObtenerMascotasAsync(long cedula) {
+            VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasRequest inValue = new VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasRequest();
+            inValue.Body = new VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasRequestBody();
+            inValue.Body.cedula = cedula;
+            return ((VeterianriaWinForms.GestionVeterinarioServices.WebServiceVeterinariasSoap)(this)).ObtenerMascotasAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

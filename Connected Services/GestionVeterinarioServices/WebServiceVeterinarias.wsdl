@@ -51,7 +51,41 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="VOMascota" nillable="true" type="tns:VOMascota" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="VOMascota" />
+      <s:complexType name="VOMascota">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="cedulaCliente" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Animal" type="tns:TipoAnimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Raza" type="tns:Raza" />
+          <s:element minOccurs="1" maxOccurs="1" name="Edad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VacunaAlDia" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarnetInscripcion" type="tns:VOCarnetInscripcion" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TipoAnimal">
+        <s:restriction base="s:string">
+          <s:enumeration value="Gato" />
+          <s:enumeration value="Perro" />
+          <s:enumeration value="Loro" />
+          <s:enumeration value="Huron" />
+          <s:enumeration value="Conejo" />
+          <s:enumeration value="Cobayo" />
+          <s:enumeration value="Hamster" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Raza">
+        <s:restriction base="s:string">
+          <s:enumeration value="Policia" />
+          <s:enumeration value="Golden" />
+          <s:enumeration value="Caniche" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="VOCarnetInscripcion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Expedido" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Foto" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
       <s:complexType name="ArrayOfVOConsulta">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="unbounded" name="VOConsulta" nillable="true" type="tns:VOConsulta" />
@@ -229,6 +263,20 @@
       <s:element name="MemberMascotaResponse">
         <s:complexType />
       </s:element>
+      <s:element name="ObtenerMascotas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cedula" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerMascotasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerMascotasResult" type="tns:ArrayOfVOMascota" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="CrearCarnet">
         <s:complexType>
           <s:sequence>
@@ -247,7 +295,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="VOCarnetInscripcion" />
       <s:element name="EditarCarnetResponse">
         <s:complexType />
       </s:element>
@@ -385,6 +432,12 @@
   <wsdl:message name="MemberMascotaSoapOut">
     <wsdl:part name="parameters" element="tns:MemberMascotaResponse" />
   </wsdl:message>
+  <wsdl:message name="ObtenerMascotasSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerMascotas" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMascotasSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerMascotasResponse" />
+  </wsdl:message>
   <wsdl:message name="CrearCarnetSoapIn">
     <wsdl:part name="parameters" element="tns:CrearCarnet" />
   </wsdl:message>
@@ -500,6 +553,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para determinar si existe una mascota</wsdl:documentation>
       <wsdl:input message="tns:MemberMascotaSoapIn" />
       <wsdl:output message="tns:MemberMascotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMascotas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtener los mascotas exitentes dado un cliente existentes</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerMascotasSoapIn" />
+      <wsdl:output message="tns:ObtenerMascotasSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="CrearCarnet">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para crear un carnet nuevo</wsdl:documentation>
@@ -675,6 +733,15 @@
     </wsdl:operation>
     <wsdl:operation name="MemberMascota">
       <soap:operation soapAction="http://tempuri.org/MemberMascota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMascotas">
+      <soap:operation soapAction="http://tempuri.org/ObtenerMascotas" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -876,6 +943,15 @@
     </wsdl:operation>
     <wsdl:operation name="MemberMascota">
       <soap12:operation soapAction="http://tempuri.org/MemberMascota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMascotas">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerMascotas" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

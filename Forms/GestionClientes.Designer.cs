@@ -40,6 +40,7 @@ namespace VeterianriaWinForms.Forms
             this.btnNuevo = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
+            this.btnListadoMascotas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -130,11 +131,22 @@ namespace VeterianriaWinForms.Forms
             this.BtnEditar.UseVisualStyleBackColor = true;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
+            // btnListadoMascotas
+            // 
+            this.btnListadoMascotas.Location = new System.Drawing.Point(960, 356);
+            this.btnListadoMascotas.Name = "btnListadoMascotas";
+            this.btnListadoMascotas.Size = new System.Drawing.Size(196, 23);
+            this.btnListadoMascotas.TabIndex = 16;
+            this.btnListadoMascotas.Text = "Listado de Mascotas";
+            this.btnListadoMascotas.UseVisualStyleBackColor = true;
+            this.btnListadoMascotas.Click += new System.EventHandler(this.btnListadoMascotas_Click);
+            // 
             // GestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1168, 391);
+            this.Controls.Add(this.btnListadoMascotas);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.btnNuevo);
@@ -160,5 +172,6 @@ namespace VeterianriaWinForms.Forms
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnEditar;
+        private System.Windows.Forms.Button btnListadoMascotas;
     }
 }

@@ -23,8 +23,6 @@ namespace VeterianriaWinForms.Forms
         private void PreCargarForm(long cedula)
         {
             GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-
-
             VeterianriaWinForms.GestionVeterinarioServices.VOCliente vocliente = ws.ObtenerCliente(cedula);
 
             lblCedulaValor.Text = vocliente.Cedula.ToString();
