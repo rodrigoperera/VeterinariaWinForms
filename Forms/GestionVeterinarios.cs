@@ -11,12 +11,11 @@ using VeterianriaWinForms.ValueObject;
 
 namespace VeterianriaWinForms.Forms
 {
-    public partial class GestionVeterinaria : Form
+    public partial class GestionVeterinarios : Form
     {
-        public GestionVeterinaria()
+        public GestionVeterinarios()
         {
             InitializeComponent();
-            //this.fachadaWin = FachadaWin;
             CargarLista();
         }
 
