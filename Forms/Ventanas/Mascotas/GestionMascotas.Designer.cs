@@ -127,6 +127,7 @@ namespace VeterianriaWinForms.Forms.Ventanas.Mascotas
             this.BtnEliminar.TabIndex = 20;
             this.BtnEliminar.Text = "Editar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // btnNuevo
             // 
@@ -137,6 +138,7 @@ namespace VeterianriaWinForms.Forms.Ventanas.Mascotas
             this.btnNuevo.TabIndex = 19;
             this.btnNuevo.Text = "Nueva";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // GestionMascotas
             // 

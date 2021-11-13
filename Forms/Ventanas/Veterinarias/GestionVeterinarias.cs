@@ -16,5 +16,21 @@ namespace VeterianriaWinForms.Forms.Ventanas.Veterinarias
         {
             InitializeComponent();
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            NuevaVeterinaria FrmNuevaVeterinaria;
+            FrmNuevaVeterinaria = new NuevaVeterinaria();
+            FrmNuevaVeterinaria.Owner = this;
+            FrmNuevaVeterinaria.ShowDialog();
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            EditarVeterinaria FrmEditarVeterinaria;
+            FrmEditarVeterinaria = new EditarVeterinaria();
+            FrmEditarVeterinaria.Owner = this;
+            FrmEditarVeterinaria.ShowDialog();
+        }
     }
 }

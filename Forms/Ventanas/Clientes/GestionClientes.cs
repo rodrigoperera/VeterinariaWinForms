@@ -25,5 +25,21 @@ namespace VeterianriaWinForms.Forms.Ventanas.Clientes
             FrmGestionMascotas.Owner = this;
             FrmGestionMascotas.ShowDialog();
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            NuevoCliente FrmNuevoCliente;
+            FrmNuevoCliente = new NuevoCliente();
+            FrmNuevoCliente.Owner = this;
+            FrmNuevoCliente.ShowDialog();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            EditarCliente FrmEditarCliente;
+            FrmEditarCliente = new EditarCliente();
+            FrmEditarCliente.Owner = this;
+            FrmEditarCliente.ShowDialog();
+        }
     }
 }

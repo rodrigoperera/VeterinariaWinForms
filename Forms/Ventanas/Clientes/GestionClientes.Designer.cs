@@ -113,6 +113,7 @@ namespace VeterianriaWinForms.Forms.Ventanas.Clientes
             this.BtnEliminar.TabIndex = 13;
             this.BtnEliminar.Text = "Editar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // btnNuevo
             // 
@@ -123,6 +124,7 @@ namespace VeterianriaWinForms.Forms.Ventanas.Clientes
             this.btnNuevo.TabIndex = 11;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // button2
             // 

@@ -101,6 +101,7 @@ namespace VeterianriaWinForms.Forms.Ventanas.Veterinarias
             this.BtnEditar.TabIndex = 12;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = true;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -111,6 +112,7 @@ namespace VeterianriaWinForms.Forms.Ventanas.Veterinarias
             this.btnNuevo.TabIndex = 11;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // GestionVeterinarias
             // 

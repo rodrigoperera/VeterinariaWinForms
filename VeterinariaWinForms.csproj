@@ -60,11 +60,29 @@
     <Compile Include="Forms\Ventanas\Carnet\CarnetMascota.Designer.cs">
       <DependentUpon>CarnetMascota.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Ventanas\Clientes\EditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Clientes\EditarCliente.Designer.cs">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Ventanas\Clientes\GestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Ventanas\Clientes\GestionClientes.Designer.cs">
       <DependentUpon>GestionClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Clientes\NuevoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Clientes\NuevoCliente.Designer.cs">
+      <DependentUpon>NuevoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Mascotas\EditarMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Mascotas\EditarMascota.Designer.cs">
+      <DependentUpon>EditarMascota.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Ventanas\Mascotas\GestionMascotas.cs">
       <SubType>Form</SubType>
@@ -72,17 +90,35 @@
     <Compile Include="Forms\Ventanas\Mascotas\GestionMascotas.Designer.cs">
       <DependentUpon>GestionMascotas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Ventanas\Mascotas\NuevaMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Mascotas\NuevaMascota.Designer.cs">
+      <DependentUpon>NuevaMascota.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Ventanas\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Ventanas\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Ventanas\Veterinarias\EditarVeterinaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Veterinarias\EditarVeterinaria.Designer.cs">
+      <DependentUpon>EditarVeterinaria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Ventanas\Veterinarias\GestionVeterinarias.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Ventanas\Veterinarias\GestionVeterinarias.Designer.cs">
       <DependentUpon>GestionVeterinarias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Veterinarias\NuevaVeterinaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Veterinarias\NuevaVeterinaria.Designer.cs">
+      <DependentUpon>NuevaVeterinaria.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Ventanas\Veterinarios\EditaraVeterinario.cs">
       <SubType>Form</SubType>
@@ -118,17 +154,35 @@
     <EmbeddedResource Include="Forms\Ventanas\Carnet\CarnetMascota.resx">
       <DependentUpon>CarnetMascota.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ventanas\Clientes\EditarCliente.resx">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ventanas\Clientes\GestionClientes.resx">
       <DependentUpon>GestionClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ventanas\Clientes\NuevoCliente.resx">
+      <DependentUpon>NuevoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ventanas\Mascotas\EditarMascota.resx">
+      <DependentUpon>EditarMascota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ventanas\Mascotas\GestionMascotas.resx">
       <DependentUpon>GestionMascotas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ventanas\Mascotas\NuevaMascota.resx">
+      <DependentUpon>NuevaMascota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ventanas\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ventanas\Veterinarias\EditarVeterinaria.resx">
+      <DependentUpon>EditarVeterinaria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ventanas\Veterinarias\GestionVeterinarias.resx">
       <DependentUpon>GestionVeterinarias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ventanas\Veterinarias\NuevaVeterinaria.resx">
+      <DependentUpon>NuevaVeterinaria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ventanas\Veterinarios\EditaraVeterinario.resx">
       <DependentUpon>EditaraVeterinario.cs</DependentUpon>
