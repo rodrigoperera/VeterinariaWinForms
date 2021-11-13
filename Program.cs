@@ -17,7 +17,7 @@ namespace VeterianriaWinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GestionVeterinaria());
+            Application.Run(new Home());
         }
     }
 }

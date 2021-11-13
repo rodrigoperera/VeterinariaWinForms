@@ -53,22 +53,59 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EditaraVeterinario.cs">
+    <Compile Include="Forms\Controladores\ControladorVeterinarias.cs" />
+    <Compile Include="Forms\Ventanas\Carnet\CarnetMascota.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditaraVeterinario.Designer.cs">
+    <Compile Include="Forms\Ventanas\Carnet\CarnetMascota.Designer.cs">
+      <DependentUpon>CarnetMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Clientes\GestionClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Clientes\GestionClientes.Designer.cs">
+      <DependentUpon>GestionClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Mascotas\GestionMascotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Mascotas\GestionMascotas.Designer.cs">
+      <DependentUpon>GestionMascotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ventanas\MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ventanas\MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Veterinarias\GestionVeterinarias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Veterinarias\GestionVeterinarias.Designer.cs">
+      <DependentUpon>GestionVeterinarias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Veterinarios\EditaraVeterinario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Veterinarios\EditaraVeterinario.Designer.cs">
       <DependentUpon>EditaraVeterinario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\GestionVeterinaria.cs">
+    <Compile Include="Forms\Ventanas\Veterinarios\GestionVeterinarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\GestionVeterinaria.Designer.cs">
-      <DependentUpon>GestionVeterinaria.cs</DependentUpon>
+    <Compile Include="Forms\Ventanas\Veterinarios\GestionVeterinarios.Designer.cs">
+      <DependentUpon>GestionVeterinarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NuevoVeterinario.cs">
+    <Compile Include="Forms\Ventanas\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NuevoVeterinario.Designer.cs">
+    <Compile Include="Forms\Ventanas\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Veterinarios\NuevoVeterinario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ventanas\Veterinarios\NuevoVeterinario.Designer.cs">
       <DependentUpon>NuevoVeterinario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -78,13 +115,31 @@
     <Compile Include="ValueObject\VOConsulta.cs" />
     <Compile Include="ValueObject\VOMascota.cs" />
     <Compile Include="ValueObject\VOVeterinaria.cs" />
-    <EmbeddedResource Include="Forms\EditaraVeterinario.resx">
+    <EmbeddedResource Include="Forms\Ventanas\Carnet\CarnetMascota.resx">
+      <DependentUpon>CarnetMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ventanas\Clientes\GestionClientes.resx">
+      <DependentUpon>GestionClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ventanas\Mascotas\GestionMascotas.resx">
+      <DependentUpon>GestionMascotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ventanas\MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ventanas\Veterinarias\GestionVeterinarias.resx">
+      <DependentUpon>GestionVeterinarias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ventanas\Veterinarios\EditaraVeterinario.resx">
       <DependentUpon>EditaraVeterinario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\GestionVeterinaria.resx">
-      <DependentUpon>GestionVeterinaria.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Ventanas\Veterinarios\GestionVeterinarios.resx">
+      <DependentUpon>GestionVeterinarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NuevoVeterinario.resx">
+    <EmbeddedResource Include="Forms\Ventanas\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ventanas\Veterinarios\NuevoVeterinario.resx">
       <DependentUpon>NuevoVeterinario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -175,6 +230,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\Imagenes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
