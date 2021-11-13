@@ -16,5 +16,10 @@ namespace VeterianriaWinForms.Forms.Ventanas.Carnet
         {
             InitializeComponent();
         }
+
+        private void CarnetMascota_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

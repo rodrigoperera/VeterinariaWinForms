@@ -105,6 +105,7 @@ namespace VeterianriaWinForms.Forms.Ventanas.Carnet
             this.Name = "CarnetMascota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CarnetMascota";
+            this.Load += new System.EventHandler(this.CarnetMascota_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

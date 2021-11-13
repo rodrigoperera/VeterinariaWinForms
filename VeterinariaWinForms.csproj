@@ -120,11 +120,11 @@
     <Compile Include="Forms\Ventanas\Veterinarias\NuevaVeterinaria.Designer.cs">
       <DependentUpon>NuevaVeterinaria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Ventanas\Veterinarios\EditaraVeterinario.cs">
+    <Compile Include="Forms\Ventanas\Veterinarios\EditarVeterinario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Ventanas\Veterinarios\EditaraVeterinario.Designer.cs">
-      <DependentUpon>EditaraVeterinario.cs</DependentUpon>
+    <Compile Include="Forms\Ventanas\Veterinarios\EditarVeterinario.Designer.cs">
+      <DependentUpon>EditarVeterinario.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Ventanas\Veterinarios\GestionVeterinarios.cs">
       <SubType>Form</SubType>
@@ -184,8 +184,8 @@
     <EmbeddedResource Include="Forms\Ventanas\Veterinarias\NuevaVeterinaria.resx">
       <DependentUpon>NuevaVeterinaria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Ventanas\Veterinarios\EditaraVeterinario.resx">
-      <DependentUpon>EditaraVeterinario.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Ventanas\Veterinarios\EditarVeterinario.resx">
+      <DependentUpon>EditarVeterinario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ventanas\Veterinarios\GestionVeterinarios.resx">
       <DependentUpon>GestionVeterinarios.cs</DependentUpon>
