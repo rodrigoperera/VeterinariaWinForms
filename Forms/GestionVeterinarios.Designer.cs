@@ -1,7 +1,7 @@
 ﻿
 namespace VeterianriaWinForms.Forms
 {
-    partial class GestionVeterinaria
+    partial class GestionVeterinarios
     {
         /// <summary>
         /// Required designer variable.

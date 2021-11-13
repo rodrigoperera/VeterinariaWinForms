@@ -7,24 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VeterianriaWinForms.ValueObject;
 
 namespace VeterianriaWinForms.Forms
 {
-    public partial class NuevoVeterinario : Form
+    public partial class NuevoCliente : Form
     {
-
-        public NuevoVeterinario()
+        public NuevoCliente()
         {
             InitializeComponent();
-
-        }
-
-       
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -34,11 +24,11 @@ namespace VeterianriaWinForms.Forms
 
                 try
                 {
-                    
-                    VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario voveterinario = CrearVO();
+
+                    VeterianriaWinForms.GestionVeterinarioServices.VOCliente vocliente = CrearVO();
                     GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-                    ws.CrearVeterianario(voveterinario);
-                    MessageBox.Show("Veterinario ingresado con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ws.CrearCliente(vocliente);
+                    MessageBox.Show("Cliente ingresado con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     BorrarDatos();
 
                 }
@@ -47,29 +37,38 @@ namespace VeterianriaWinForms.Forms
                     MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    
 
         private void BorrarDatos()
         {
             TextBoxCedula.Text = String.Empty;
             textBoxNombre.Text = String.Empty;
             textBoxTelefono.Text = String.Empty;
-            textBoxHorario.Text = String.Empty;
+            textBoxDireccion.Text = String.Empty;
+            textBoxCorreo.Text = String.Empty;
 
         }
-        
-        private VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario CrearVO()
+
+        private VeterianriaWinForms.GestionVeterinarioServices.VOCliente CrearVO()
         {
-            VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario voveterinario = new VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario();
-            voveterinario.Cedula = Convert.ToInt64(TextBoxCedula.Text);
-            voveterinario.Nombre = textBoxNombre.Text;
-            voveterinario.Telefono = textBoxTelefono.Text;
-            voveterinario.Horario = textBoxHorario.Text;
-            return voveterinario;
-            
-        }
+            VeterianriaWinForms.GestionVeterinarioServices.VOCliente vocliente = new VeterianriaWinForms.GestionVeterinarioServices.VOCliente();
+            vocliente.Cedula = Convert.ToInt64(TextBoxCedula.Text);
+            vocliente.Nombre = textBoxNombre.Text;
+            vocliente.Telefono = textBoxTelefono.Text;
+            vocliente.Direccion = textBoxDireccion.Text;
+            vocliente.Correo= textBoxCorreo.Text;
+            vocliente.Activo = true;
 
-        
+            return vocliente;
+
+        }
 
         private bool ValidarDatos()
         {
@@ -77,7 +76,9 @@ namespace VeterianriaWinForms.Forms
             exito = ValidarCedula();
             exito = ValidarNombre();
             exito = ValidarTelefono();
-            exito = ValidarHorario();
+            exito = ValidarDireccion();
+            exito = ValidarCorreo();
+
             return exito;
 
         }
@@ -121,24 +122,32 @@ namespace VeterianriaWinForms.Forms
             return bStatus;
         }
 
-        private bool ValidarHorario()
+        private bool ValidarDireccion()
         {
             bool bStatus = true;
-            if (textBoxHorario.Text == "")
+            if (textBoxDireccion.Text == "")
             {
-                errorProvider1.SetError(textBoxHorario, "Por favor ingrese el horario");
+                errorProvider1.SetError(textBoxDireccion, "Por favor ingrese la direccion");
                 bStatus = false;
             }
             else
-                errorProvider1.SetError(textBoxHorario, "");
+                errorProvider1.SetError(textBoxDireccion, "");
             return bStatus;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private bool ValidarCorreo()
         {
-
+            bool bStatus = true;
+            if (textBoxCorreo.Text == "")
+            {
+                errorProvider1.SetError(textBoxCorreo, "Por favor ingrese el correo");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(textBoxCorreo, "");
+            return bStatus;
         }
 
-       
+
     }
 }
