@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carnet\CarnetMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carnet\CarnetMascota.Designer.cs">
+      <DependentUpon>CarnetMascota.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Global.cs" />
     <Compile Include="Connected Services\GestionVeterinarioServices\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -68,11 +74,23 @@
     <Compile Include="Forms\EditarCliente.Designer.cs">
       <DependentUpon>EditarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\GestionCarnet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GestionCarnet.Designer.cs">
+      <DependentUpon>GestionCarnet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\GestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\GestionClientes.Designer.cs">
       <DependentUpon>GestionClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GestionConsultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GestionConsultas.Designer.cs">
+      <DependentUpon>GestionConsultas.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\GestionMascotas.cs">
       <SubType>Form</SubType>
@@ -118,14 +136,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Carnet\CarnetMascota.resx">
+      <DependentUpon>CarnetMascota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditaraVeterinario.resx">
       <DependentUpon>EditaraVeterinario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditarCliente.resx">
       <DependentUpon>EditarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GestionCarnet.resx">
+      <DependentUpon>GestionCarnet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\GestionClientes.resx">
       <DependentUpon>GestionClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GestionConsultas.resx">
+      <DependentUpon>GestionConsultas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GestionMascotas.resx">
       <DependentUpon>GestionMascotas.cs</DependentUpon>

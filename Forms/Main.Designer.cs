@@ -37,9 +37,10 @@ namespace VeterianriaWinForms.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 36);
+            this.label1.Location = new System.Drawing.Point(26, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 17);
+            this.label1.Size = new System.Drawing.Size(126, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Seleccione la veterinaria ";
             // 
@@ -47,16 +48,18 @@ namespace VeterianriaWinForms.Forms
             // 
             this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(207, 36);
+            this.comboBox.Location = new System.Drawing.Point(155, 29);
+            this.comboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(121, 24);
+            this.comboBox.Size = new System.Drawing.Size(92, 21);
             this.comboBox.TabIndex = 1;
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(354, 37);
+            this.btnIngresar.Location = new System.Drawing.Point(266, 30);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(75, 23);
+            this.btnIngresar.Size = new System.Drawing.Size(56, 19);
             this.btnIngresar.TabIndex = 2;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -64,13 +67,15 @@ namespace VeterianriaWinForms.Forms
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 127);
+            this.ClientSize = new System.Drawing.Size(346, 103);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.comboBox);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -88,5 +88,21 @@ namespace VeterianriaWinForms.Forms
             listView1.Items.Clear();
             CargarLista();
         }
+
+        private void BtnCarnet_Click(object sender, EventArgs e)
+        {
+            GestionCarnet FrmGestionCarnet;
+            FrmGestionCarnet = new GestionCarnet();
+            FrmGestionCarnet.Owner = this;  // <-- This is the important thing
+            FrmGestionCarnet.ShowDialog();
+        }
+
+        private void BtnConsultas_Click(object sender, EventArgs e)
+        {
+            GestionConsultas FrmGestionConsultas;
+            FrmGestionConsultas = new GestionConsultas();
+            FrmGestionConsultas.Owner = this;  // <-- This is the important thing
+            FrmGestionConsultas.ShowDialog();
+        }
     }
 }
