@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VeterianriaWinForms.ValueObject;
 
 namespace VeterianriaWinForms.Forms
 {
@@ -37,7 +36,7 @@ namespace VeterianriaWinForms.Forms
                     
                     VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario voveterinario = CrearVO();
                     GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-                    ws.CrearVeterianario(voveterinario);
+                    ws.CrearVeterinario(voveterinario);
                     MessageBox.Show("Veterinario ingresado con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     BorrarDatos();
 

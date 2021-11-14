@@ -39,23 +39,16 @@ namespace VeterianriaWinForms.Forms
             lista = ws.ObtenerMascotas(this.cedula);
             foreach (var item in lista)
             {
-                // aca debería ir el id de la mascota. pero el VO solo tiene get para ese atributo.
-                // luego ese dato se usa para eliminar.
-                ListViewItem listado = new ListViewItem(item.Edad.ToString());
+                ListViewItem listado = new ListViewItem(item.Id.ToString());
                 listado.SubItems.Add(item.Animal.ToString());
                 listado.SubItems.Add(item.Nombre);
                 listado.SubItems.Add(item.Raza.ToString());
                 listado.SubItems.Add(item.Edad.ToString());
                 listado.SubItems.Add(item.VacunaAlDia ? "Vacunas al dia" : "Vacunas vencias");
                 listado.SubItems.Add(item.CarnetInscripcion.Expedido.ToString());
-                //listado.SubItems.Add(item.CarnetInscripcion.Foto);
                 listView1.Items.Add(listado);
                 
             }
-            
-
-
-
 
         }
 
@@ -68,9 +61,8 @@ namespace VeterianriaWinForms.Forms
         {
             foreach (ListViewItem lista in listView1.SelectedItems)
             {
-                // TODO: NO ESTA FUNCIONADNO AHORA. VA A FUNCIONAR CUANDO TENGAMOS EL ID DE LA MASCOTA EN EL LISTADO
-                // YA QUE ESO ES LO QUE SE LE PASA AL ELIMINAR. 
-                int id = int.Parse(lista.Text); // es necesario que el primer campo sea el id de la mascota asi lo mandamos en el eliminar
+                
+                int id = int.Parse(lista.Text);
                 try
                 {
 
@@ -85,6 +77,16 @@ namespace VeterianriaWinForms.Forms
                     MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            NuevaMascota FrmNuevaMascota;
+            FrmNuevaMascota = new NuevaMascota();
+            FrmNuevaMascota.Owner = this;  // <-- This is the important thing
+            FrmNuevaMascota.ShowDialog();
+            listView1.Items.Clear();
+            CargarLista();
         }
     }
 }

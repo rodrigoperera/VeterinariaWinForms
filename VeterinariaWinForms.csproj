@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Global.cs" />
     <Compile Include="Connected Services\GestionVeterinarioServices\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,6 +86,18 @@
     <Compile Include="Forms\GestionVeterinarios.Designer.cs">
       <DependentUpon>GestionVeterinarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NuevaMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NuevaMascota.Designer.cs">
+      <DependentUpon>NuevaMascota.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NuevoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,19 +110,14 @@
     <Compile Include="Forms\NuevoVeterinario.Designer.cs">
       <DependentUpon>NuevoVeterinario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Principal.cs">
+    <Compile Include="Forms\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Principal.Designer.cs">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <Compile Include="Forms\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValueObject\VOCarnetInscripcion.cs" />
-    <Compile Include="ValueObject\VOCliente.cs" />
-    <Compile Include="ValueObject\VOConsulta.cs" />
-    <Compile Include="ValueObject\VOMascota.cs" />
-    <Compile Include="ValueObject\VOVeterinaria.cs" />
     <EmbeddedResource Include="Forms\EditaraVeterinario.resx">
       <DependentUpon>EditaraVeterinario.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,14 +133,20 @@
     <EmbeddedResource Include="Forms\GestionVeterinarios.resx">
       <DependentUpon>GestionVeterinarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NuevaMascota.resx">
+      <DependentUpon>NuevaMascota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NuevoCliente.resx">
       <DependentUpon>NuevoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NuevoVeterinario.resx">
       <DependentUpon>NuevoVeterinario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Principal.resx">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -155,10 +169,10 @@
     <None Include="Connected Services\GestionVeterinarioServices\VeterianriaWinForms.GestionVeterinarioServices.CrearMascotaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\GestionVeterinarioServices\VeterianriaWinForms.GestionVeterinarioServices.CrearVeterianariaResponse.datasource">
+    <None Include="Connected Services\GestionVeterinarioServices\VeterianriaWinForms.GestionVeterinarioServices.CrearVeterinariaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\GestionVeterinarioServices\VeterianriaWinForms.GestionVeterinarioServices.CrearVeterianarioResponse.datasource">
+    <None Include="Connected Services\GestionVeterinarioServices\VeterianriaWinForms.GestionVeterinarioServices.CrearVeterinarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\GestionVeterinarioServices\VeterianriaWinForms.GestionVeterinarioServices.EditarCarnetResponse.datasource">
@@ -188,6 +202,9 @@
     <None Include="Connected Services\GestionVeterinarioServices\VeterianriaWinForms.GestionVeterinarioServices.ObtenerMascotasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\GestionVeterinarioServices\VeterianriaWinForms.GestionVeterinarioServices.ObtenerVeterinariasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\GestionVeterinarioServices\VeterianriaWinForms.GestionVeterinarioServices.ObtenerVeterinarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -198,6 +215,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\GestionVeterinarioServices\VeterianriaWinForms.GestionVeterinarioServices.VOMascota.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GestionVeterinarioServices\VeterianriaWinForms.GestionVeterinarioServices.VOVeterinaria.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\GestionVeterinarioServices\VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario.datasource">

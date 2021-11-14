@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeterianriaWinForms.Clases;
 
 namespace VeterianriaWinForms.Forms
 {
-    public partial class Principal : Form
+    public partial class Inicio : Form
     {
-        public Principal()
+        private string Nombre;
+        public Inicio()
         {
             InitializeComponent();
+            this.Text = String.Format("Sistem de gestion para la veterinaria {0}", Global.NombreVeterinaria);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -39,6 +42,11 @@ namespace VeterianriaWinForms.Forms
             FrmGestionClientes = new GestionClientes();
             FrmGestionClientes.Owner = this;
             FrmGestionClientes.Show();
+        }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

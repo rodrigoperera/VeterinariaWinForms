@@ -30,18 +30,18 @@ namespace VeterianriaWinForms.Forms
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
+            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Raza = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Edad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblClienteNombre = new System.Windows.Forms.Label();
             this.Vacunas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Expedido = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblClienteNombre = new System.Windows.Forms.Label();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
@@ -65,6 +65,10 @@ namespace VeterianriaWinForms.Forms
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
+            // Id
+            // 
+            this.Id.Text = "Id";
+            // 
             // Tipo
             // 
             this.Tipo.Text = "Tipo animal";
@@ -83,6 +87,16 @@ namespace VeterianriaWinForms.Forms
             // 
             this.Edad.Text = "Edad";
             this.Edad.Width = 98;
+            // 
+            // Vacunas
+            // 
+            this.Vacunas.Text = "Vacunas al dia?";
+            this.Vacunas.Width = 213;
+            // 
+            // Expedido
+            // 
+            this.Expedido.Text = "Carnet - Fecha expedido";
+            this.Expedido.Width = 212;
             // 
             // label1
             // 
@@ -103,16 +117,6 @@ namespace VeterianriaWinForms.Forms
             this.lblClienteNombre.Size = new System.Drawing.Size(57, 18);
             this.lblClienteNombre.TabIndex = 2;
             this.lblClienteNombre.Text = "cliente";
-            // 
-            // Vacunas
-            // 
-            this.Vacunas.Text = "Vacunas al dia?";
-            this.Vacunas.Width = 213;
-            // 
-            // Expedido
-            // 
-            this.Expedido.Text = "Fecha de expedido";
-            this.Expedido.Width = 212;
             // 
             // BtnEliminar
             // 
@@ -141,10 +145,7 @@ namespace VeterianriaWinForms.Forms
             this.btnNuevo.TabIndex = 17;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
-            // 
-            // Id
-            // 
-            this.Id.Text = "Id";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // GestionMascotas
             // 
