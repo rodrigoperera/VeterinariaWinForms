@@ -20,16 +20,15 @@ namespace VeterianriaWinForms.Forms
             this.Text = String.Format("Sistem de gestion para la veterinaria {0}", Global.NombreVeterinaria);
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void Inicio_Load(object sender, EventArgs e)
         {
-
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            DigiClockTextBox.Text = DateTime.Now.ToLongTimeString();
         }
-
-        
 
         private void trabajarConVeterinariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
             GestionVeterinarios FrmGestionVeterinarios;
             FrmGestionVeterinarios = new GestionVeterinarios();
             FrmGestionVeterinarios.Owner = this;
@@ -42,13 +41,6 @@ namespace VeterianriaWinForms.Forms
             FrmGestionClientes = new GestionClientes();
             FrmGestionClientes.Owner = this;
             FrmGestionClientes.ShowDialog();
-        }
-
-        private void Inicio_Load(object sender, EventArgs e)
-        {
-            timer1.Enabled = true;
-            timer1.Interval = 1000;
-            DigiClockTextBox.Text = DateTime.Now.ToLongTimeString();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

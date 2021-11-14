@@ -48,13 +48,12 @@ namespace VeterianriaWinForms.Forms
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(11, 35);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(384, 333);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // menuStrip1
             // 
@@ -80,8 +79,8 @@ namespace VeterianriaWinForms.Forms
             // trabajarConClientesToolStripMenuItem
             // 
             this.trabajarConClientesToolStripMenuItem.Name = "trabajarConClientesToolStripMenuItem";
-            this.trabajarConClientesToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.trabajarConClientesToolStripMenuItem.Text = "Trabajar con clientes";
+            this.trabajarConClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.trabajarConClientesToolStripMenuItem.Text = "Gestionar Clientes";
             this.trabajarConClientesToolStripMenuItem.Click += new System.EventHandler(this.trabajarConClientesToolStripMenuItem_Click);
             // 
             // veterinariosToolStripMenuItem
@@ -95,8 +94,8 @@ namespace VeterianriaWinForms.Forms
             // trabajarConVeterinariosToolStripMenuItem
             // 
             this.trabajarConVeterinariosToolStripMenuItem.Name = "trabajarConVeterinariosToolStripMenuItem";
-            this.trabajarConVeterinariosToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.trabajarConVeterinariosToolStripMenuItem.Text = "Trabajar con veterinarios";
+            this.trabajarConVeterinariosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.trabajarConVeterinariosToolStripMenuItem.Text = "Gestionar Veterinarios";
             this.trabajarConVeterinariosToolStripMenuItem.Click += new System.EventHandler(this.trabajarConVeterinariosToolStripMenuItem_Click);
             // 
             // monthCalendar1
@@ -123,13 +122,14 @@ namespace VeterianriaWinForms.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(702, 378);
             this.Controls.Add(this.DigiClockTextBox);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
