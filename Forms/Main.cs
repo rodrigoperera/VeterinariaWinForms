@@ -46,5 +46,13 @@ namespace VeterianriaWinForms.Forms
             comboBox.ValueMember = "Id";
 
         }
+
+        private void btnConfiguraciones_Click(object sender, EventArgs e)
+        {
+            GestionVeterinarias FrmGestionVeterinarias;
+            FrmGestionVeterinarias = new GestionVeterinarias();
+            FrmGestionVeterinarias.Owner = this;  // <-- This is the important thing
+            FrmGestionVeterinarias.ShowDialog();
+        }
     }
 }
