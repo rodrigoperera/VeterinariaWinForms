@@ -28,8 +28,9 @@ namespace VeterianriaWinForms.Forms
             Global.NombreVeterinaria = "FALTA OBTENERLO DE LA BASE";
             Inicio FrmInicio;
             FrmInicio = new Inicio();
-            FrmInicio.Owner = this;  // <-- This is the important thing
-            FrmInicio.ShowDialog();
+            this.Hide();
+            FrmInicio.Closed += (s, args) => this.Close();
+            FrmInicio.Show();
         }
 
 
