@@ -92,5 +92,19 @@ namespace VeterianriaWinForms.Forms
             FrmGestionConsultas.Owner = this;  // <-- This is the important thing
             FrmGestionConsultas.ShowDialog();
         }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem lista in listView1.SelectedItems)
+            {
+                int id = int.Parse(lista.Text);
+                EditarMascota FrmEditarMascota;
+                FrmEditarMascota = new EditarMascota(id);
+                FrmEditarMascota.Owner = this;
+                FrmEditarMascota.ShowDialog();
+                listView1.Items.Clear();
+                CargarLista();
+            }
+        }
     }
 }
