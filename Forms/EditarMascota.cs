@@ -11,80 +11,65 @@ using System.Windows.Forms;
 
 namespace VeterianriaWinForms.Forms
 {
-    public partial class NuevaMascota : Form
+    public partial class EditarMascota : Form
     {
-        long cedula;
+        long ciCliente;
+        int id;
         byte[] m_barrImg;
 
-        public NuevaMascota(long ci)
+        public EditarMascota(int id)
         {
             InitializeComponent();
-            CargarCombos();
-            this.cedula = ci;
+            this.id = id;
+            PreCargarForm(id);
         }
 
-        private void CargarCombos() {
+        private void PreCargarForm(int id)
+        {
+            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+            VeterianriaWinForms.GestionVeterinarioServices.VOMascota vomascota = ws.ObtenerMascota(id);
             comboBoxTipo.DataSource = Enum.GetValues(typeof(TipoAnimal));
             comboBoxRaza.DataSource = Enum.GetValues(typeof(Raza));
-        }
+            textBoxNombre.Text = vomascota.Nombre;
+            textBoxEdad.Text = vomascota.Edad.ToString();
+            checkBox.Checked = vomascota.VacunaAlDia;
+            this.ciCliente = vomascota.cedulaCliente;
 
+            m_barrImg = vomascota.CarnetInscripcion.Foto;
+            string strfn = Convert.ToString(DateTime.Now.ToFileTime());
+            FileStream fs = new FileStream(strfn,
+                              FileMode.CreateNew, FileAccess.Write);
+            fs.Write(m_barrImg, 0, m_barrImg.Length);
+            fs.Flush();
+            fs.Close();
+            imagen.Image = Image.FromFile(strfn);
+            textBoxNombre.Focus();
+        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string imageLocation = "";
-            try
-            {
-                OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Filter = "jpg files(.*jpg)|*.jpg| PNG files(.*png)|*.png| All Files(*.*)|*.*";
-                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
-                    imageLocation = dialog.FileName;
-                    imagen.Image = Image.FromFile(imageLocation);
-                    FileInfo info = new FileInfo(imageLocation);
-                    long size = info.Length;
-                    FileStream fs = new FileStream(imageLocation, FileMode.Open,
-                          FileAccess.Read, FileShare.Read);
-                    this.m_barrImg = new byte[Convert.ToInt32(size)];
-                    int iBytesRead = fs.Read(this.m_barrImg, 0,
-                                     Convert.ToInt32(size));
-                    fs.Close();
-                }
-            }
-            catch 
-            {
-                MessageBox.Show("Error al intentar cargar la imagen");
-            }
-        }
-
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (ValidarDatos())
+            try
             {
-                try
-                {
-                    VeterianriaWinForms.GestionVeterinarioServices.VOMascota vomascota = CrearVO();
-                    GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-                    ws.CrearMascota(vomascota);
-                    MessageBox.Show("Mascota ingresada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    BorrarDatos();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                VeterianriaWinForms.GestionVeterinarioServices.VOMascota vomascota = CrearVO();
+                GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                ws.EditarMascota(vomascota);
+                MessageBox.Show("Mascota editada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private VeterianriaWinForms.GestionVeterinarioServices.VOMascota CrearVO()
         {
             VeterianriaWinForms.GestionVeterinarioServices.VOMascota vomascota = new VeterianriaWinForms.GestionVeterinarioServices.VOMascota();
-            vomascota.cedulaCliente = this.cedula;
+            vomascota.cedulaCliente = this.ciCliente;
             vomascota.Animal = (GestionVeterinarioServices.TipoAnimal)comboBoxTipo.SelectedItem;
             vomascota.Nombre = textBoxNombre.Text;
             vomascota.Raza = (GestionVeterinarioServices.Raza)comboBoxRaza.SelectedItem;
@@ -97,16 +82,6 @@ namespace VeterianriaWinForms.Forms
 
             vomascota.CarnetInscripcion = vocarnetinscripcion;
             return vomascota;
-        }
-
-        private void BorrarDatos()
-        {
-            comboBoxTipo.SelectedItem = null;
-            comboBoxRaza.SelectedItem = null;
-            textBoxNombre.Text = String.Empty;
-            textBoxEdad.Text = String.Empty;
-            checkBox.Checked = false;
-            imagen = null;
         }
 
         private bool ValidarDatos()

@@ -53,9 +53,8 @@ namespace VeterianriaWinForms.Forms
         private bool ValidarDatos()
         {
             bool exito = false;
-            exito = ValidarNombre();
-            exito = ValidarTelefono();
-            exito = ValidarHorario();
+            if (ValidarNombre() && ValidarTelefono() && ValidarHorario())
+                exito = true;
             return exito;
         }
 
