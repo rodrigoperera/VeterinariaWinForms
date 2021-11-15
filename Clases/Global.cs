@@ -23,6 +23,5 @@ namespace VeterianriaWinForms.Clases
             get { return _NombreVeterinaria; }
             set { _NombreVeterinaria = value; }
         }
-
     }
 }

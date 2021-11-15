@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeterianriaWinForms.Clases;
 
 namespace VeterianriaWinForms.Forms
 {
@@ -18,8 +19,6 @@ namespace VeterianriaWinForms.Forms
             InitializeComponent();
 
         }
-
-       
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -64,11 +63,9 @@ namespace VeterianriaWinForms.Forms
             voveterinario.Nombre = textBoxNombre.Text;
             voveterinario.Telefono = textBoxTelefono.Text;
             voveterinario.Horario = textBoxHorario.Text;
+            voveterinario.IdVeterinaria = Global.IdVeterinaria;
             return voveterinario;
-            
         }
-
-        
 
         private bool ValidarDatos()
         {
@@ -78,7 +75,6 @@ namespace VeterianriaWinForms.Forms
             exito = ValidarTelefono();
             exito = ValidarHorario();
             return exito;
-
         }
 
         private bool ValidarCedula()
@@ -132,12 +128,5 @@ namespace VeterianriaWinForms.Forms
                 errorProvider1.SetError(textBoxHorario, "");
             return bStatus;
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
     }
 }

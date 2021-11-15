@@ -66,7 +66,6 @@ namespace VeterianriaWinForms.Forms
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // Id
             // 
@@ -75,12 +74,12 @@ namespace VeterianriaWinForms.Forms
             // Tipo
             // 
             this.Tipo.Text = "Tipo animal";
-            this.Tipo.Width = 125;
+            this.Tipo.Width = 97;
             // 
             // Nombre
             // 
             this.Nombre.Text = "Nombre";
-            this.Nombre.Width = 130;
+            this.Nombre.Width = 86;
             // 
             // Raza
             // 
@@ -94,7 +93,7 @@ namespace VeterianriaWinForms.Forms
             // Vacunas
             // 
             this.Vacunas.Text = "Vacunas al dia?";
-            this.Vacunas.Width = 213;
+            this.Vacunas.Width = 111;
             // 
             // Expedido
             // 
@@ -151,13 +150,13 @@ namespace VeterianriaWinForms.Forms
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(56, 19);
             this.btnNuevo.TabIndex = 17;
-            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Text = "Nueva";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // BtnConsultas
             // 
-            this.BtnConsultas.Location = new System.Drawing.Point(222, 212);
+            this.BtnConsultas.Location = new System.Drawing.Point(608, 212);
             this.BtnConsultas.Margin = new System.Windows.Forms.Padding(2);
             this.BtnConsultas.Name = "BtnConsultas";
             this.BtnConsultas.Size = new System.Drawing.Size(64, 19);
@@ -168,7 +167,7 @@ namespace VeterianriaWinForms.Forms
             // 
             // BtnCarnet
             // 
-            this.BtnCarnet.Location = new System.Drawing.Point(301, 212);
+            this.BtnCarnet.Location = new System.Drawing.Point(687, 212);
             this.BtnCarnet.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCarnet.Name = "BtnCarnet";
             this.BtnCarnet.Size = new System.Drawing.Size(64, 19);

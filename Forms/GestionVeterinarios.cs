@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeterianriaWinForms.Clases;
 
 namespace VeterianriaWinForms.Forms
 {
@@ -20,11 +21,9 @@ namespace VeterianriaWinForms.Forms
 
         private void CargarLista()
         {
-
             VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario[] lista; // new VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario[]();
-
             GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-            lista = ws.ObtenerVeterinarios();
+            lista = ws.ObtenerVeterinarios(Global.IdVeterinaria);
 
             foreach (var item in lista)
             {
@@ -34,21 +33,16 @@ namespace VeterianriaWinForms.Forms
                 listado.SubItems.Add(item.Horario);
                 listView1.Items.Add(listado);
             }
-            
-
         }
-
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-          
             NuevoVeterinario FrmNuevoVeterinario;
             FrmNuevoVeterinario = new NuevoVeterinario();
             FrmNuevoVeterinario.Owner = this;  // <-- This is the important thing
             FrmNuevoVeterinario.ShowDialog();
             listView1.Items.Clear();
-            CargarLista();
-            
+            CargarLista(); 
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
@@ -62,9 +56,7 @@ namespace VeterianriaWinForms.Forms
                 FrmEditarVeterinario.ShowDialog();
                 listView1.Items.Clear();
                 CargarLista();
-                
             }
-
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -74,12 +66,10 @@ namespace VeterianriaWinForms.Forms
                 long cedula = long.Parse(lista.Text);
                 try
                 {
-                    
                     lista.Remove();
                     GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
                     ws.EliminarVeterinario(cedula);
                     MessageBox.Show("Veterinario eliminado con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
                 }
                 catch (Exception ex)
                 {

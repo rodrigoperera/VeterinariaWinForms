@@ -44,19 +44,20 @@ namespace VeterianriaWinForms.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(9, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(343, 25);
+            this.label1.Size = new System.Drawing.Size(286, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "Listado de veterinarias registradas";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.Location = new System.Drawing.Point(206, 211);
-            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnEliminar.Location = new System.Drawing.Point(154, 171);
+            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.BtnEliminar.Size = new System.Drawing.Size(56, 19);
             this.BtnEliminar.TabIndex = 13;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
@@ -64,10 +65,10 @@ namespace VeterianriaWinForms.Forms
             // 
             // BtnEditar
             // 
-            this.BtnEditar.Location = new System.Drawing.Point(110, 211);
-            this.BtnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnEditar.Location = new System.Drawing.Point(82, 171);
+            this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(75, 23);
+            this.BtnEditar.Size = new System.Drawing.Size(56, 19);
             this.BtnEditar.TabIndex = 12;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = true;
@@ -75,12 +76,12 @@ namespace VeterianriaWinForms.Forms
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(18, 211);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNuevo.Location = new System.Drawing.Point(14, 171);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.Size = new System.Drawing.Size(56, 19);
             this.btnNuevo.TabIndex = 11;
-            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Text = "Nueva";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -93,9 +94,10 @@ namespace VeterianriaWinForms.Forms
             this.Telefono});
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(17, 37);
+            this.listView1.Location = new System.Drawing.Point(13, 30);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(783, 156);
+            this.listView1.Size = new System.Drawing.Size(588, 128);
             this.listView1.TabIndex = 15;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -122,15 +124,17 @@ namespace VeterianriaWinForms.Forms
             // 
             // GestionVeterinarias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 242);
+            this.ClientSize = new System.Drawing.Size(606, 197);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.btnNuevo);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GestionVeterinarias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Veterianarias registradas";
             this.Load += new System.EventHandler(this.GestionVeterinarias_Load);
             this.ResumeLayout(false);

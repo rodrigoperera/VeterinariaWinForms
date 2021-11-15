@@ -39,9 +39,10 @@ namespace VeterianriaWinForms.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 22);
+            this.label1.Location = new System.Drawing.Point(9, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 20);
+            this.label1.Size = new System.Drawing.Size(193, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Seleccione la veterinaria ";
             // 
@@ -49,18 +50,20 @@ namespace VeterianriaWinForms.Forms
             // 
             this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(256, 18);
-            this.comboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox.Location = new System.Drawing.Point(192, 15);
+            this.comboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(221, 24);
+            this.comboBox.Size = new System.Drawing.Size(167, 21);
             this.comboBox.TabIndex = 1;
+            this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(497, 19);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnIngresar.Enabled = false;
+            this.btnIngresar.Location = new System.Drawing.Point(373, 15);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(75, 23);
+            this.btnIngresar.Size = new System.Drawing.Size(56, 19);
             this.btnIngresar.TabIndex = 2;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -68,9 +71,10 @@ namespace VeterianriaWinForms.Forms
             // 
             // btnConfiguraciones
             // 
-            this.btnConfiguraciones.Location = new System.Drawing.Point(587, 18);
+            this.btnConfiguraciones.Location = new System.Drawing.Point(440, 15);
+            this.btnConfiguraciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConfiguraciones.Name = "btnConfiguraciones";
-            this.btnConfiguraciones.Size = new System.Drawing.Size(110, 23);
+            this.btnConfiguraciones.Size = new System.Drawing.Size(82, 19);
             this.btnConfiguraciones.TabIndex = 3;
             this.btnConfiguraciones.Text = "Configuraciones";
             this.btnConfiguraciones.UseVisualStyleBackColor = true;
@@ -78,14 +82,14 @@ namespace VeterianriaWinForms.Forms
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 73);
+            this.ClientSize = new System.Drawing.Size(551, 59);
             this.Controls.Add(this.btnConfiguraciones);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.comboBox);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vete-Soft 1.0";

@@ -13,19 +13,17 @@ namespace VeterianriaWinForms.Forms
 {
     public partial class Main : Form
     {
-        private int IdVeterinaria;
         public Main()
         {
             InitializeComponent();
             CargarLista();
-
         }
-       
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             Global.IdVeterinaria = Convert.ToInt32(comboBox.SelectedValue);
-            Global.NombreVeterinaria = "FALTA OBTENERLO DE LA BASE";
+            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+            Global.NombreVeterinaria = ws.ObtenerVeterinaria(Global.IdVeterinaria).Nombre;
             Inicio FrmInicio;
             FrmInicio = new Inicio();
             this.Hide();
@@ -33,18 +31,14 @@ namespace VeterianriaWinForms.Forms
             FrmInicio.Show();
         }
 
-
         private void CargarLista()
         {
-
             VeterianriaWinForms.GestionVeterinarioServices.VOVeterinaria[] lista; // new VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario[]();
-
             GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
             lista = ws.ObtenerVeterinarias();
             comboBox.DataSource = lista;
             comboBox.DisplayMember = "Nombre";
             comboBox.ValueMember = "Id";
-
         }
 
         private void btnConfiguraciones_Click(object sender, EventArgs e)
@@ -53,6 +47,16 @@ namespace VeterianriaWinForms.Forms
             FrmGestionVeterinarias = new GestionVeterinarias();
             FrmGestionVeterinarias.Owner = this;  // <-- This is the important thing
             FrmGestionVeterinarias.ShowDialog();
+            btnIngresar.Enabled = false;
+            CargarLista();
+        }
+
+        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox.SelectedValue == null)
+                btnIngresar.Enabled = false;
+            else
+                btnIngresar.Enabled = true;
         }
     }
 }

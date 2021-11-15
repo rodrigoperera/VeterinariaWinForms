@@ -79,7 +79,7 @@ namespace VeterianriaWinForms.Forms
             // trabajarConClientesToolStripMenuItem
             // 
             this.trabajarConClientesToolStripMenuItem.Name = "trabajarConClientesToolStripMenuItem";
-            this.trabajarConClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.trabajarConClientesToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.trabajarConClientesToolStripMenuItem.Text = "Gestionar Clientes";
             this.trabajarConClientesToolStripMenuItem.Click += new System.EventHandler(this.trabajarConClientesToolStripMenuItem_Click);
             // 
@@ -102,6 +102,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.monthCalendar1.Location = new System.Drawing.Point(426, 101);
             this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.ShowTodayCircle = false;
             this.monthCalendar1.TabIndex = 2;
             // 
             // timer1

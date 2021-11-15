@@ -75,7 +75,6 @@ namespace VeterianriaWinForms.Forms
                 FrmEditarVeterinaria.ShowDialog();
                 listView1.Items.Clear();
                 CargarLista();
-
             }
         }
 

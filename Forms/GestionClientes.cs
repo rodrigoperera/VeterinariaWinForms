@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeterianriaWinForms.Clases;
 
 namespace VeterianriaWinForms.Forms
 {
@@ -55,7 +56,7 @@ namespace VeterianriaWinForms.Forms
             VeterianriaWinForms.GestionVeterinarioServices.VOCliente[] lista; // new VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario[]();
 
             GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-            lista = ws.ObtenerClientes();
+            lista = ws.ObtenerClientes(Global.IdVeterinaria);
             string activo;
             foreach (var item in lista)
             {

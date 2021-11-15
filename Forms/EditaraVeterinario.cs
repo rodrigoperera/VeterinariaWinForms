@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeterianriaWinForms.Clases;
 
 namespace VeterianriaWinForms.Forms
 {
@@ -25,10 +26,7 @@ namespace VeterianriaWinForms.Forms
         private void PreCargarForm(long cedula)
         {
             GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-
-
             VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario voveterinario = ws.ObtenerVeterinario(cedula);
-            
             lblCedulaValor.Text = voveterinario.Cedula.ToString();
             textBoxNombre.Text = voveterinario.Nombre;
             textBoxTelefono.Text = voveterinario.Telefono;
@@ -48,8 +46,8 @@ namespace VeterianriaWinForms.Forms
             voveterinario.Nombre = textBoxNombre.Text;
             voveterinario.Telefono = textBoxTelefono.Text;
             voveterinario.Horario = textBoxHorario.Text;
+            voveterinario.IdVeterinaria = Global.IdVeterinaria;
             return voveterinario;
-
         }
 
         private bool ValidarDatos()
@@ -59,10 +57,7 @@ namespace VeterianriaWinForms.Forms
             exito = ValidarTelefono();
             exito = ValidarHorario();
             return exito;
-
         }
-
-
 
         private bool ValidarNombre()
         {
@@ -103,11 +98,6 @@ namespace VeterianriaWinForms.Forms
             return bStatus;
         }
 
-        private void EditarVeterinario_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnConfirmar_Click_1(object sender, EventArgs e)
         {
             try
@@ -116,9 +106,6 @@ namespace VeterianriaWinForms.Forms
                 GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
                 ws.EditarVeterinario(voveterinario);
                 MessageBox.Show("Veterinario editado con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-             
-
             }
             catch (Exception ex)
             {

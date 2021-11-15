@@ -13,14 +13,13 @@ namespace VeterianriaWinForms.Forms
     public partial class GestionMascotas : Form
     {
         long cedula;
-        string nombre;
+
         public GestionMascotas(long cedula)
         {
             InitializeComponent();
             this.cedula = cedula;
             ObtenerCliente(cedula);
             CargarLista();
-
         }
 
         private void ObtenerCliente(long cedula)
@@ -32,11 +31,10 @@ namespace VeterianriaWinForms.Forms
 
         private void CargarLista()
         {
-
             VeterianriaWinForms.GestionVeterinarioServices.VOMascota[] lista; 
-
             GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
             lista = ws.ObtenerMascotas(this.cedula);
+
             foreach (var item in lista)
             {
                 ListViewItem listado = new ListViewItem(item.Id.ToString());
@@ -47,30 +45,20 @@ namespace VeterianriaWinForms.Forms
                 listado.SubItems.Add(item.VacunaAlDia ? "Vacunas al dia" : "Vacunas vencias");
                 listado.SubItems.Add(item.CarnetInscripcion.Expedido.ToString());
                 listView1.Items.Add(listado);
-                
             }
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem lista in listView1.SelectedItems)
             {
-                
                 int id = int.Parse(lista.Text);
                 try
                 {
-
                     lista.Remove();
                     GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
                     ws.EliminarMascota(id);
                     MessageBox.Show("Mascota eliminada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 catch (Exception ex)
                 {
@@ -82,7 +70,7 @@ namespace VeterianriaWinForms.Forms
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             NuevaMascota FrmNuevaMascota;
-            FrmNuevaMascota = new NuevaMascota();
+            FrmNuevaMascota = new NuevaMascota(cedula);
             FrmNuevaMascota.Owner = this;  // <-- This is the important thing
             FrmNuevaMascota.ShowDialog();
             listView1.Items.Clear();

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeterianriaWinForms.Clases;
 
 namespace VeterianriaWinForms.Forms
 {
@@ -21,10 +22,8 @@ namespace VeterianriaWinForms.Forms
         {
             if (ValidarDatos())
             {
-
                 try
                 {
-
                     VeterianriaWinForms.GestionVeterinarioServices.VOCliente vocliente = CrearVO();
                     GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
                     ws.CrearCliente(vocliente);
@@ -37,7 +36,6 @@ namespace VeterianriaWinForms.Forms
                     MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -53,7 +51,6 @@ namespace VeterianriaWinForms.Forms
             textBoxTelefono.Text = String.Empty;
             textBoxDireccion.Text = String.Empty;
             textBoxCorreo.Text = String.Empty;
-
         }
 
         private VeterianriaWinForms.GestionVeterinarioServices.VOCliente CrearVO()
@@ -65,22 +62,16 @@ namespace VeterianriaWinForms.Forms
             vocliente.Direccion = textBoxDireccion.Text;
             vocliente.Correo= textBoxCorreo.Text;
             vocliente.Activo = true;
-
+            vocliente.IdVeterinaria = Global.IdVeterinaria;
             return vocliente;
-
         }
 
         private bool ValidarDatos()
         {
             bool exito = false;
-            exito = ValidarCedula();
-            exito = ValidarNombre();
-            exito = ValidarTelefono();
-            exito = ValidarDireccion();
-            exito = ValidarCorreo();
-
+            if (ValidarCedula() && ValidarNombre() && ValidarTelefono() && ValidarDireccion() && ValidarCorreo())
+                exito = true;
             return exito;
-
         }
 
         private bool ValidarCedula()

@@ -67,7 +67,7 @@ namespace VeterianriaWinForms.Forms
             this.listView1.HideSelection = false;
             this.listView1.HoverSelection = true;
             this.listView1.Location = new System.Drawing.Point(13, 39);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(855, 237);
             this.listView1.TabIndex = 12;
@@ -105,19 +105,20 @@ namespace VeterianriaWinForms.Forms
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(13, 292);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNuevo.Location = new System.Drawing.Point(734, 288);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(56, 19);
             this.btnNuevo.TabIndex = 13;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Visible = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.Location = new System.Drawing.Point(154, 292);
-            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnEliminar.Location = new System.Drawing.Point(173, 288);
+            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(56, 19);
             this.BtnEliminar.TabIndex = 15;
@@ -127,19 +128,20 @@ namespace VeterianriaWinForms.Forms
             // 
             // BtnEditar
             // 
-            this.BtnEditar.Location = new System.Drawing.Point(82, 292);
-            this.BtnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnEditar.Location = new System.Drawing.Point(803, 288);
+            this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(56, 19);
             this.BtnEditar.TabIndex = 14;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = true;
+            this.BtnEditar.Visible = false;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // btnListadoMascotas
             // 
-            this.btnListadoMascotas.Location = new System.Drawing.Point(720, 289);
-            this.btnListadoMascotas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnListadoMascotas.Location = new System.Drawing.Point(11, 288);
+            this.btnListadoMascotas.Margin = new System.Windows.Forms.Padding(2);
             this.btnListadoMascotas.Name = "btnListadoMascotas";
             this.btnListadoMascotas.Size = new System.Drawing.Size(147, 19);
             this.btnListadoMascotas.TabIndex = 16;
@@ -158,7 +160,7 @@ namespace VeterianriaWinForms.Forms
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GestionClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de clientes del sistema";

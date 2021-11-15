@@ -43,7 +43,7 @@ namespace VeterianriaWinForms.Forms
             // BtnEliminar
             // 
             this.BtnEliminar.Location = new System.Drawing.Point(150, 271);
-            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(56, 19);
             this.BtnEliminar.TabIndex = 8;
@@ -54,7 +54,7 @@ namespace VeterianriaWinForms.Forms
             // BtnEditar
             // 
             this.BtnEditar.Location = new System.Drawing.Point(78, 271);
-            this.BtnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(56, 19);
             this.BtnEditar.TabIndex = 7;
@@ -65,7 +65,7 @@ namespace VeterianriaWinForms.Forms
             // btnNuevo
             // 
             this.btnNuevo.Location = new System.Drawing.Point(9, 271);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(56, 19);
             this.btnNuevo.TabIndex = 6;
@@ -84,7 +84,7 @@ namespace VeterianriaWinForms.Forms
             this.listView1.HideSelection = false;
             this.listView1.HoverSelection = true;
             this.listView1.Location = new System.Drawing.Point(9, 30);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(576, 237);
             this.listView1.TabIndex = 9;
@@ -132,7 +132,7 @@ namespace VeterianriaWinForms.Forms
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.btnNuevo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GestionVeterinarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de veterinarios del sistema";
