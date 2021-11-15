@@ -13,7 +13,6 @@ namespace VeterianriaWinForms.Forms
 {
     public partial class Inicio : Form
     {
-        private string Nombre;
         public Inicio()
         {
             InitializeComponent();

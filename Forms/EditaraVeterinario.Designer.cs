@@ -50,9 +50,10 @@ namespace VeterianriaWinForms.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 201);
+            this.label1.Location = new System.Drawing.Point(10, 163);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 17);
+            this.label1.Size = new System.Drawing.Size(216, 13);
             this.label1.TabIndex = 27;
             this.label1.Text = "Los campos indicados con * son obligatorios";
             // 
@@ -60,45 +61,50 @@ namespace VeterianriaWinForms.Forms
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 9);
+            this.label5.Location = new System.Drawing.Point(9, 7);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(175, 25);
+            this.label5.Size = new System.Drawing.Size(146, 20);
             this.label5.TabIndex = 26;
             this.label5.Text = "Editar veterinario";
             // 
             // lblHorario
             // 
             this.lblHorario.AutoSize = true;
-            this.lblHorario.Location = new System.Drawing.Point(12, 169);
+            this.lblHorario.Location = new System.Drawing.Point(9, 137);
+            this.lblHorario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHorario.Name = "lblHorario";
-            this.lblHorario.Size = new System.Drawing.Size(74, 17);
+            this.lblHorario.Size = new System.Drawing.Size(54, 13);
             this.lblHorario.TabIndex = 25;
             this.lblHorario.Text = "Horario (*)";
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(12, 131);
+            this.lblTelefono.Location = new System.Drawing.Point(9, 106);
+            this.lblTelefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(83, 17);
+            this.lblTelefono.Size = new System.Drawing.Size(62, 13);
             this.lblTelefono.TabIndex = 24;
             this.lblTelefono.Text = "Telefono (*)";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(12, 92);
+            this.lblNombre.Location = new System.Drawing.Point(9, 75);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(77, 17);
+            this.lblNombre.Size = new System.Drawing.Size(57, 13);
             this.lblNombre.TabIndex = 23;
             this.lblNombre.Text = "Nombre (*)";
             // 
             // lblCedula
             // 
             this.lblCedula.AutoSize = true;
-            this.lblCedula.Location = new System.Drawing.Point(12, 53);
+            this.lblCedula.Location = new System.Drawing.Point(9, 43);
+            this.lblCedula.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCedula.Name = "lblCedula";
-            this.lblCedula.Size = new System.Drawing.Size(52, 17);
+            this.lblCedula.Size = new System.Drawing.Size(40, 13);
             this.lblCedula.TabIndex = 22;
             this.lblCedula.Text = "Cedula";
             // 
@@ -107,39 +113,44 @@ namespace VeterianriaWinForms.Forms
             this.lblCedulaValor.AutoSize = true;
             this.lblCedulaValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCedulaValor.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCedulaValor.Location = new System.Drawing.Point(104, 53);
+            this.lblCedulaValor.Location = new System.Drawing.Point(78, 43);
+            this.lblCedulaValor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCedulaValor.Name = "lblCedulaValor";
-            this.lblCedulaValor.Size = new System.Drawing.Size(21, 20);
+            this.lblCedulaValor.Size = new System.Drawing.Size(20, 17);
             this.lblCedulaValor.TabIndex = 31;
             this.lblCedulaValor.Text = "...";
             // 
             // textBoxHorario
             // 
-            this.textBoxHorario.Location = new System.Drawing.Point(104, 166);
+            this.textBoxHorario.Location = new System.Drawing.Point(78, 135);
+            this.textBoxHorario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxHorario.Name = "textBoxHorario";
-            this.textBoxHorario.Size = new System.Drawing.Size(209, 22);
+            this.textBoxHorario.Size = new System.Drawing.Size(158, 20);
             this.textBoxHorario.TabIndex = 30;
             // 
             // textBoxTelefono
             // 
-            this.textBoxTelefono.Location = new System.Drawing.Point(104, 128);
+            this.textBoxTelefono.Location = new System.Drawing.Point(78, 104);
+            this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(100, 22);
+            this.textBoxTelefono.Size = new System.Drawing.Size(76, 20);
             this.textBoxTelefono.TabIndex = 29;
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(104, 89);
+            this.textBoxNombre.Location = new System.Drawing.Point(78, 72);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(209, 22);
+            this.textBoxNombre.Size = new System.Drawing.Size(158, 20);
             this.textBoxNombre.TabIndex = 28;
             // 
             // btnConfirmar
             // 
             this.btnConfirmar.ForeColor = System.Drawing.Color.Olive;
-            this.btnConfirmar.Location = new System.Drawing.Point(155, 241);
+            this.btnConfirmar.Location = new System.Drawing.Point(116, 196);
+            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(129, 23);
+            this.btnConfirmar.Size = new System.Drawing.Size(97, 19);
             this.btnConfirmar.TabIndex = 33;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
@@ -148,9 +159,10 @@ namespace VeterianriaWinForms.Forms
             // btnCancelar
             // 
             this.btnCancelar.ForeColor = System.Drawing.Color.Red;
-            this.btnCancelar.Location = new System.Drawing.Point(17, 241);
+            this.btnCancelar.Location = new System.Drawing.Point(13, 196);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(121, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(91, 19);
             this.btnCancelar.TabIndex = 32;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -162,9 +174,9 @@ namespace VeterianriaWinForms.Forms
             // 
             // EditarVeterinario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 290);
+            this.ClientSize = new System.Drawing.Size(251, 236);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblCedulaValor);
@@ -177,7 +189,9 @@ namespace VeterianriaWinForms.Forms
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCedula);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EditarVeterinario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditaraVeterinario";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

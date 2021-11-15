@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeterianriaWinForms.Clases;
 
 namespace VeterianriaWinForms.Forms
 {
@@ -24,20 +25,13 @@ namespace VeterianriaWinForms.Forms
         {
             GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
             VeterianriaWinForms.GestionVeterinarioServices.VOCliente vocliente = ws.ObtenerCliente(cedula);
-
             lblCedulaValor.Text = vocliente.Cedula.ToString();
             textBoxNombre.Text = vocliente.Nombre;
             textBoxTelefono.Text = vocliente.Telefono;
             textBoxDireccion.Text = vocliente.Direccion;
             textBoxCorreo.Text = vocliente.Correo;
             checkBoxActivo.Checked = vocliente.Activo;
-
             textBoxNombre.Focus();
-        }
-
-        private void EditarCliente_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -49,24 +43,18 @@ namespace VeterianriaWinForms.Forms
         {
             if (ValidarDatos())
             {
-
                 try
                 {
-
                     VeterianriaWinForms.GestionVeterinarioServices.VOCliente vocliente = CrearVO();
                     GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
                     ws.EditarCliente(vocliente);
                     MessageBox.Show("Cliente editado con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-            
         }
 
         private VeterianriaWinForms.GestionVeterinarioServices.VOCliente CrearVO()
@@ -78,8 +66,8 @@ namespace VeterianriaWinForms.Forms
             vocliente.Direccion = textBoxDireccion.Text;
             vocliente.Correo = textBoxCorreo.Text;
             vocliente.Activo = checkBoxActivo.Checked;
+            vocliente.IdVeterinaria = Global.IdVeterinaria;
             return vocliente;
-
         }
 
         private bool ValidarDatos()
@@ -89,11 +77,8 @@ namespace VeterianriaWinForms.Forms
             exito = ValidarTelefono();
             exito = ValidarDireccion();
             exito = ValidarCorreo();
-
             return exito;
-
         }
-
 
         private bool ValidarNombre()
         {
