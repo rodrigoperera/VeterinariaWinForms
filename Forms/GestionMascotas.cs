@@ -87,10 +87,23 @@ namespace VeterianriaWinForms.Forms
 
         private void BtnConsultas_Click(object sender, EventArgs e)
         {
-            GestionConsultas FrmGestionConsultas;
-            FrmGestionConsultas = new GestionConsultas();
-            FrmGestionConsultas.Owner = this;  // <-- This is the important thing
-            FrmGestionConsultas.ShowDialog();
+            if (listView1.SelectedItems.Count > 0)
+            {
+                foreach (ListViewItem lista in listView1.SelectedItems)
+                {
+                    int id = int.Parse(lista.Text);
+                    GestionConsultas FrmGestionConsultas;
+                    FrmGestionConsultas = new GestionConsultas(id);
+                    FrmGestionConsultas.Owner = this;  // <-- This is the important thing
+                    FrmGestionConsultas.ShowDialog();
+                }
+
+             
+            }
+            else {
+                MessageBox.Show("Para acceder a ver las consultas es necesario seleccionar una mascota", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)

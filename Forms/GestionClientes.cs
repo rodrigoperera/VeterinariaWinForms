@@ -95,15 +95,25 @@ namespace VeterianriaWinForms.Forms
 
         private void btnListadoMascotas_Click(object sender, EventArgs e)
         {
-            foreach (ListViewItem lista in listView1.SelectedItems)
+            if (listView1.SelectedItems.Count > 0)
             {
-                long cedula = long.Parse(lista.Text);
-                GestionMascotas FrmGestionMascotas;
-                FrmGestionMascotas = new GestionMascotas(cedula);
-                FrmGestionMascotas.Owner = this;  // <-- This is the important thing
-                FrmGestionMascotas.ShowDialog();
+                foreach (ListViewItem lista in listView1.SelectedItems)
+                {
+                    long cedula = long.Parse(lista.Text);
+                    GestionMascotas FrmGestionMascotas;
+                    FrmGestionMascotas = new GestionMascotas(cedula);
+                    FrmGestionMascotas.Owner = this;  // <-- This is the important thing
+                    FrmGestionMascotas.ShowDialog();
+
+                }
+            }
+            else {
+                MessageBox.Show("Para acceder a ver las mascotas es necesario seleccionar un cliente", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
+
+    
+
         }
     }
 }
