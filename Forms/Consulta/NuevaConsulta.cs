@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VeterianriaWinForms.Forms
+namespace VeterianriaWinForms.Forms.Consulta
 {
-    public partial class GestionConsultas : Form
+    public partial class NuevaConsulta : Form
     {
-        public GestionConsultas()
+        public NuevaConsulta()
         {
             InitializeComponent();
         }

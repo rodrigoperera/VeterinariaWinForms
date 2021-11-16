@@ -37,9 +37,14 @@ namespace VeterianriaWinForms.Forms
             this.trabajarConClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veterinariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trabajarConVeterinariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.DigiClockTextBox = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.Numero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Veterinario = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Fecha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Descripcion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Mascota = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -47,10 +52,10 @@ namespace VeterianriaWinForms.Forms
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(11, 35);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 43);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(384, 333);
+            this.pictureBox1.Size = new System.Drawing.Size(512, 410);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -63,8 +68,8 @@ namespace VeterianriaWinForms.Forms
             this.veterinariosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(702, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1139, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -73,13 +78,13 @@ namespace VeterianriaWinForms.Forms
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.trabajarConClientesToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // trabajarConClientesToolStripMenuItem
             // 
             this.trabajarConClientesToolStripMenuItem.Name = "trabajarConClientesToolStripMenuItem";
-            this.trabajarConClientesToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.trabajarConClientesToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
             this.trabajarConClientesToolStripMenuItem.Text = "Gestionar Clientes";
             this.trabajarConClientesToolStripMenuItem.Click += new System.EventHandler(this.trabajarConClientesToolStripMenuItem_Click);
             // 
@@ -88,49 +93,81 @@ namespace VeterianriaWinForms.Forms
             this.veterinariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.trabajarConVeterinariosToolStripMenuItem});
             this.veterinariosToolStripMenuItem.Name = "veterinariosToolStripMenuItem";
-            this.veterinariosToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.veterinariosToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
             this.veterinariosToolStripMenuItem.Text = "Veterinarios";
             // 
             // trabajarConVeterinariosToolStripMenuItem
             // 
             this.trabajarConVeterinariosToolStripMenuItem.Name = "trabajarConVeterinariosToolStripMenuItem";
-            this.trabajarConVeterinariosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.trabajarConVeterinariosToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
             this.trabajarConVeterinariosToolStripMenuItem.Text = "Gestionar Veterinarios";
             this.trabajarConVeterinariosToolStripMenuItem.Click += new System.EventHandler(this.trabajarConVeterinariosToolStripMenuItem_Click);
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(426, 101);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.ShowTodayCircle = false;
-            this.monthCalendar1.TabIndex = 2;
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // DigiClockTextBox
+            // listView1
             // 
-            this.DigiClockTextBox.AutoSize = true;
-            this.DigiClockTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DigiClockTextBox.Location = new System.Drawing.Point(603, 59);
-            this.DigiClockTextBox.Name = "DigiClockTextBox";
-            this.DigiClockTextBox.Size = new System.Drawing.Size(71, 20);
-            this.DigiClockTextBox.TabIndex = 3;
-            this.DigiClockTextBox.Text = "00:00:00";
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Numero,
+            this.Veterinario,
+            this.Fecha,
+            this.Descripcion,
+            this.Mascota});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(533, 67);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(580, 229);
+            this.listView1.TabIndex = 4;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // Numero
+            // 
+            this.Numero.Text = "Numero";
+            // 
+            // Veterinario
+            // 
+            this.Veterinario.Text = "Veterinario";
+            // 
+            // Fecha
+            // 
+            this.Fecha.Text = "Fecha";
+            this.Fecha.Width = 92;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.Text = "Descripcion";
+            this.Descripcion.Width = 117;
+            // 
+            // Mascota
+            // 
+            this.Mascota.Text = "Mascota";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(534, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(395, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Consultas a realizarse en los próximos 7 días";
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(702, 378);
-            this.Controls.Add(this.DigiClockTextBox);
-            this.Controls.Add(this.monthCalendar1);
+            this.ClientSize = new System.Drawing.Size(1139, 595);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -152,8 +189,13 @@ namespace VeterianriaWinForms.Forms
         private System.Windows.Forms.ToolStripMenuItem trabajarConClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem veterinariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trabajarConVeterinariosToolStripMenuItem;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label DigiClockTextBox;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader Numero;
+        private System.Windows.Forms.ColumnHeader Veterinario;
+        private System.Windows.Forms.ColumnHeader Fecha;
+        private System.Windows.Forms.ColumnHeader Descripcion;
+        private System.Windows.Forms.ColumnHeader Mascota;
+        private System.Windows.Forms.Label label1;
     }
 }
