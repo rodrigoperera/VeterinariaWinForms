@@ -79,13 +79,6 @@ namespace VeterianriaWinForms.Forms
             vomascota.Edad = Convert.ToInt32(textBoxEdad.Text);
             vomascota.VacunaAlDia = checkBox.Checked;
             vomascota.CarnetInscripcion = new VeterianriaWinForms.GestionVeterinarioServices.VOCarnetInscripcion();
-            /*
-            VeterianriaWinForms.GestionVeterinarioServices.VOCarnetInscripcion vocarnetinscripcion = new VeterianriaWinForms.GestionVeterinarioServices.VOCarnetInscripcion();
-            vocarnetinscripcion.Numero = this.numeroCarnet;
-            vocarnetinscripcion.Expedido = DateTime.Now;
-            vocarnetinscripcion.Foto = this.m_barrImg;
-
-            vomascota.CarnetInscripcion = vocarnetinscripcion;*/
             return vomascota;
         }
 
