@@ -13,8 +13,9 @@ namespace VeterianriaWinForms.Forms
 {
     public partial class EditarMascota : Form
     {
-        long ciCliente;
         int id;
+        int numeroCarnet;
+        long ciCliente;
         byte[] m_barrImg;
 
         public EditarMascota(int id)
@@ -34,6 +35,7 @@ namespace VeterianriaWinForms.Forms
             textBoxEdad.Text = vomascota.Edad.ToString();
             checkBox.Checked = vomascota.VacunaAlDia;
             this.ciCliente = vomascota.cedulaCliente;
+            this.numeroCarnet = vomascota.CarnetInscripcion.Numero;
 
             m_barrImg = vomascota.CarnetInscripcion.Foto;
             string strfn = Convert.ToString(DateTime.Now.ToFileTime());
@@ -69,18 +71,21 @@ namespace VeterianriaWinForms.Forms
         private VeterianriaWinForms.GestionVeterinarioServices.VOMascota CrearVO()
         {
             VeterianriaWinForms.GestionVeterinarioServices.VOMascota vomascota = new VeterianriaWinForms.GestionVeterinarioServices.VOMascota();
+            vomascota.Id = this.id;
             vomascota.cedulaCliente = this.ciCliente;
             vomascota.Animal = (GestionVeterinarioServices.TipoAnimal)comboBoxTipo.SelectedItem;
             vomascota.Nombre = textBoxNombre.Text;
             vomascota.Raza = (GestionVeterinarioServices.Raza)comboBoxRaza.SelectedItem;
             vomascota.Edad = Convert.ToInt32(textBoxEdad.Text);
             vomascota.VacunaAlDia = checkBox.Checked;
-
+            vomascota.CarnetInscripcion = new VeterianriaWinForms.GestionVeterinarioServices.VOCarnetInscripcion();
+            /*
             VeterianriaWinForms.GestionVeterinarioServices.VOCarnetInscripcion vocarnetinscripcion = new VeterianriaWinForms.GestionVeterinarioServices.VOCarnetInscripcion();
+            vocarnetinscripcion.Numero = this.numeroCarnet;
             vocarnetinscripcion.Expedido = DateTime.Now;
             vocarnetinscripcion.Foto = this.m_barrImg;
 
-            vomascota.CarnetInscripcion = vocarnetinscripcion;
+            vomascota.CarnetInscripcion = vocarnetinscripcion;*/
             return vomascota;
         }
 
@@ -119,3 +124,4 @@ namespace VeterianriaWinForms.Forms
         }
     }
 }
+
