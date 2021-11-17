@@ -84,8 +84,10 @@ namespace VeterianriaWinForms.Forms
                 int id = int.Parse(lista.Text);
                 GestionCarnet FrmGestionCarnet;
                 FrmGestionCarnet = new GestionCarnet(id);
-                FrmGestionCarnet.Owner = this;  // <-- This is the important thing
+                FrmGestionCarnet.Owner = this;
                 FrmGestionCarnet.ShowDialog();
+                listView1.Items.Clear();
+                CargarLista();
             }
 
         }

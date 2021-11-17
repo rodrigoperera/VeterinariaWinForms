@@ -45,7 +45,7 @@ namespace VeterianriaWinForms.Forms
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(194, 188);
             this.pictureBox1.TabIndex = 0;
@@ -149,6 +149,7 @@ namespace VeterianriaWinForms.Forms
             this.BtnModificar.TabIndex = 10;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = true;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // GestionCarnet
             // 
