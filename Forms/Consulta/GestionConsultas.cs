@@ -20,7 +20,6 @@ namespace VeterianriaWinForms.Forms
             this.idMascota = idMascota;
             ObtenerMascota (idMascota);
             CargarConsultas();
-
         }
 
         private void ObtenerMascota(int id)
@@ -32,10 +31,7 @@ namespace VeterianriaWinForms.Forms
 
         private void CargarConsultas()
         {
-
-
             VeterianriaWinForms.GestionVeterinarioServices.VOConsulta[] lista;
-
             GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
             lista = ws.ObtenerConsultasPorMascota(this.idMascota);
             foreach (var item in lista)
@@ -47,7 +43,6 @@ namespace VeterianriaWinForms.Forms
                 listado.SubItems.Add(String.Format("{0}-{1}", item.Mascota.Id.ToString(), item.Mascota.Nombre));
                 listView1.Items.Add(listado);
             }
-
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -86,8 +81,6 @@ namespace VeterianriaWinForms.Forms
                     FrmEditarConsulta.Owner = this;  // <-- This is the important thing
                     FrmEditarConsulta.ShowDialog();
                 }
-
-
             }
             else
             {
@@ -95,6 +88,5 @@ namespace VeterianriaWinForms.Forms
 
             }
         }
-    }
     }
 }

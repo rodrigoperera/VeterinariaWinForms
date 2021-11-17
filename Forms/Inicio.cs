@@ -20,11 +20,9 @@ namespace VeterianriaWinForms.Forms
             CargarConsultas();
         }
 
-        private void CargarConsultas() {
-
-
+        private void CargarConsultas() 
+        {
             VeterianriaWinForms.GestionVeterinarioServices.VOConsulta[] lista; 
-
             GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
             DateTime desde = DateTime.Today;
             DateTime hasta = desde.AddDays(7);

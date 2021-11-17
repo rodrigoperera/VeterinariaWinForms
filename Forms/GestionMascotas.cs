@@ -42,7 +42,7 @@ namespace VeterianriaWinForms.Forms
                 listado.SubItems.Add(item.Nombre);
                 listado.SubItems.Add(item.Raza.ToString());
                 listado.SubItems.Add(item.Edad.ToString());
-                listado.SubItems.Add(item.VacunaAlDia ? "Vacunas al dia" : "Vacunas vencias");
+                listado.SubItems.Add(item.VacunaAlDia ? "Vacunas al dia" : "Vacunas vencidas");
                 listado.SubItems.Add(item.CarnetInscripcion.Expedido.ToString());
                 listView1.Items.Add(listado);
             }
@@ -79,10 +79,15 @@ namespace VeterianriaWinForms.Forms
 
         private void BtnCarnet_Click(object sender, EventArgs e)
         {
-            GestionCarnet FrmGestionCarnet;
-            FrmGestionCarnet = new GestionCarnet();
-            FrmGestionCarnet.Owner = this;  // <-- This is the important thing
-            FrmGestionCarnet.ShowDialog();
+            foreach (ListViewItem lista in listView1.SelectedItems)
+            {
+                int id = int.Parse(lista.Text);
+                GestionCarnet FrmGestionCarnet;
+                FrmGestionCarnet = new GestionCarnet(id);
+                FrmGestionCarnet.Owner = this;  // <-- This is the important thing
+                FrmGestionCarnet.ShowDialog();
+            }
+
         }
 
         private void BtnConsultas_Click(object sender, EventArgs e)
@@ -97,8 +102,6 @@ namespace VeterianriaWinForms.Forms
                     FrmGestionConsultas.Owner = this;  // <-- This is the important thing
                     FrmGestionConsultas.ShowDialog();
                 }
-
-             
             }
             else {
                 MessageBox.Show("Para acceder a ver las consultas es necesario seleccionar una mascota", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Warning);

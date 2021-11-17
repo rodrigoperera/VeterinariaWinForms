@@ -30,7 +30,7 @@ namespace VeterianriaWinForms.Forms
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
             this.labelvalorraza = new System.Windows.Forms.Label();
             this.labelvaloredad = new System.Windows.Forms.Label();
             this.labelvalordueno = new System.Windows.Forms.Label();
@@ -51,53 +51,53 @@ namespace VeterianriaWinForms.Forms
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // labelNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(223, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "NOMBRE DE MASCOTA";
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Location = new System.Drawing.Point(223, 13);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(249, 25);
+            this.labelNombre.TabIndex = 1;
+            this.labelNombre.Text = "NOMBRE DE MASCOTA";
             // 
             // labelvalorraza
             // 
             this.labelvalorraza.AutoSize = true;
-            this.labelvalorraza.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelvalorraza.Location = new System.Drawing.Point(290, 56);
+            this.labelvalorraza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelvalorraza.Location = new System.Drawing.Point(283, 59);
             this.labelvalorraza.Name = "labelvalorraza";
-            this.labelvalorraza.Size = new System.Drawing.Size(20, 20);
+            this.labelvalorraza.Size = new System.Drawing.Size(16, 16);
             this.labelvalorraza.TabIndex = 2;
             this.labelvalorraza.Text = "X";
             // 
             // labelvaloredad
             // 
             this.labelvaloredad.AutoSize = true;
-            this.labelvaloredad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelvaloredad.Location = new System.Drawing.Point(290, 91);
+            this.labelvaloredad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelvaloredad.Location = new System.Drawing.Point(283, 94);
             this.labelvaloredad.Name = "labelvaloredad";
-            this.labelvaloredad.Size = new System.Drawing.Size(20, 20);
+            this.labelvaloredad.Size = new System.Drawing.Size(16, 16);
             this.labelvaloredad.TabIndex = 3;
             this.labelvaloredad.Text = "X";
             // 
             // labelvalordueno
             // 
             this.labelvalordueno.AutoSize = true;
-            this.labelvalordueno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelvalordueno.Location = new System.Drawing.Point(300, 125);
+            this.labelvalordueno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelvalordueno.Location = new System.Drawing.Point(293, 128);
             this.labelvalordueno.Name = "labelvalordueno";
-            this.labelvalordueno.Size = new System.Drawing.Size(20, 20);
+            this.labelvalordueno.Size = new System.Drawing.Size(16, 16);
             this.labelvalordueno.TabIndex = 4;
             this.labelvalordueno.Text = "X";
             // 
             // labelvalorvacunado
             // 
             this.labelvalorvacunado.AutoSize = true;
-            this.labelvalorvacunado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelvalorvacunado.Location = new System.Drawing.Point(325, 162);
+            this.labelvalorvacunado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelvalorvacunado.Location = new System.Drawing.Point(318, 165);
             this.labelvalorvacunado.Name = "labelvalorvacunado";
-            this.labelvalorvacunado.Size = new System.Drawing.Size(20, 20);
+            this.labelvalorvacunado.Size = new System.Drawing.Size(16, 16);
             this.labelvalorvacunado.TabIndex = 5;
             this.labelvalorvacunado.Text = "X";
             // 
@@ -164,7 +164,7 @@ namespace VeterianriaWinForms.Forms
             this.Controls.Add(this.labelvalordueno);
             this.Controls.Add(this.labelvaloredad);
             this.Controls.Add(this.labelvalorraza);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.pictureBox1);
             this.Name = "GestionCarnet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -178,7 +178,7 @@ namespace VeterianriaWinForms.Forms
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.Label labelvalorraza;
         private System.Windows.Forms.Label labelvaloredad;
         private System.Windows.Forms.Label labelvalordueno;
