@@ -194,6 +194,7 @@ namespace VeterianriaWinForms.Forms
             // 
             // imagen
             // 
+            this.imagen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.imagen.Location = new System.Drawing.Point(470, 57);
             this.imagen.Name = "imagen";
             this.imagen.Size = new System.Drawing.Size(200, 200);

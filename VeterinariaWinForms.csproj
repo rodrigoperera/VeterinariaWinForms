@@ -166,7 +166,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="utiles\Validaciones.cs" />
     <EmbeddedResource Include="Forms\Consulta\EditarConsulta.resx">
       <DependentUpon>EditarConsulta.cs</DependentUpon>
     </EmbeddedResource>
