@@ -17,7 +17,6 @@ namespace VeterianriaWinForms.Forms
         public NuevoVeterinario()
         {
             InitializeComponent();
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -29,20 +28,17 @@ namespace VeterianriaWinForms.Forms
         {
             if (ValidarDatos())
             {
-
                 try
                 {
-                    
                     VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario voveterinario = CrearVO();
                     GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
                     ws.CrearVeterinario(voveterinario);
                     MessageBox.Show("Veterinario ingresado con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     BorrarDatos();
-
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hubo un error al intentar agregar un nuevo veterinario. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -70,10 +66,8 @@ namespace VeterianriaWinForms.Forms
         private bool ValidarDatos()
         {
             bool exito = false;
-            exito = ValidarCedula();
-            exito = ValidarNombre();
-            exito = ValidarTelefono();
-            exito = ValidarHorario();
+            if (ValidarCedula() && ValidarNombre() && ValidarTelefono() && ValidarHorario())
+                exito = true;
             return exito;
         }
 
@@ -127,6 +121,22 @@ namespace VeterianriaWinForms.Forms
             else
                 errorProvider1.SetError(textBoxHorario, "");
             return bStatus;
+        }
+
+        private void TextBoxCedula_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(TextBoxCedula.Text, "[^0-9]"))
+            {
+                TextBoxCedula.Text = TextBoxCedula.Text.Remove(TextBoxCedula.Text.Length - 1);
+            }
+        }
+
+        private void textBoxTelefono_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBoxTelefono.Text, "[^0-9]"))
+            {
+                textBoxTelefono.Text = textBoxTelefono.Text.Remove(textBoxTelefono.Text.Length - 1);
+            }
         }
     }
 }

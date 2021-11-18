@@ -46,38 +46,52 @@ namespace VeterianriaWinForms.Forms
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            foreach (ListViewItem lista in listView1.SelectedItems)
+            if (listView1.SelectedItems.Count > 0)
             {
-                int id = int.Parse(lista.Text);
-                try
+                foreach (ListViewItem lista in listView1.SelectedItems)
                 {
-                    DialogResult dialogResult = MessageBox.Show("¿Desea eliminar la veterinaria?", "Eliminar Veterinaria", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
+                    int id = int.Parse(lista.Text);
+                    try
                     {
-                        lista.Remove();
-                        GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-                        ws.EliminarVeterinaria(id);
-                        MessageBox.Show("Veterinaria eliminado con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult dialogResult = MessageBox.Show("¿Desea eliminar la veterinaria?", "Eliminar Veterinaria", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            lista.Remove();
+                            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                            ws.EliminarVeterinaria(id);
+                            MessageBox.Show("Veterinaria eliminado con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Hubo un error al eliminar una veterinaria. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch (Exception)
-                {
-                    MessageBox.Show("Hubo un error al eliminar una veterinaria. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un objeto de la lista", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-            foreach (ListViewItem lista in listView1.SelectedItems)
+            if (listView1.SelectedItems.Count > 0)
             {
-                int id = int.Parse(lista.Text);
-                EditarVeterinaria FrmEditarVeterinaria;
-                FrmEditarVeterinaria = new EditarVeterinaria(id);
-                FrmEditarVeterinaria.Owner = this;
-                FrmEditarVeterinaria.ShowDialog();
-                listView1.Items.Clear();
-                CargarLista();
+                foreach (ListViewItem lista in listView1.SelectedItems)
+                {
+                    int id = int.Parse(lista.Text);
+                    EditarVeterinaria FrmEditarVeterinaria;
+                    FrmEditarVeterinaria = new EditarVeterinaria(id);
+                    FrmEditarVeterinaria.Owner = this;
+                    FrmEditarVeterinaria.ShowDialog();
+                    listView1.Items.Clear();
+                    CargarLista();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un objeto de la lista", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

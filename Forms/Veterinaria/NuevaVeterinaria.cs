@@ -28,16 +28,15 @@ namespace VeterianriaWinForms.Forms
             {
                 try
                 {
-
                     VeterianriaWinForms.GestionVeterinarioServices.VOVeterinaria voveterinaria = CrearVO();
                     GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
                     ws.CrearVeterinaria(voveterinaria);
                     MessageBox.Show("Veterinaria creada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     BorrarDatos();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hubo un error al intentar crear una veterinaria. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

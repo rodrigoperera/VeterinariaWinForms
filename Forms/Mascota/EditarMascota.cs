@@ -117,6 +117,14 @@ namespace VeterianriaWinForms.Forms
                 errorProvider1.SetError(textBoxEdad, "");
             return bStatus;
         }
+
+        private void textBoxEdad_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBoxEdad.Text, "[^0-9]"))
+            {
+                textBoxEdad.Text = textBoxEdad.Text.Remove(textBoxEdad.Text.Length - 1);
+            }
+        }
     }
 }
 

@@ -39,10 +39,12 @@ namespace VeterianriaWinForms.Forms
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnEliminar
             // 
+            this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEliminar.Location = new System.Drawing.Point(618, 167);
             this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2);
@@ -55,6 +57,7 @@ namespace VeterianriaWinForms.Forms
             // 
             // BtnEditar
             // 
+            this.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEditar.Location = new System.Drawing.Point(618, 119);
             this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
@@ -67,6 +70,7 @@ namespace VeterianriaWinForms.Forms
             // 
             // btnNuevo
             // 
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Location = new System.Drawing.Point(618, 73);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
@@ -126,11 +130,25 @@ namespace VeterianriaWinForms.Forms
             this.label1.TabIndex = 10;
             this.label1.Text = "Listado de veterinarios registrados";
             // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(618, 211);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 29);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Volver";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // GestionVeterinarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 327);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.BtnEliminar);
@@ -160,5 +178,6 @@ namespace VeterianriaWinForms.Forms
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

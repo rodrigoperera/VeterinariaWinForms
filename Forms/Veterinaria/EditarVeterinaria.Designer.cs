@@ -79,6 +79,7 @@ namespace VeterianriaWinForms.Forms
             // 
             // textBoxDireccion
             // 
+            this.textBoxDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDireccion.Location = new System.Drawing.Point(138, 178);
             this.textBoxDireccion.Name = "textBoxDireccion";
             this.textBoxDireccion.Size = new System.Drawing.Size(261, 26);
@@ -96,6 +97,7 @@ namespace VeterianriaWinForms.Forms
             // 
             // textBoxTelefono
             // 
+            this.textBoxTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTelefono.Location = new System.Drawing.Point(138, 136);
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(261, 26);
@@ -104,6 +106,7 @@ namespace VeterianriaWinForms.Forms
             // 
             // textBoxNombre
             // 
+            this.textBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNombre.Location = new System.Drawing.Point(138, 92);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(261, 26);
@@ -185,6 +188,9 @@ namespace VeterianriaWinForms.Forms
             this.Controls.Add(this.lblCedula);
             this.Controls.Add(this.label5);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EditarVeterinaria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Veterinaria";

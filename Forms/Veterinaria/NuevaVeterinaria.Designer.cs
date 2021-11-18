@@ -60,7 +60,7 @@ namespace VeterianriaWinForms.Forms
             this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.Olive;
-            this.btnConfirmar.Location = new System.Drawing.Point(229, 249);
+            this.btnConfirmar.Location = new System.Drawing.Point(229, 257);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(162, 29);
             this.btnConfirmar.TabIndex = 61;
@@ -73,7 +73,7 @@ namespace VeterianriaWinForms.Forms
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Red;
-            this.btnCancelar.Location = new System.Drawing.Point(57, 249);
+            this.btnCancelar.Location = new System.Drawing.Point(57, 257);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(151, 29);
             this.btnCancelar.TabIndex = 60;
@@ -166,7 +166,10 @@ namespace VeterianriaWinForms.Forms
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.label5);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NuevaVeterinaria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Veterinaria";
