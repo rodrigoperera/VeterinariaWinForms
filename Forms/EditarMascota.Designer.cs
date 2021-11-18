@@ -57,7 +57,7 @@ namespace VeterianriaWinForms.Forms
             this.comboBoxRaza.Location = new System.Drawing.Point(118, 70);
             this.comboBoxRaza.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxRaza.Name = "comboBoxRaza";
-            this.comboBoxRaza.Size = new System.Drawing.Size(92, 21);
+            this.comboBoxRaza.Size = new System.Drawing.Size(131, 21);
             this.comboBoxRaza.TabIndex = 86;
             // 
             // comboBoxTipo
@@ -67,7 +67,7 @@ namespace VeterianriaWinForms.Forms
             this.comboBoxTipo.Location = new System.Drawing.Point(118, 44);
             this.comboBoxTipo.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxTipo.Name = "comboBoxTipo";
-            this.comboBoxTipo.Size = new System.Drawing.Size(92, 21);
+            this.comboBoxTipo.Size = new System.Drawing.Size(131, 21);
             this.comboBoxTipo.TabIndex = 85;
             // 
             // imagen
@@ -225,6 +225,7 @@ namespace VeterianriaWinForms.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Name = "EditarMascota";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarMascota";
             ((System.ComponentModel.ISupportInitialize)(this.imagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

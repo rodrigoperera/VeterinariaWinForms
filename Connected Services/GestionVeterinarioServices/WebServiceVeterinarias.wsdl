@@ -71,20 +71,38 @@
       </s:complexType>
       <s:simpleType name="TipoAnimal">
         <s:restriction base="s:string">
+          <s:enumeration value="Otro" />
           <s:enumeration value="Gato" />
           <s:enumeration value="Perro" />
-          <s:enumeration value="Loro" />
-          <s:enumeration value="Huron" />
           <s:enumeration value="Conejo" />
           <s:enumeration value="Cobayo" />
           <s:enumeration value="Hamster" />
+          <s:enumeration value="Tortuga" />
+          <s:enumeration value="Chinchilla" />
+          <s:enumeration value="Pajaro" />
+          <s:enumeration value="Cerdo" />
+          <s:enumeration value="Pez" />
+          <s:enumeration value="Loro" />
+          <s:enumeration value="Huron" />
         </s:restriction>
       </s:simpleType>
       <s:simpleType name="Raza">
         <s:restriction base="s:string">
-          <s:enumeration value="Policia" />
-          <s:enumeration value="Golden" />
-          <s:enumeration value="Caniche" />
+          <s:enumeration value="Otro" />
+          <s:enumeration value="Perro_Husky" />
+          <s:enumeration value="Perro_Chihuahua" />
+          <s:enumeration value="Perro_Rottweiler" />
+          <s:enumeration value="Perro_BulldogFrances" />
+          <s:enumeration value="Perro_Pug" />
+          <s:enumeration value="Perro_Boxer" />
+          <s:enumeration value="Perro_GranDanes" />
+          <s:enumeration value="Gato_Persa" />
+          <s:enumeration value="Gato_MaineCoon" />
+          <s:enumeration value="Gato_Siames" />
+          <s:enumeration value="Gato_Ragdoll" />
+          <s:enumeration value="Gato_Siberiano" />
+          <s:enumeration value="Gato_Americano" />
+          <s:enumeration value="Gato_AzulRuso" />
         </s:restriction>
       </s:simpleType>
       <s:complexType name="VOCarnetInscripcion">

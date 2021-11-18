@@ -30,7 +30,9 @@ namespace VeterianriaWinForms.Forms
             GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
             VeterianriaWinForms.GestionVeterinarioServices.VOMascota vomascota = ws.ObtenerMascota(id);
             comboBoxTipo.DataSource = Enum.GetValues(typeof(TipoAnimal));
+            comboBoxTipo.SelectedIndex = Convert.ToInt32(vomascota.Animal);
             comboBoxRaza.DataSource = Enum.GetValues(typeof(Raza));
+            comboBoxRaza.SelectedIndex = Convert.ToInt32(vomascota.Raza);
             textBoxNombre.Text = vomascota.Nombre;
             textBoxEdad.Text = vomascota.Edad.ToString();
             checkBox.Checked = vomascota.VacunaAlDia;

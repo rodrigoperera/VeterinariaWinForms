@@ -783,25 +783,43 @@ namespace VeterianriaWinForms.GestionVeterinarioServices {
     public enum TipoAnimal : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Gato = 0,
+        Otro = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Perro = 1,
+        Gato = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Loro = 2,
+        Perro = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Huron = 3,
+        Conejo = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Conejo = 4,
+        Cobayo = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Cobayo = 5,
+        Hamster = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Hamster = 6,
+        Tortuga = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Chinchilla = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Pajaro = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Cerdo = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Pez = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Loro = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Huron = 12,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -809,13 +827,49 @@ namespace VeterianriaWinForms.GestionVeterinarioServices {
     public enum Raza : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Policia = 0,
+        Otro = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Golden = 1,
+        Perro_Husky = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Caniche = 2,
+        Perro_Chihuahua = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Perro_Rottweiler = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Perro_BulldogFrances = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Perro_Pug = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Perro_Boxer = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Perro_GranDanes = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Gato_Persa = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Gato_MaineCoon = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Gato_Siames = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Gato_Ragdoll = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Gato_Siberiano = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Gato_Americano = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Gato_AzulRuso = 14,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

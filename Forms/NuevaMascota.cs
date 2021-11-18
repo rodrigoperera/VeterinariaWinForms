@@ -88,6 +88,7 @@ namespace VeterianriaWinForms.Forms
             vomascota.Animal = (GestionVeterinarioServices.TipoAnimal)comboBoxTipo.SelectedItem;
             vomascota.Nombre = textBoxNombre.Text;
             vomascota.Raza = (GestionVeterinarioServices.Raza)comboBoxRaza.SelectedItem;
+            MessageBox.Show(vomascota.Raza.ToString(), "");
             vomascota.Edad = Convert.ToInt32(textBoxEdad.Text);
             vomascota.VacunaAlDia = checkBox.Checked;
 

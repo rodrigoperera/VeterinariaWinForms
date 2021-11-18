@@ -29,41 +29,52 @@ namespace VeterianriaWinForms.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnConfiguraciones = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 18);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(29, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 17);
+            this.label1.Size = new System.Drawing.Size(197, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Seleccione la veterinaria ";
+            this.label1.Text = "Seleccionar veterinaria ";
             // 
             // comboBox
             // 
+            this.comboBox.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(192, 15);
-            this.comboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox.Location = new System.Drawing.Point(230, 26);
+            this.comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(167, 21);
+            this.comboBox.Size = new System.Drawing.Size(163, 21);
             this.comboBox.TabIndex = 1;
             this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
             // 
             // btnIngresar
             // 
+            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresar.Enabled = false;
-            this.btnIngresar.Location = new System.Drawing.Point(373, 15);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.Location = new System.Drawing.Point(147, 86);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(56, 19);
+            this.btnIngresar.Size = new System.Drawing.Size(146, 30);
             this.btnIngresar.TabIndex = 2;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -71,28 +82,54 @@ namespace VeterianriaWinForms.Forms
             // 
             // btnConfiguraciones
             // 
-            this.btnConfiguraciones.Location = new System.Drawing.Point(440, 15);
-            this.btnConfiguraciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConfiguraciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfiguraciones.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnConfiguraciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguraciones.Location = new System.Drawing.Point(147, 122);
+            this.btnConfiguraciones.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfiguraciones.Name = "btnConfiguraciones";
-            this.btnConfiguraciones.Size = new System.Drawing.Size(82, 19);
+            this.btnConfiguraciones.Size = new System.Drawing.Size(146, 30);
             this.btnConfiguraciones.TabIndex = 3;
             this.btnConfiguraciones.Text = "Configuraciones";
             this.btnConfiguraciones.UseVisualStyleBackColor = true;
             this.btnConfiguraciones.Click += new System.EventHandler(this.btnConfiguraciones_Click);
             // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(147, 158);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(146, 30);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 59);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(440, 212);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnConfiguraciones);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.comboBox);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Main";
+            this.Opacity = 0.8D;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Vete-Soft 1.0";
+            this.Text = " ";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,5 +141,6 @@ namespace VeterianriaWinForms.Forms
         private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Button btnConfiguraciones;
+        private System.Windows.Forms.Button button1;
     }
 }

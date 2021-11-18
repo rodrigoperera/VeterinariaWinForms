@@ -38,12 +38,6 @@ namespace VeterianriaWinForms.Forms
             }
             
         }
-        private void Inicio_Load(object sender, EventArgs e)
-        {
-            //timer1.Enabled = true;
-            //timer1.Interval = 1000;
-            //DigiClockTextBox.Text = DateTime.Now.ToLongTimeString();
-        }
 
         private void trabajarConVeterinariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -59,16 +53,6 @@ namespace VeterianriaWinForms.Forms
             FrmGestionClientes = new GestionClientes();
             FrmGestionClientes.Owner = this;
             FrmGestionClientes.ShowDialog();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            //DigiClockTextBox.Text = DateTime.Now.ToLongTimeString();
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
