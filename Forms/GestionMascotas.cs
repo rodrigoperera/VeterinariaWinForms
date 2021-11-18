@@ -12,12 +12,12 @@ namespace VeterianriaWinForms.Forms
 {
     public partial class GestionMascotas : Form
     {
-        long cedula;
+        long cedulaCliente;
 
         public GestionMascotas(long cedula)
         {
             InitializeComponent();
-            this.cedula = cedula;
+            this.cedulaCliente = cedula;
             ObtenerCliente(cedula);
             CargarLista();
         }
@@ -33,7 +33,7 @@ namespace VeterianriaWinForms.Forms
         {
             VeterianriaWinForms.GestionVeterinarioServices.VOMascota[] lista; 
             GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-            lista = ws.ObtenerMascotas(this.cedula);
+            lista = ws.ObtenerMascotas(this.cedulaCliente);
 
             foreach (var item in lista)
             {
@@ -70,7 +70,7 @@ namespace VeterianriaWinForms.Forms
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             NuevaMascota FrmNuevaMascota;
-            FrmNuevaMascota = new NuevaMascota(cedula);
+            FrmNuevaMascota = new NuevaMascota(cedulaCliente);
             FrmNuevaMascota.Owner = this;  // <-- This is the important thing
             FrmNuevaMascota.ShowDialog();
             listView1.Items.Clear();
@@ -98,9 +98,9 @@ namespace VeterianriaWinForms.Forms
             {
                 foreach (ListViewItem lista in listView1.SelectedItems)
                 {
-                    int id = int.Parse(lista.Text);
+                    int idMascota = int.Parse(lista.Text);
                     GestionConsultas FrmGestionConsultas;
-                    FrmGestionConsultas = new GestionConsultas(id);
+                    FrmGestionConsultas = new GestionConsultas(idMascota);
                     FrmGestionConsultas.Owner = this;  // <-- This is the important thing
                     FrmGestionConsultas.ShowDialog();
                 }

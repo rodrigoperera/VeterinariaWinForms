@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
       <s:element name="CrearVeterinaria">
@@ -125,6 +125,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="Calificacion" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Mascota" type="tns:VOMascota" />
           <s:element minOccurs="0" maxOccurs="1" name="Veterinario" type="tns:VOVeterinario" />
+          <s:element minOccurs="1" maxOccurs="1" name="Realizada" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Importe" type="s:double" />
         </s:sequence>
       </s:complexType>
       <s:element name="CrearVeterinariaResponse">
@@ -458,6 +460,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ObtenerConsulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numero" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerConsultaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerConsultaResult" type="tns:VOConsulta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="CrearVeterinariaSoapIn">
@@ -634,6 +650,12 @@
   <wsdl:message name="ObtenerConsultasPorMascotaSoapOut">
     <wsdl:part name="parameters" element="tns:ObtenerConsultasPorMascotaResponse" />
   </wsdl:message>
+  <wsdl:message name="ObtenerConsultaSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerConsulta" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerConsultaSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerConsultaResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceVeterinariasSoap">
     <wsdl:operation name="CrearVeterinaria">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para crear una veterinaria nueva</wsdl:documentation>
@@ -779,6 +801,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para obtener todas las consultas de una mascota puntual</wsdl:documentation>
       <wsdl:input message="tns:ObtenerConsultasPorMascotaSoapIn" />
       <wsdl:output message="tns:ObtenerConsultasPorMascotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConsulta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para obtener una consulta</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerConsultaSoapIn" />
+      <wsdl:output message="tns:ObtenerConsultaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceVeterinariasSoap" type="tns:WebServiceVeterinariasSoap">
@@ -1044,6 +1071,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ObtenerConsulta">
+      <soap:operation soapAction="http://tempuri.org/ObtenerConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceVeterinariasSoap12" type="tns:WebServiceVeterinariasSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1301,6 +1337,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerConsultasPorMascota">
       <soap12:operation soapAction="http://tempuri.org/ObtenerConsultasPorMascota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConsulta">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerConsulta" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

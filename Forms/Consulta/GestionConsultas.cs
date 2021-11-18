@@ -37,10 +37,14 @@ namespace VeterianriaWinForms.Forms
             foreach (var item in lista)
             {
                 ListViewItem listado = new ListViewItem(item.Numero.ToString());
-                listado.SubItems.Add(item.Veterinario.Nombre);
+                listado.SubItems.Add(item.Realizada ? "SI" : "NO");
                 listado.SubItems.Add(item.Fecha.ToString());
-                listado.SubItems.Add(item.Descripcion);
+                listado.SubItems.Add(item.Veterinario.Nombre);
                 listado.SubItems.Add(String.Format("{0}-{1}", item.Mascota.Id.ToString(), item.Mascota.Nombre));
+                listado.SubItems.Add(item.Descripcion);
+                listado.SubItems.Add(item.Calificacion.ToString());
+                listado.SubItems.Add(item.Importe.ToString());
+
                 listView1.Items.Add(listado);
             }
         }
@@ -75,9 +79,9 @@ namespace VeterianriaWinForms.Forms
             {
                 foreach (ListViewItem lista in listView1.SelectedItems)
                 {
-                    int numero = int.Parse(lista.Text);
+                    int numeroConsulta = int.Parse(lista.Text);
                     EditarConsulta FrmEditarConsulta;
-                    FrmEditarConsulta = new EditarConsulta(numero);
+                    FrmEditarConsulta = new EditarConsulta(numeroConsulta);
                     FrmEditarConsulta.Owner = this;  // <-- This is the important thing
                     FrmEditarConsulta.ShowDialog();
                 }
