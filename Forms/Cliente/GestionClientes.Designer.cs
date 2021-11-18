@@ -29,6 +29,7 @@ namespace VeterianriaWinForms.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionClientes));
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.Cedula = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,16 +42,16 @@ namespace VeterianriaWinForms.Forms
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.btnListadoMascotas = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(255, 20);
+            this.label1.Size = new System.Drawing.Size(293, 24);
             this.label1.TabIndex = 11;
             this.label1.Text = "Listado de clientes registrados";
             // 
@@ -63,13 +64,13 @@ namespace VeterianriaWinForms.Forms
             this.Direccion,
             this.Correo,
             this.Activo});
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.HoverSelection = true;
-            this.listView1.Location = new System.Drawing.Point(13, 39);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2);
+            this.listView1.Location = new System.Drawing.Point(12, 45);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(855, 237);
+            this.listView1.Size = new System.Drawing.Size(649, 290);
             this.listView1.TabIndex = 12;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -77,38 +78,40 @@ namespace VeterianriaWinForms.Forms
             // Cedula
             // 
             this.Cedula.Text = "Cedula";
-            this.Cedula.Width = 192;
+            this.Cedula.Width = 83;
             // 
             // Nombre
             // 
             this.Nombre.Text = "Nombre";
-            this.Nombre.Width = 146;
+            this.Nombre.Width = 112;
             // 
             // Telefono
             // 
             this.Telefono.Text = "Telefono";
-            this.Telefono.Width = 119;
+            this.Telefono.Width = 86;
             // 
             // Direccion
             // 
             this.Direccion.Text = "Direccion";
-            this.Direccion.Width = 186;
+            this.Direccion.Width = 136;
             // 
             // Correo
             // 
             this.Correo.Text = "Correo";
-            this.Correo.Width = 232;
+            this.Correo.Width = 147;
             // 
             // Activo
             // 
             this.Activo.Text = "Activo?";
+            this.Activo.Width = 79;
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(734, 288);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Location = new System.Drawing.Point(352, 341);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(56, 19);
+            this.btnNuevo.Size = new System.Drawing.Size(84, 29);
             this.btnNuevo.TabIndex = 13;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -117,10 +120,11 @@ namespace VeterianriaWinForms.Forms
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.Location = new System.Drawing.Point(173, 288);
-            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEliminar.Location = new System.Drawing.Point(201, 352);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(56, 19);
+            this.BtnEliminar.Size = new System.Drawing.Size(84, 29);
             this.BtnEliminar.TabIndex = 15;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
@@ -128,10 +132,11 @@ namespace VeterianriaWinForms.Forms
             // 
             // BtnEditar
             // 
-            this.BtnEditar.Location = new System.Drawing.Point(803, 288);
-            this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEditar.Location = new System.Drawing.Point(386, 362);
             this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(56, 19);
+            this.BtnEditar.Size = new System.Drawing.Size(84, 29);
             this.BtnEditar.TabIndex = 14;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = true;
@@ -140,27 +145,45 @@ namespace VeterianriaWinForms.Forms
             // 
             // btnListadoMascotas
             // 
-            this.btnListadoMascotas.Location = new System.Drawing.Point(11, 288);
-            this.btnListadoMascotas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnListadoMascotas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnListadoMascotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListadoMascotas.Location = new System.Drawing.Point(12, 352);
             this.btnListadoMascotas.Name = "btnListadoMascotas";
-            this.btnListadoMascotas.Size = new System.Drawing.Size(147, 19);
+            this.btnListadoMascotas.Size = new System.Drawing.Size(170, 29);
             this.btnListadoMascotas.TabIndex = 16;
             this.btnListadoMascotas.Text = "Listado de Mascotas";
             this.btnListadoMascotas.UseVisualStyleBackColor = true;
             this.btnListadoMascotas.Click += new System.EventHandler(this.btnListadoMascotas_Click);
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(577, 352);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(84, 29);
+            this.btnVolver.TabIndex = 17;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // GestionClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 318);
+            this.ClientSize = new System.Drawing.Size(692, 393);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnListadoMascotas);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GestionClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de clientes del sistema";
@@ -183,5 +206,6 @@ namespace VeterianriaWinForms.Forms
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button btnListadoMascotas;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

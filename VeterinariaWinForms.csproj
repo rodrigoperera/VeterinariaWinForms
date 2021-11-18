@@ -74,10 +74,10 @@
     <Compile Include="Forms\Veterinario\EditaraVeterinario.Designer.cs">
       <DependentUpon>EditaraVeterinario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EditarCliente.cs">
+    <Compile Include="Forms\Cliente\EditarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditarCliente.Designer.cs">
+    <Compile Include="Forms\Cliente\EditarCliente.Designer.cs">
       <DependentUpon>EditarCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Mascota\EditarMascota.cs">
@@ -98,10 +98,10 @@
     <Compile Include="Forms\Carnet\GestionCarnet.Designer.cs">
       <DependentUpon>GestionCarnet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\GestionClientes.cs">
+    <Compile Include="Forms\Cliente\GestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\GestionClientes.Designer.cs">
+    <Compile Include="Forms\Cliente\GestionClientes.Designer.cs">
       <DependentUpon>GestionClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Consulta\GestionConsultas.cs">
@@ -146,10 +146,10 @@
     <Compile Include="Forms\Veterinaria\NuevaVeterinaria.Designer.cs">
       <DependentUpon>NuevaVeterinaria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NuevoCliente.cs">
+    <Compile Include="Forms\Cliente\NuevoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NuevoCliente.Designer.cs">
+    <Compile Include="Forms\Cliente\NuevoCliente.Designer.cs">
       <DependentUpon>NuevoCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Veterinario\NuevoVeterinario.cs">
@@ -172,7 +172,7 @@
     <EmbeddedResource Include="Forms\Veterinario\EditaraVeterinario.resx">
       <DependentUpon>EditaraVeterinario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditarCliente.resx">
+    <EmbeddedResource Include="Forms\Cliente\EditarCliente.resx">
       <DependentUpon>EditarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Mascota\EditarMascota.resx">
@@ -184,7 +184,7 @@
     <EmbeddedResource Include="Forms\Carnet\GestionCarnet.resx">
       <DependentUpon>GestionCarnet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\GestionClientes.resx">
+    <EmbeddedResource Include="Forms\Cliente\GestionClientes.resx">
       <DependentUpon>GestionClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Consulta\GestionConsultas.resx">
@@ -208,7 +208,7 @@
     <EmbeddedResource Include="Forms\Veterinaria\NuevaVeterinaria.resx">
       <DependentUpon>NuevaVeterinaria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NuevoCliente.resx">
+    <EmbeddedResource Include="Forms\Cliente\NuevoCliente.resx">
       <DependentUpon>NuevoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Veterinario\NuevoVeterinario.resx">

@@ -72,7 +72,6 @@ namespace VeterianriaWinForms.Forms
                     ws.CrearMascota(vomascota);
                     MessageBox.Show("Mascota ingresada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     BorrarDatos();
-
                 }
                 catch (Exception ex)
                 {
@@ -88,14 +87,11 @@ namespace VeterianriaWinForms.Forms
             vomascota.Animal = (GestionVeterinarioServices.TipoAnimal)comboBoxTipo.SelectedItem;
             vomascota.Nombre = textBoxNombre.Text;
             vomascota.Raza = (GestionVeterinarioServices.Raza)comboBoxRaza.SelectedItem;
-            MessageBox.Show(vomascota.Raza.ToString(), "");
             vomascota.Edad = Convert.ToInt32(textBoxEdad.Text);
             vomascota.VacunaAlDia = checkBox.Checked;
-
             VeterianriaWinForms.GestionVeterinarioServices.VOCarnetInscripcion vocarnetinscripcion = new VeterianriaWinForms.GestionVeterinarioServices.VOCarnetInscripcion();
             vocarnetinscripcion.Expedido = DateTime.Now;
             vocarnetinscripcion.Foto = this.m_barrImg;
-
             vomascota.CarnetInscripcion = vocarnetinscripcion;
             return vomascota;
         }
