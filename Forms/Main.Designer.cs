@@ -125,11 +125,9 @@ namespace VeterianriaWinForms.Forms
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
-            this.Opacity = 0.8D;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
-            this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

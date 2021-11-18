@@ -21,24 +21,39 @@ namespace VeterianriaWinForms.Forms
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            Global.IdVeterinaria = Convert.ToInt32(comboBox.SelectedValue);
-            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-            Global.NombreVeterinaria = ws.ObtenerVeterinaria(Global.IdVeterinaria).Nombre;
-            Inicio FrmInicio;
-            FrmInicio = new Inicio();
-            this.Hide();
-            FrmInicio.Closed += (s, args) => this.Close();
-            FrmInicio.Show();
+            try
+            {
+                Global.IdVeterinaria = Convert.ToInt32(comboBox.SelectedValue);
+                GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                Global.NombreVeterinaria = ws.ObtenerVeterinaria(Global.IdVeterinaria).Nombre;
+                Inicio FrmInicio;
+                FrmInicio = new Inicio();
+                this.Hide();
+                FrmInicio.Closed += (s, args) => this.Close();
+                FrmInicio.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error al conectarse al servidor. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CargarLista()
         {
-            VeterianriaWinForms.GestionVeterinarioServices.VOVeterinaria[] lista; // new VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario[]();
-            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-            lista = ws.ObtenerVeterinarias();
-            comboBox.DataSource = lista;
-            comboBox.DisplayMember = "Nombre";
-            comboBox.ValueMember = "Id";
+            try
+            {
+                VeterianriaWinForms.GestionVeterinarioServices.VOVeterinaria[] lista; // new VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario[]();
+                GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                lista = ws.ObtenerVeterinarias();
+                comboBox.DataSource = lista;
+                comboBox.DisplayMember = "Nombre";
+                comboBox.ValueMember = "Id";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error al conectarse al servidor. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //this.Close();
+            }
         }
 
         private void btnConfiguraciones_Click(object sender, EventArgs e)
@@ -62,11 +77,6 @@ namespace VeterianriaWinForms.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }
