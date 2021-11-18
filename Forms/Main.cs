@@ -52,7 +52,6 @@ namespace VeterianriaWinForms.Forms
             catch (Exception)
             {
                 MessageBox.Show("Hubo un error al conectarse al servidor. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //this.Close();
             }
         }
 
