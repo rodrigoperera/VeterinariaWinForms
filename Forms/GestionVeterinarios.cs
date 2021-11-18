@@ -21,18 +21,26 @@ namespace VeterianriaWinForms.Forms
 
         private void CargarLista()
         {
-            VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario[] lista; // new VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario[]();
-            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-            lista = ws.ObtenerVeterinarios(Global.IdVeterinaria);
-
-            foreach (var item in lista)
+            try
             {
-                ListViewItem listado = new ListViewItem(item.Cedula.ToString());
-                listado.SubItems.Add(item.Nombre);
-                listado.SubItems.Add(item.Telefono);
-                listado.SubItems.Add(item.Horario);
-                listView1.Items.Add(listado);
+                VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario[] lista; // new VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario[]();
+                GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                lista = ws.ObtenerVeterinarios(Global.IdVeterinaria);
+
+                foreach (var item in lista)
+                {
+                    ListViewItem listado = new ListViewItem(item.Cedula.ToString());
+                    listado.SubItems.Add(item.Nombre);
+                    listado.SubItems.Add(item.Telefono);
+                    listado.SubItems.Add(item.Horario);
+                    listView1.Items.Add(listado);
+                }
             }
+            catch
+            {
+                MessageBox.Show("Hubo un error al obtener los veterinarios. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -71,9 +79,9 @@ namespace VeterianriaWinForms.Forms
                     ws.EliminarVeterinario(cedula);
                     MessageBox.Show("Veterinario eliminado con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hubo un error al eliminar una veterinario. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

@@ -26,7 +26,6 @@ namespace VeterianriaWinForms.Forms
         {
             if (ValidarDatos())
             {
-
                 try
                 {
 
@@ -35,7 +34,6 @@ namespace VeterianriaWinForms.Forms
                     ws.CrearVeterinaria(voveterinaria);
                     MessageBox.Show("Veterinaria creada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     BorrarDatos();
-
                 }
                 catch (Exception ex)
                 {
@@ -49,7 +47,6 @@ namespace VeterianriaWinForms.Forms
             textBoxNombre.Text = String.Empty;
             textBoxTelefono.Text = String.Empty;
             textBoxDireccion.Text = String.Empty;
-
         }
 
         private VeterianriaWinForms.GestionVeterinarioServices.VOVeterinaria CrearVO()
@@ -59,19 +56,15 @@ namespace VeterianriaWinForms.Forms
             voveterinaria.Telefono = textBoxTelefono.Text;
             voveterinaria.Direccion = textBoxDireccion.Text;
             return voveterinaria;
-
         }
 
         private bool ValidarDatos()
         {
             bool exito = false;
-            exito = ValidarNombre();
-            exito = ValidarTelefono();
-
+            if (ValidarNombre() && ValidarTelefono())
+                exito = true;
             return exito;
-
         }
-
 
         private bool ValidarNombre()
         {
@@ -97,6 +90,14 @@ namespace VeterianriaWinForms.Forms
             else
                 errorProvider1.SetError(textBoxTelefono, "");
             return bStatus;
+        }
+
+        private void textBoxTelefono_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBoxTelefono.Text, "[^0-9]"))
+            {
+                textBoxTelefono.Text = textBoxTelefono.Text.Remove(textBoxTelefono.Text.Length - 1);
+            }
         }
     }
 }

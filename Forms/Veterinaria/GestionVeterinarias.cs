@@ -20,27 +20,28 @@ namespace VeterianriaWinForms.Forms
 
         private void CargarLista()
         {
-
-            VeterianriaWinForms.GestionVeterinarioServices.VOVeterinaria[] lista; // new VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario[]();
-
-            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-            lista = ws.ObtenerVeterinarias();
-
-            foreach (var item in lista)
+            try
             {
-                ListViewItem listado = new ListViewItem(item.Id.ToString());
-                listado.SubItems.Add(item.Nombre);
-                listado.SubItems.Add(item.Direccion);
-                listado.SubItems.Add(item.Telefono);
-                listView1.Items.Add(listado);
+                VeterianriaWinForms.GestionVeterinarioServices.VOVeterinaria[] lista;
+                GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                lista = ws.ObtenerVeterinarias();
+
+                foreach (var item in lista)
+                {
+                    ListViewItem listado = new ListViewItem(item.Id.ToString());
+                    listado.SubItems.Add(item.Nombre);
+                    listado.SubItems.Add(item.Direccion);
+                    listado.SubItems.Add(item.Telefono);
+                    listView1.Items.Add(listado);
+                }
             }
-
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error al obtener la lista de veterinarias. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                BtnEliminar.Enabled = false;
+                BtnEditar.Enabled = false;
+                btnNuevo.Enabled = false;
+            }
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -50,16 +51,18 @@ namespace VeterianriaWinForms.Forms
                 int id = int.Parse(lista.Text);
                 try
                 {
-
-                    lista.Remove();
-                    GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-                    ws.EliminarVeterinaria(id);
-                    MessageBox.Show("Veterinaria eliminado con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    DialogResult dialogResult = MessageBox.Show("¿Desea eliminar la veterinaria?", "Eliminar Veterinaria", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        lista.Remove();
+                        GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                        ws.EliminarVeterinaria(id);
+                        MessageBox.Show("Veterinaria eliminado con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hubo un error al eliminar una veterinaria. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -71,7 +74,7 @@ namespace VeterianriaWinForms.Forms
                 int id = int.Parse(lista.Text);
                 EditarVeterinaria FrmEditarVeterinaria;
                 FrmEditarVeterinaria = new EditarVeterinaria(id);
-                FrmEditarVeterinaria.Owner = this;  // <-- This is the important thing
+                FrmEditarVeterinaria.Owner = this;
                 FrmEditarVeterinaria.ShowDialog();
                 listView1.Items.Clear();
                 CargarLista();
@@ -82,15 +85,15 @@ namespace VeterianriaWinForms.Forms
         {
             NuevaVeterinaria FrmNuevoVeterinaria;
             FrmNuevoVeterinaria = new NuevaVeterinaria();
-            FrmNuevoVeterinaria.Owner = this;  // <-- This is the important thing
+            FrmNuevoVeterinaria.Owner = this;
             FrmNuevoVeterinaria.ShowDialog();
             listView1.Items.Clear();
             CargarLista();
         }
 
-        private void GestionVeterinarias_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

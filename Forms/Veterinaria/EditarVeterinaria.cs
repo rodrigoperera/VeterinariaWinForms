@@ -22,15 +22,20 @@ namespace VeterianriaWinForms.Forms
 
         private void PreCargarForm(long cedula)
         {
-            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-            VeterianriaWinForms.GestionVeterinarioServices.VOVeterinaria voveterinaria = ws.ObtenerVeterinaria(id);
-
-            lblIdValor.Text = voveterinaria.Id.ToString();
-            textBoxNombre.Text = voveterinaria.Nombre;
-            textBoxTelefono.Text = voveterinaria.Telefono;
-            textBoxDireccion.Text = voveterinaria.Direccion;
-           
-            textBoxNombre.Focus();
+            try
+            {
+                GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                VeterianriaWinForms.GestionVeterinarioServices.VOVeterinaria voveterinaria = ws.ObtenerVeterinaria(id);
+                lblIdValor.Text = voveterinaria.Id.ToString();
+                textBoxNombre.Text = voveterinaria.Nombre;
+                textBoxTelefono.Text = voveterinaria.Telefono;
+                textBoxDireccion.Text = voveterinaria.Direccion;
+                textBoxNombre.Focus();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error al obtener los datos de la veterinaria. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -42,20 +47,16 @@ namespace VeterianriaWinForms.Forms
         {
             if (ValidarDatos())
             {
-
                 try
                 {
-
                     VeterianriaWinForms.GestionVeterinarioServices.VOVeterinaria voveterinaria = CrearVO();
                     GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
                     ws.EditarVeterinaria(voveterinaria);
                     MessageBox.Show("Veterinaria editado con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
-                    MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hubo un error al guardar los datos de la veterinaria. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -80,7 +81,6 @@ namespace VeterianriaWinForms.Forms
             return exito;
 
         }
-
 
         private bool ValidarNombre()
         {
@@ -108,6 +108,12 @@ namespace VeterianriaWinForms.Forms
             return bStatus;
         }
 
-        
+        private void textBoxTelefono_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBoxTelefono.Text, "[^0-9]"))
+            {
+                textBoxTelefono.Text = textBoxTelefono.Text.Remove(textBoxTelefono.Text.Length - 1);
+            }
+        }
     }
 }
