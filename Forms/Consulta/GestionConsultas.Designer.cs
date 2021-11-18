@@ -37,8 +37,12 @@ namespace VeterianriaWinForms.Forms
             this.listView1 = new System.Windows.Forms.ListView();
             this.Numero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Fecha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Veterinario = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Mascota = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Descripción = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Calificación = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Realizada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Importe = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // BtnEditar
@@ -98,16 +102,20 @@ namespace VeterianriaWinForms.Forms
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Numero,
+            this.Realizada,
             this.Fecha,
+            this.Veterinario,
+            this.Mascota,
             this.Descripción,
-            this.Calificación});
+            this.Calificación,
+            this.Importe});
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.HoverSelection = true;
-            this.listView1.Location = new System.Drawing.Point(15, 49);
+            this.listView1.Location = new System.Drawing.Point(16, 43);
             this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1031, 218);
+            this.listView1.Size = new System.Drawing.Size(1255, 218);
             this.listView1.TabIndex = 21;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -119,23 +127,42 @@ namespace VeterianriaWinForms.Forms
             // Fecha
             // 
             this.Fecha.Text = "Fecha";
-            this.Fecha.Width = 103;
+            this.Fecha.Width = 136;
+            // 
+            // Veterinario
+            // 
+            this.Veterinario.Text = "Veterinario";
+            this.Veterinario.Width = 136;
+            // 
+            // Mascota
+            // 
+            this.Mascota.Text = "Mascota";
+            this.Mascota.Width = 185;
             // 
             // Descripción
             // 
             this.Descripción.Text = "Descripción";
-            this.Descripción.Width = 522;
+            this.Descripción.Width = 338;
             // 
             // Calificación
             // 
             this.Calificación.Text = "Calificación";
-            this.Calificación.Width = 84;
+            this.Calificación.Width = 119;
+            // 
+            // Realizada
+            // 
+            this.Realizada.Text = "¿Realizada?";
+            this.Realizada.Width = 101;
+            // 
+            // Importe
+            // 
+            this.Importe.Text = "Importe";
             // 
             // GestionConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1065, 308);
+            this.ClientSize = new System.Drawing.Size(1304, 308);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.btnNueva);
             this.Controls.Add(this.BtnEliminar);
@@ -162,5 +189,9 @@ namespace VeterianriaWinForms.Forms
         private System.Windows.Forms.ColumnHeader Fecha;
         private System.Windows.Forms.ColumnHeader Descripción;
         private System.Windows.Forms.ColumnHeader Calificación;
+        private System.Windows.Forms.ColumnHeader Veterinario;
+        private System.Windows.Forms.ColumnHeader Mascota;
+        private System.Windows.Forms.ColumnHeader Realizada;
+        private System.Windows.Forms.ColumnHeader Importe;
     }
 }
