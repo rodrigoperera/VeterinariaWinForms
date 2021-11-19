@@ -41,10 +41,9 @@ namespace VeterianriaWinForms.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(39, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 20);
+            this.label1.Size = new System.Drawing.Size(239, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Seleccionar veterinaria ";
             // 
@@ -57,11 +56,10 @@ namespace VeterianriaWinForms.Forms
             this.comboBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(230, 26);
-            this.comboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox.Location = new System.Drawing.Point(307, 32);
+            this.comboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(163, 21);
+            this.comboBox.Size = new System.Drawing.Size(216, 24);
             this.comboBox.TabIndex = 1;
             this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
             // 
@@ -71,10 +69,10 @@ namespace VeterianriaWinForms.Forms
             this.btnIngresar.Enabled = false;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.Location = new System.Drawing.Point(147, 86);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIngresar.Location = new System.Drawing.Point(196, 106);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(146, 30);
+            this.btnIngresar.Size = new System.Drawing.Size(195, 37);
             this.btnIngresar.TabIndex = 2;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -85,10 +83,10 @@ namespace VeterianriaWinForms.Forms
             this.btnConfiguraciones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfiguraciones.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnConfiguraciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfiguraciones.Location = new System.Drawing.Point(147, 122);
-            this.btnConfiguraciones.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConfiguraciones.Location = new System.Drawing.Point(196, 150);
+            this.btnConfiguraciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfiguraciones.Name = "btnConfiguraciones";
-            this.btnConfiguraciones.Size = new System.Drawing.Size(146, 30);
+            this.btnConfiguraciones.Size = new System.Drawing.Size(195, 37);
             this.btnConfiguraciones.TabIndex = 3;
             this.btnConfiguraciones.Text = "Configuraciones";
             this.btnConfiguraciones.UseVisualStyleBackColor = true;
@@ -99,10 +97,10 @@ namespace VeterianriaWinForms.Forms
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(147, 158);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(196, 194);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 30);
+            this.button1.Size = new System.Drawing.Size(195, 37);
             this.button1.TabIndex = 4;
             this.button1.Text = "Salir";
             this.button1.UseVisualStyleBackColor = true;
@@ -110,10 +108,10 @@ namespace VeterianriaWinForms.Forms
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(440, 212);
+            this.ClientSize = new System.Drawing.Size(587, 261);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnConfiguraciones);
             this.Controls.Add(this.btnIngresar);
@@ -121,7 +119,7 @@ namespace VeterianriaWinForms.Forms
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";

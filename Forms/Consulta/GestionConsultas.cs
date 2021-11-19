@@ -14,6 +14,7 @@ namespace VeterianriaWinForms.Forms
     public partial class GestionConsultas : Form
     {
         private int idMascota;
+        private long cedulaCliente;
         public GestionConsultas(int idMascota)
         {
             InitializeComponent();
@@ -27,10 +28,12 @@ namespace VeterianriaWinForms.Forms
             GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
             VeterianriaWinForms.GestionVeterinarioServices.VOMascota vomascota = ws.ObtenerMascota(id);
             lblMascotaNombre.Text = String.Format("{0} - {1}", vomascota.Id, vomascota.Nombre);
+            this.cedulaCliente = vomascota.cedulaCliente;
         }
 
         private void CargarConsultas()
         {
+            listView1.Items.Clear();
             VeterianriaWinForms.GestionVeterinarioServices.VOConsulta[] lista;
             GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
             lista = ws.ObtenerConsultasPorMascota(this.idMascota);
@@ -56,10 +59,20 @@ namespace VeterianriaWinForms.Forms
                 int id = int.Parse(lista.Text);
                 try
                 {
-                    lista.Remove();
                     GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-                    ws.EliminarConsulta(id);
-                    MessageBox.Show("Consulta eliminada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    VeterianriaWinForms.GestionVeterinarioServices.VOConsulta con = ws.ObtenerConsulta(id);
+                    if (con.Realizada)
+                    {
+                        MessageBox.Show("Eliminación no disponible. La consulta que intenta eliminar ya fue realizada.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                    else {
+                        lista.Remove();
+                        ws.EliminarConsulta(id);
+                        MessageBox.Show("Consulta eliminada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    
                 }
                 catch (Exception ex)
                 {
@@ -70,7 +83,11 @@ namespace VeterianriaWinForms.Forms
 
         private void btnNueva_Click(object sender, EventArgs e)
         {
-
+            NuevaConsulta FrmNuevaConsulta;
+            FrmNuevaConsulta = new NuevaConsulta(this.cedulaCliente);
+            FrmNuevaConsulta.Owner = this;  
+            FrmNuevaConsulta.ShowDialog();
+            CargarConsultas();
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
@@ -84,6 +101,7 @@ namespace VeterianriaWinForms.Forms
                     FrmEditarConsulta = new EditarConsulta(numeroConsulta);
                     FrmEditarConsulta.Owner = this;  // <-- This is the important thing
                     FrmEditarConsulta.ShowDialog();
+                    CargarConsultas();
                 }
             }
             else
