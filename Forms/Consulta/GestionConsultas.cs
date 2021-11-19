@@ -57,7 +57,6 @@ namespace VeterianriaWinForms.Forms
                     listado.SubItems.Add(item.Descripcion);
                     listado.SubItems.Add(item.Calificacion.ToString());
                     listado.SubItems.Add(item.Importe.ToString());
-
                     listView1.Items.Add(listado);
                 }
             }

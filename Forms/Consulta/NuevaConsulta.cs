@@ -103,6 +103,7 @@ namespace VeterianriaWinForms.Forms.Consulta
             voconsulta.Descripcion = textBoxDetalle.Text;
             voconsulta.Realizada = checkBoxRealizada.Checked;
             voconsulta.Importe = Convert.ToDouble(textBoxImporte.Text);
+            voconsulta.Calificacion = 0;
             return voconsulta;
         }
     }
