@@ -75,9 +75,8 @@ namespace VeterianriaWinForms.Forms
         private bool ValidarDatos()
         {
             bool exito = false;
-            exito = ValidarNombre();
-            exito = ValidarTelefono();
-
+            if (ValidarNombre() && ValidarTelefono())
+                exito = true;
             return exito;
 
         }

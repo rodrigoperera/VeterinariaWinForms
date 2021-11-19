@@ -59,7 +59,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.ForeColor = System.Drawing.Color.Olive;
+            this.btnConfirmar.ForeColor = System.Drawing.Color.Black;
             this.btnConfirmar.Location = new System.Drawing.Point(229, 257);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(162, 29);
@@ -85,7 +85,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.textBoxDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDireccion.Location = new System.Drawing.Point(143, 154);
-            this.textBoxDireccion.MaxLength = 50;
+            this.textBoxDireccion.MaxLength = 30;
             this.textBoxDireccion.Name = "textBoxDireccion";
             this.textBoxDireccion.Size = new System.Drawing.Size(261, 26);
             this.textBoxDireccion.TabIndex = 59;
@@ -154,6 +154,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(196)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(443, 312);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConfirmar);

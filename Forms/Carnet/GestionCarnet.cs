@@ -23,26 +23,34 @@ namespace VeterianriaWinForms.Forms
 
         private void ObtenerMascota(int id)
         {
-            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-            VeterianriaWinForms.GestionVeterinarioServices.VOMascota vomascota = ws.ObtenerMascota(id);
-            VeterianriaWinForms.GestionVeterinarioServices.VOCliente vocliente = ws.ObtenerCliente(vomascota.cedulaCliente);
-            this.vomascota = vomascota;
+            try
+            {
+                GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                VeterianriaWinForms.GestionVeterinarioServices.VOMascota vomascota = ws.ObtenerMascota(id);
+                VeterianriaWinForms.GestionVeterinarioServices.VOCliente vocliente = ws.ObtenerCliente(vomascota.cedulaCliente);
+                this.vomascota = vomascota;
 
-            labelNombre.Text = vomascota.Nombre;
-            labelvalorraza.Text = vomascota.Raza.ToString();
-            labelvaloredad.Text = vomascota.Edad.ToString();
-            labelvalordueno.Text = vocliente.Nombre;
-            labelvalorvacunado.Text = vomascota.VacunaAlDia ? "Vacunas al dia" : "Vacunas vencidas";
+                labelNombre.Text = vomascota.Nombre;
+                labelvalorraza.Text = vomascota.Raza.ToString();
+                labelvaloredad.Text = vomascota.Edad.ToString();
+                labelvalordueno.Text = vocliente.Nombre;
+                labelvalorvacunado.Text = vomascota.VacunaAlDia ? "Vacunas al dia" : "Vacunas vencidas";
 
-            this.vomascota.CarnetInscripcion.Foto = vomascota.CarnetInscripcion.Foto;
-            string strfn = Convert.ToString(DateTime.Now.ToFileTime());
-            FileStream fs = new FileStream(strfn,
-                              FileMode.CreateNew, FileAccess.Write);
-            //pictureBox1.Image = Image.FromFile(strfn);
-            fs.Write(this.vomascota.CarnetInscripcion.Foto, 0, this.vomascota.CarnetInscripcion.Foto.Length);
-            fs.Flush();
-            fs.Close();
-            pictureBox1.Image = Image.FromFile(strfn);
+                this.vomascota.CarnetInscripcion.Foto = vomascota.CarnetInscripcion.Foto;
+                string strfn = Convert.ToString(DateTime.Now.ToFileTime());
+                FileStream fs = new FileStream(strfn,
+                                  FileMode.CreateNew, FileAccess.Write);
+                fs.Write(this.vomascota.CarnetInscripcion.Foto, 0, this.vomascota.CarnetInscripcion.Foto.Length);
+                fs.Flush();
+                fs.Close();
+                pictureBox1.Image = Image.FromFile(strfn);
+            }
+            catch
+            {
+                MessageBox.Show("Hubo un error al consultar por el carnet de la mascota. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
+
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
@@ -70,7 +78,7 @@ namespace VeterianriaWinForms.Forms
             }
             catch 
             {
-                MessageBox.Show("Error al intentar cargar la imagen");
+                MessageBox.Show("Error al intentar cargar la imagen", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

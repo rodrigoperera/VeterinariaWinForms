@@ -32,12 +32,7 @@ namespace VeterianriaWinForms.Forms
             }
             catch (Exception)
             {
-                MessageBox.Show("Hubo un error al cargar el menú. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                btnNuevo.Enabled = false;
-                BtnEditar.Enabled = false;
-                BtnEliminar.Enabled = false;
-                BtnConsultas.Enabled = false;
-                BtnCarnet.Enabled = false;
+                MessageBox.Show("Hubo un error al intentar obtener los datos. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -57,18 +52,13 @@ namespace VeterianriaWinForms.Forms
                     listado.SubItems.Add(item.Raza.ToString());
                     listado.SubItems.Add(item.Edad.ToString());
                     listado.SubItems.Add(item.VacunaAlDia ? "Vacunas al dia" : "Vacunas vencidas");
-                    listado.SubItems.Add(item.CarnetInscripcion.Expedido.ToString());
+                    listado.SubItems.Add(item.CarnetInscripcion.Expedido.ToShortDateString()).ToString();
                     listView1.Items.Add(listado);
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("Hubo un error al obtener la lista de mascotas. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                btnNuevo.Enabled = false;
-                BtnEditar.Enabled = false;
-                BtnEliminar.Enabled = false;
-                BtnConsultas.Enabled = false;
-                BtnCarnet.Enabled = false;
             }
         }
 
@@ -90,9 +80,9 @@ namespace VeterianriaWinForms.Forms
                             MessageBox.Show("Mascota eliminada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Hubo un error al intentar eliminar la mascota. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

@@ -44,12 +44,12 @@ namespace VeterianriaWinForms.Forms
             this.Descripción = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Calificación = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Importe = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnEditar
             // 
             this.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEditar.Location = new System.Drawing.Point(122, 342);
             this.BtnEditar.Name = "BtnEditar";
@@ -62,7 +62,6 @@ namespace VeterianriaWinForms.Forms
             // btnNueva
             // 
             this.btnNueva.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNueva.Location = new System.Drawing.Point(18, 342);
             this.btnNueva.Name = "btnNueva";
@@ -75,7 +74,6 @@ namespace VeterianriaWinForms.Forms
             // BtnEliminar
             // 
             this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEliminar.Location = new System.Drawing.Point(226, 342);
             this.BtnEliminar.Name = "BtnEliminar";
@@ -89,7 +87,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.lblMascotaNombre.AutoSize = true;
             this.lblMascotaNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMascotaNombre.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblMascotaNombre.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblMascotaNombre.Location = new System.Drawing.Point(350, 20);
             this.lblMascotaNombre.Name = "lblMascotaNombre";
             this.lblMascotaNombre.Size = new System.Drawing.Size(87, 24);
@@ -102,9 +100,9 @@ namespace VeterianriaWinForms.Forms
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(341, 24);
+            this.label1.Size = new System.Drawing.Size(335, 24);
             this.label1.TabIndex = 22;
-            this.label1.Text = "Listado de consultas de la mascota:";
+            this.label1.Text = "Listado de consultas de la mascota";
             // 
             // listView1
             // 
@@ -168,11 +166,25 @@ namespace VeterianriaWinForms.Forms
             this.Importe.Text = "Importe";
             this.Importe.Width = 78;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(927, 342);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(84, 29);
+            this.btnVolver.TabIndex = 27;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // GestionConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(196)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(1035, 385);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.btnNueva);
             this.Controls.Add(this.BtnEliminar);
@@ -207,5 +219,6 @@ namespace VeterianriaWinForms.Forms
         private System.Windows.Forms.ColumnHeader Mascota;
         private System.Windows.Forms.ColumnHeader Realizada;
         private System.Windows.Forms.ColumnHeader Importe;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

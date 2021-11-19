@@ -38,9 +38,6 @@ namespace VeterianriaWinForms.Forms
             catch (Exception)
             {
                 MessageBox.Show("Hubo un error al obtener la lista de veterinarias. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                BtnEliminar.Enabled = false;
-                BtnEditar.Enabled = false;
-                btnNuevo.Enabled = false;
             }
         }
 

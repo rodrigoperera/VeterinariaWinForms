@@ -119,7 +119,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.lblClienteNombre.AutoSize = true;
             this.lblClienteNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClienteNombre.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblClienteNombre.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblClienteNombre.Location = new System.Drawing.Point(351, 13);
             this.lblClienteNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblClienteNombre.Name = "lblClienteNombre";
@@ -209,6 +209,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(196)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(769, 360);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnCarnet);

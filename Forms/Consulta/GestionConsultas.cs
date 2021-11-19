@@ -77,7 +77,6 @@ namespace VeterianriaWinForms.Forms
                     try
                     {
                         GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-
                         VeterianriaWinForms.GestionVeterinarioServices.VOConsulta con = ws.ObtenerConsulta(id);
                         if (con.Realizada)
                         {
@@ -94,7 +93,6 @@ namespace VeterianriaWinForms.Forms
                                 MessageBox.Show("Consulta eliminada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
-                    
                     }
                     catch (Exception)
                     {
@@ -135,6 +133,11 @@ namespace VeterianriaWinForms.Forms
             {
                 MessageBox.Show("Seleccione un objeto de la lista", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

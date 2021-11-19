@@ -57,7 +57,7 @@ namespace VeterianriaWinForms.Forms
             }
             catch 
             {
-                MessageBox.Show("Error al intentar cargar la imagen");
+                MessageBox.Show("Error al intentar cargar la imagen", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -110,7 +110,7 @@ namespace VeterianriaWinForms.Forms
         private bool ValidarDatos()
         {
             bool exito = false;
-            if (ValidarNombre() && ValidarEdad())
+            if (ValidarNombre() && ValidarEdad() && ValidarFoto())
                 exito = true;
             return exito;
         }
@@ -138,6 +138,19 @@ namespace VeterianriaWinForms.Forms
             }
             else
                 errorProvider1.SetError(textBoxEdad, "");
+            return bStatus;
+        }
+
+        private bool ValidarFoto()
+        {
+            bool bStatus = true;
+            if (imagen.Image == null)
+            {
+                errorProvider1.SetError(imagen, "Por favor ingrese la foto mascota");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(imagen, "");
             return bStatus;
         }
     }

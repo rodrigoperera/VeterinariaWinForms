@@ -65,16 +65,19 @@ namespace VeterianriaWinForms.Forms
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            try
+            if (ValidarDatos())
             {
-                VeterianriaWinForms.GestionVeterinarioServices.VOMascota vomascota = CrearVO();
-                GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-                ws.EditarMascota(vomascota);
-                MessageBox.Show("Mascota editada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hubo un error al intentar editar una mascota. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    VeterianriaWinForms.GestionVeterinarioServices.VOMascota vomascota = CrearVO();
+                    GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                    ws.EditarMascota(vomascota);
+                    MessageBox.Show("Mascota editada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Hubo un error al intentar editar una mascota. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -95,7 +98,7 @@ namespace VeterianriaWinForms.Forms
         private bool ValidarDatos()
         {
             bool exito = false;
-            if (ValidarNombre() && ValidarEdad())
+            if (ValidarNombre() && ValidarEdad() && ValidarFoto())
                 exito = true;
             return exito;
         }
@@ -123,6 +126,19 @@ namespace VeterianriaWinForms.Forms
             }
             else
                 errorProvider1.SetError(textBoxEdad, "");
+            return bStatus;
+        }
+
+        private bool ValidarFoto()
+        {
+            bool bStatus = true;
+            if (imagen.Image == null)
+            {
+                errorProvider1.SetError(imagen, "Por favor ingrese la foto mascota");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(imagen, "");
             return bStatus;
         }
 

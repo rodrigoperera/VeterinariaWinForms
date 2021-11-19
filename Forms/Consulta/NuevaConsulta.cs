@@ -20,22 +20,36 @@ namespace VeterianriaWinForms.Forms.Consulta
             this.cedula = cedulaCliente;
             CargarComboVeterinaria();
             CargarComboMascotas();
-
         }
 
-        private void CargarComboVeterinaria() {
-            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-            comboBoxVeterinario.DataSource = ws.ObtenerVeterinarios(Global.IdVeterinaria);
-            comboBoxVeterinario.DisplayMember = "nombre";//String.Format("{0}({1})", voconsulta.Veterinario.Cedula, voconsulta.Veterinario.Nombre);
-            comboBoxVeterinario.ValueMember = "cedula";
+        private void CargarComboVeterinaria() 
+        {
+            try
+            {
+                GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                comboBoxVeterinario.DataSource = ws.ObtenerVeterinarios(Global.IdVeterinaria);
+                comboBoxVeterinario.DisplayMember = "nombre";//String.Format("{0}({1})", voconsulta.Veterinario.Cedula, voconsulta.Veterinario.Nombre);
+                comboBoxVeterinario.ValueMember = "cedula";
+            }
+            catch
+            {
+                MessageBox.Show("Hubo un error al obtener los datos. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CargarComboMascotas()
         {
-            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-            comboBoxMascota.DataSource = ws.ObtenerMascotas(this.cedula);
-            comboBoxMascota.DisplayMember = "nombre";//String.Format("{0}:{1}-{2}", voconsulta.Mascota.Id, voconsulta.Mascota.Animal, voconsulta.Mascota.Raza);
-            comboBoxMascota.ValueMember = "id";
+            try
+            {
+                GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                comboBoxMascota.DataSource = ws.ObtenerMascotas(this.cedula);
+                comboBoxMascota.DisplayMember = "nombre";//String.Format("{0}:{1}-{2}", voconsulta.Mascota.Id, voconsulta.Mascota.Animal, voconsulta.Mascota.Raza);
+                comboBoxMascota.ValueMember = "id";
+            }
+            catch
+            {
+                MessageBox.Show("Hubo un error al obtener los datos. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -55,18 +69,16 @@ namespace VeterianriaWinForms.Forms.Consulta
                     MessageBox.Show("Consulta creada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hubo un error al intentar crear la consulta. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
         private bool ValidarDatos()
         {
-            bool exito = false;
-            exito = ValidarDetalle();
-            return exito;
+            return ValidarDetalle(); ;
         }
 
         private bool ValidarDetalle()

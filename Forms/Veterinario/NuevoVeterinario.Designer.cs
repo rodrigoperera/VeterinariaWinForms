@@ -60,7 +60,7 @@ namespace VeterianriaWinForms.Forms
             // btnConfirmar
             // 
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.ForeColor = System.Drawing.Color.Olive;
+            this.btnConfirmar.ForeColor = System.Drawing.Color.Black;
             this.btnConfirmar.Location = new System.Drawing.Point(221, 312);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(162, 29);
@@ -85,6 +85,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.textBoxHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxHorario.Location = new System.Drawing.Point(144, 220);
+            this.textBoxHorario.MaxLength = 30;
             this.textBoxHorario.Name = "textBoxHorario";
             this.textBoxHorario.Size = new System.Drawing.Size(248, 26);
             this.textBoxHorario.TabIndex = 20;
@@ -103,6 +104,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.textBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNombre.Location = new System.Drawing.Point(144, 114);
+            this.textBoxNombre.MaxLength = 30;
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(248, 26);
             this.textBoxNombre.TabIndex = 18;
@@ -171,6 +173,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(196)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(443, 363);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConfirmar);

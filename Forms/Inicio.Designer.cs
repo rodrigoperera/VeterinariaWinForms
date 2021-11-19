@@ -37,10 +37,10 @@ namespace VeterianriaWinForms.Forms
             this.trabajarConVeterinariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView1 = new System.Windows.Forms.ListView();
             this.Numero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Realizada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Fecha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Veterinario = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Mascota = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Fecha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Realizada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Descripcion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Importe = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.comboBoxVeterinario = new System.Windows.Forms.ComboBox();
@@ -121,18 +121,6 @@ namespace VeterianriaWinForms.Forms
             this.Numero.Text = "Numero";
             this.Numero.Width = 126;
             // 
-            // Realizada
-            // 
-            this.Realizada.DisplayIndex = 1;
-            this.Realizada.Text = "¿Realizada?";
-            this.Realizada.Width = 133;
-            // 
-            // Fecha
-            // 
-            this.Fecha.DisplayIndex = 2;
-            this.Fecha.Text = "Fecha";
-            this.Fecha.Width = 134;
-            // 
             // Veterinario
             // 
             this.Veterinario.DisplayIndex = 3;
@@ -144,6 +132,18 @@ namespace VeterianriaWinForms.Forms
             this.Mascota.DisplayIndex = 4;
             this.Mascota.Text = "Mascota";
             this.Mascota.Width = 144;
+            // 
+            // Fecha
+            // 
+            this.Fecha.DisplayIndex = 2;
+            this.Fecha.Text = "Fecha";
+            this.Fecha.Width = 134;
+            // 
+            // Realizada
+            // 
+            this.Realizada.DisplayIndex = 1;
+            this.Realizada.Text = "¿Realizada?";
+            this.Realizada.Width = 133;
             // 
             // Descripcion
             // 
@@ -245,7 +245,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(196)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(854, 358);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -263,7 +263,7 @@ namespace VeterianriaWinForms.Forms
             this.MaximizeBox = false;
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Principal";
+            this.Text = "Gestión de Veterinarias";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

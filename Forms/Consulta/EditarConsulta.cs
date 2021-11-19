@@ -24,30 +24,33 @@ namespace VeterianriaWinForms.Forms.Consulta
 
         private void PreCargarForm(int numero)
         {
-            
-            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-            VeterianriaWinForms.GestionVeterinarioServices.VOConsulta voconsulta = ws.ObtenerConsulta(numero);
-            lblNumConsultaValor.Text = voconsulta.Numero.ToString();
+            try
+            {
+                GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                VeterianriaWinForms.GestionVeterinarioServices.VOConsulta voconsulta = ws.ObtenerConsulta(numero);
+                lblNumConsultaValor.Text = voconsulta.Numero.ToString();
 
-            DTFecha.Value = voconsulta.Fecha;
-            comboBoxVeterinario.DataSource = ws.ObtenerVeterinarios(Global.IdVeterinaria);
-            comboBoxVeterinario.DisplayMember = "nombre";//String.Format("{0}({1})", voconsulta.Veterinario.Cedula, voconsulta.Veterinario.Nombre);
-            comboBoxVeterinario.ValueMember = "cedula";
+                DTFecha.Value = voconsulta.Fecha;
+                comboBoxVeterinario.DataSource = ws.ObtenerVeterinarios(Global.IdVeterinaria);
+                comboBoxVeterinario.DisplayMember = "nombre";//String.Format("{0}({1})", voconsulta.Veterinario.Cedula, voconsulta.Veterinario.Nombre);
+                comboBoxVeterinario.ValueMember = "cedula";
 
-            comboBoxVeterinario.SelectedIndex = comboBoxVeterinario.FindStringExact(voconsulta.Veterinario.Nombre.ToString());
+                comboBoxVeterinario.SelectedIndex = comboBoxVeterinario.FindStringExact(voconsulta.Veterinario.Nombre.ToString());
 
-            comboBoxMascota.DataSource = ws.ObtenerMascotas(voconsulta.Mascota.cedulaCliente);
-            comboBoxMascota.DisplayMember = "nombre";//String.Format("{0}:{1}-{2}", voconsulta.Mascota.Id, voconsulta.Mascota.Animal, voconsulta.Mascota.Raza);
-            comboBoxMascota.ValueMember = "id";
+                comboBoxMascota.DataSource = ws.ObtenerMascotas(voconsulta.Mascota.cedulaCliente);
+                comboBoxMascota.DisplayMember = "nombre";//String.Format("{0}:{1}-{2}", voconsulta.Mascota.Id, voconsulta.Mascota.Animal, voconsulta.Mascota.Raza);
+                comboBoxMascota.ValueMember = "id";
 
-            textBoxDetalle.Text = voconsulta.Descripcion;
-            textBoxDetalle.Focus();
+                textBoxDetalle.Text = voconsulta.Descripcion;
+                textBoxDetalle.Focus();
 
-            checkBoxRealizada.Checked = voconsulta.Realizada;
-            textBoxImporte.Text = voconsulta.Importe.ToString();
-
-
-
+                checkBoxRealizada.Checked = voconsulta.Realizada;
+                textBoxImporte.Text = voconsulta.Importe.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Hubo un error al obtener los datos de la consulta. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -67,18 +70,16 @@ namespace VeterianriaWinForms.Forms.Consulta
                     MessageBox.Show("Consulta editada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hubo un error al intentar guardar los datos de la consulta. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
         private bool ValidarDatos()
         {
-            bool exito = false;
-            exito = ValidarDetalle();
-            return exito;
+            return ValidarDetalle(); ;
         }
 
         private bool ValidarDetalle()
@@ -93,8 +94,6 @@ namespace VeterianriaWinForms.Forms.Consulta
                 errorProvider1.SetError(textBoxDetalle, "");
             return bStatus;
         }
-
-
 
         private VeterianriaWinForms.GestionVeterinarioServices.VOConsulta CrearVO()
         {

@@ -28,10 +28,14 @@ namespace VeterianriaWinForms.Forms
                     long cedula = long.Parse(lista.Text);
                     try
                     {
-                        lista.Remove();
-                        GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-                        ws.EliminarCliente(cedula);
-                        MessageBox.Show("Cliente eliminado con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult dialogResult = MessageBox.Show("¿Desea eliminar el cliente?", "Eliminar Cliente", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            lista.Remove();
+                            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                            ws.EliminarCliente(cedula);
+                            MessageBox.Show("Cliente eliminado con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     catch (Exception)
                     {

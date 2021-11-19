@@ -42,15 +42,15 @@ namespace VeterianriaWinForms.Forms
             {
                 VeterianriaWinForms.GestionVeterinarioServices.VOConsulta[] lista;
                 GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-                DateTime desde = DateTime.Today;
-                DateTime hasta = desde.AddDays(7);
+                DateTime desde = DateTime.Today.Date;
+                DateTime hasta = desde.AddDays(7).Date;
                 lista = ws.ObtenerConsultasPorFecha(Global.IdVeterinaria, desde, hasta);
                 foreach (var item in lista)
                 {
                     ListViewItem listado = new ListViewItem(item.Numero.ToString());
                     listado.SubItems.Add(item.Veterinario.Nombre);
                     listado.SubItems.Add(String.Format("{0}-{1}", item.Mascota.Id.ToString(), item.Mascota.Nombre));
-                    listado.SubItems.Add(item.Fecha.ToShortDateString()).ToString();
+                    listado.SubItems.Add(item.Fecha.ToString());
                     listado.SubItems.Add(item.Realizada ? "SI" : "NO");
                     listado.SubItems.Add(item.Descripcion);
                     listado.SubItems.Add(item.Importe.ToString());
@@ -94,7 +94,9 @@ namespace VeterianriaWinForms.Forms
                 VeterianriaWinForms.GestionVeterinarioServices.VOVeterinario voveterinario = (GestionVeterinarioServices.VOVeterinario)comboBoxVeterinario.SelectedItem;
                 VeterianriaWinForms.GestionVeterinarioServices.VOConsulta[] lista;
                 GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-                lista = ws.ObtenerConsultasPorVeterinario(voveterinario.Cedula, DPDesde.Value, DPHasta.Value);
+                DPHasta.Value.Hour.Equals(23);
+                DPHasta.Value.Minute.Equals(59);
+                lista = ws.ObtenerConsultasPorVeterinario(voveterinario.Cedula, DPDesde.Value.Date, DPHasta.Value);
                 foreach (var item in lista)
                 {
                     ListViewItem listado = new ListViewItem(item.Numero.ToString());
@@ -105,7 +107,6 @@ namespace VeterianriaWinForms.Forms
                     listado.SubItems.Add(item.Descripcion);
                     listado.SubItems.Add(item.Importe.ToString());
                     listView1.Items.Add(listado);
-
                 }
             }
             catch
