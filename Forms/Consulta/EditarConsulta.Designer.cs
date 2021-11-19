@@ -98,6 +98,8 @@ namespace VeterianriaWinForms.Forms.Consulta
             // 
             // DTFecha
             // 
+            this.DTFecha.CustomFormat = "dd/MM/yyyy |  HH:mm";
+            this.DTFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTFecha.Location = new System.Drawing.Point(176, 46);
             this.DTFecha.Name = "DTFecha";
             this.DTFecha.Size = new System.Drawing.Size(200, 22);
@@ -105,6 +107,7 @@ namespace VeterianriaWinForms.Forms.Consulta
             // 
             // comboBoxVeterinario
             // 
+            this.comboBoxVeterinario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVeterinario.FormattingEnabled = true;
             this.comboBoxVeterinario.Location = new System.Drawing.Point(176, 77);
             this.comboBoxVeterinario.Name = "comboBoxVeterinario";
@@ -113,6 +116,7 @@ namespace VeterianriaWinForms.Forms.Consulta
             // 
             // comboBoxMascota
             // 
+            this.comboBoxMascota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMascota.FormattingEnabled = true;
             this.comboBoxMascota.Location = new System.Drawing.Point(176, 108);
             this.comboBoxMascota.Name = "comboBoxMascota";
@@ -169,6 +173,7 @@ namespace VeterianriaWinForms.Forms.Consulta
             this.textBoxImporte.Name = "textBoxImporte";
             this.textBoxImporte.Size = new System.Drawing.Size(163, 22);
             this.textBoxImporte.TabIndex = 13;
+            this.textBoxImporte.Text = "0";
             // 
             // btnConfirmar
             // 

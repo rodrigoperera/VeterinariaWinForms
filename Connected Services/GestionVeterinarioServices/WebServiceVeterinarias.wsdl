@@ -75,6 +75,7 @@
           <s:enumeration value="Gato" />
           <s:enumeration value="Perro" />
           <s:enumeration value="Conejo" />
+          <s:enumeration value="Huron" />
           <s:enumeration value="Cobayo" />
           <s:enumeration value="Hamster" />
           <s:enumeration value="Tortuga" />
@@ -83,7 +84,6 @@
           <s:enumeration value="Cerdo" />
           <s:enumeration value="Pez" />
           <s:enumeration value="Loro" />
-          <s:enumeration value="Huron" />
         </s:restriction>
       </s:simpleType>
       <s:simpleType name="Raza">
@@ -460,6 +460,22 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ObtenerConsultasPorVeterinario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cedulaCliente" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="desde" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="hasta" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerConsultasPorVeterinarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerConsultasPorVeterinarioResult" type="tns:ArrayOfVOConsulta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="ObtenerConsulta">
         <s:complexType>
           <s:sequence>
@@ -650,6 +666,12 @@
   <wsdl:message name="ObtenerConsultasPorMascotaSoapOut">
     <wsdl:part name="parameters" element="tns:ObtenerConsultasPorMascotaResponse" />
   </wsdl:message>
+  <wsdl:message name="ObtenerConsultasPorVeterinarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerConsultasPorVeterinario" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerConsultasPorVeterinarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerConsultasPorVeterinarioResponse" />
+  </wsdl:message>
   <wsdl:message name="ObtenerConsultaSoapIn">
     <wsdl:part name="parameters" element="tns:ObtenerConsulta" />
   </wsdl:message>
@@ -801,6 +823,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para obtener todas las consultas de una mascota puntual</wsdl:documentation>
       <wsdl:input message="tns:ObtenerConsultasPorMascotaSoapIn" />
       <wsdl:output message="tns:ObtenerConsultasPorMascotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConsultasPorVeterinario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para obtener todas las consultas de un veterinario</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerConsultasPorVeterinarioSoapIn" />
+      <wsdl:output message="tns:ObtenerConsultasPorVeterinarioSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerConsulta">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para obtener una consulta</wsdl:documentation>
@@ -1064,6 +1091,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerConsultasPorMascota">
       <soap:operation soapAction="http://tempuri.org/ObtenerConsultasPorMascota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConsultasPorVeterinario">
+      <soap:operation soapAction="http://tempuri.org/ObtenerConsultasPorVeterinario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1337,6 +1373,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerConsultasPorMascota">
       <soap12:operation soapAction="http://tempuri.org/ObtenerConsultasPorMascota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConsultasPorVeterinario">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerConsultasPorVeterinario" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
