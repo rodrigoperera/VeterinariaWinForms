@@ -53,6 +53,7 @@ namespace VeterianriaWinForms.Forms.Consulta
                     GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
                     ws.CrearConsulta(voconsulta);
                     MessageBox.Show("Consulta creada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -80,8 +81,6 @@ namespace VeterianriaWinForms.Forms.Consulta
                 errorProvider1.SetError(textBoxDetalle, "");
             return bStatus;
         }
-
-
 
         private VeterianriaWinForms.GestionVeterinarioServices.VOConsulta CrearVO()
         {

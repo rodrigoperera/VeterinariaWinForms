@@ -27,27 +27,35 @@ namespace VeterianriaWinForms.Forms
 
         private void PreCargarForm(int id)
         {
-            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-            VeterianriaWinForms.GestionVeterinarioServices.VOMascota vomascota = ws.ObtenerMascota(id);
-            comboBoxTipo.DataSource = Enum.GetValues(typeof(TipoAnimal));
-            comboBoxTipo.SelectedIndex = Convert.ToInt32(vomascota.Animal);
-            comboBoxRaza.DataSource = Enum.GetValues(typeof(Raza));
-            comboBoxRaza.SelectedIndex = Convert.ToInt32(vomascota.Raza);
-            textBoxNombre.Text = vomascota.Nombre;
-            textBoxEdad.Text = vomascota.Edad.ToString();
-            checkBox.Checked = vomascota.VacunaAlDia;
-            this.ciCliente = vomascota.cedulaCliente;
-            this.numeroCarnet = vomascota.CarnetInscripcion.Numero;
+            try
+            {
+                GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                VeterianriaWinForms.GestionVeterinarioServices.VOMascota vomascota = ws.ObtenerMascota(id);
+                comboBoxTipo.DataSource = Enum.GetValues(typeof(TipoAnimal));
+                comboBoxTipo.SelectedIndex = Convert.ToInt32(vomascota.Animal);
+                comboBoxRaza.DataSource = Enum.GetValues(typeof(Raza));
+                comboBoxRaza.SelectedIndex = Convert.ToInt32(vomascota.Raza);
+                textBoxNombre.Text = vomascota.Nombre;
+                textBoxEdad.Text = vomascota.Edad.ToString();
+                checkBox.Checked = vomascota.VacunaAlDia;
+                this.ciCliente = vomascota.cedulaCliente;
+                this.numeroCarnet = vomascota.CarnetInscripcion.Numero;
 
-            m_barrImg = vomascota.CarnetInscripcion.Foto;
-            string strfn = Convert.ToString(DateTime.Now.ToFileTime());
-            FileStream fs = new FileStream(strfn,
-                              FileMode.CreateNew, FileAccess.Write);
-            fs.Write(m_barrImg, 0, m_barrImg.Length);
-            fs.Flush();
-            fs.Close();
-            imagen.Image = Image.FromFile(strfn);
-            textBoxNombre.Focus();
+                m_barrImg = vomascota.CarnetInscripcion.Foto;
+                string strfn = Convert.ToString(DateTime.Now.ToFileTime());
+                FileStream fs = new FileStream(strfn,
+                                  FileMode.CreateNew, FileAccess.Write);
+                fs.Write(m_barrImg, 0, m_barrImg.Length);
+                fs.Flush();
+                fs.Close();
+                imagen.Image = Image.FromFile(strfn);
+                textBoxNombre.Focus();
+            }
+            catch
+            {
+                MessageBox.Show("Hubo un error al obtener los datos de la mascota. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -66,7 +74,7 @@ namespace VeterianriaWinForms.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hubo un error al intentar editar una mascota. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

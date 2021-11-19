@@ -72,10 +72,11 @@ namespace VeterianriaWinForms.Forms
                     ws.CrearMascota(vomascota);
                     MessageBox.Show("Mascota ingresada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     BorrarDatos();
+                    this.Close();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hubo un error al ingresar la mascota al sistema. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

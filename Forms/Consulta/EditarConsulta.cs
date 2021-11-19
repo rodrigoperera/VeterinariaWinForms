@@ -65,6 +65,7 @@ namespace VeterianriaWinForms.Forms.Consulta
                     GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
                     ws.EditarConsulta(voconsulta);
                     MessageBox.Show("Consulta editada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 catch (Exception ex)
                 {

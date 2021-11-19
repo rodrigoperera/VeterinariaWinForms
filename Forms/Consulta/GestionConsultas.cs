@@ -25,59 +25,86 @@ namespace VeterianriaWinForms.Forms
 
         private void ObtenerMascota(int id)
         {
-            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-            VeterianriaWinForms.GestionVeterinarioServices.VOMascota vomascota = ws.ObtenerMascota(id);
-            lblMascotaNombre.Text = String.Format("{0} - {1}", vomascota.Id, vomascota.Nombre);
-            this.cedulaCliente = vomascota.cedulaCliente;
+            try
+            {
+                GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                VeterianriaWinForms.GestionVeterinarioServices.VOMascota vomascota = ws.ObtenerMascota(id);
+                lblMascotaNombre.Text = String.Format("{0}", vomascota.Nombre);
+                this.cedulaCliente = vomascota.cedulaCliente;
+            }
+            catch
+            {
+                MessageBox.Show("Hubo un error al intentar obtener datos de la mascota. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void CargarConsultas()
         {
-            listView1.Items.Clear();
-            VeterianriaWinForms.GestionVeterinarioServices.VOConsulta[] lista;
-            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-            lista = ws.ObtenerConsultasPorMascota(this.idMascota);
-            foreach (var item in lista)
+            try
             {
-                ListViewItem listado = new ListViewItem(item.Numero.ToString());
-                listado.SubItems.Add(item.Realizada ? "SI" : "NO");
-                listado.SubItems.Add(item.Fecha.ToString());
-                listado.SubItems.Add(item.Veterinario.Nombre);
-                listado.SubItems.Add(String.Format("{0}-{1}", item.Mascota.Id.ToString(), item.Mascota.Nombre));
-                listado.SubItems.Add(item.Descripcion);
-                listado.SubItems.Add(item.Calificacion.ToString());
-                listado.SubItems.Add(item.Importe.ToString());
+                listView1.Items.Clear();
+                VeterianriaWinForms.GestionVeterinarioServices.VOConsulta[] lista;
+                GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+                lista = ws.ObtenerConsultasPorMascota(this.idMascota);
+                foreach (var item in lista)
+                {
+                    ListViewItem listado = new ListViewItem(item.Numero.ToString());
+                    listado.SubItems.Add(item.Realizada ? "SI" : "NO");
+                    listado.SubItems.Add(item.Fecha.ToString());
+                    listado.SubItems.Add(item.Veterinario.Nombre);
+                    listado.SubItems.Add(String.Format("{0}-{1}", item.Mascota.Id.ToString(), item.Mascota.Nombre));
+                    listado.SubItems.Add(item.Descripcion);
+                    listado.SubItems.Add(item.Calificacion.ToString());
+                    listado.SubItems.Add(item.Importe.ToString());
 
-                listView1.Items.Add(listado);
+                    listView1.Items.Add(listado);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Hubo un error al intentar obtener los datos de las consultas. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            foreach (ListViewItem lista in listView1.SelectedItems)
+            if (listView1.SelectedItems.Count > 0)
             {
-                int id = int.Parse(lista.Text);
-                try
+                foreach (ListViewItem lista in listView1.SelectedItems)
                 {
-                    GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-
-                    VeterianriaWinForms.GestionVeterinarioServices.VOConsulta con = ws.ObtenerConsulta(id);
-                    if (con.Realizada)
+                    int id = int.Parse(lista.Text);
+                    try
                     {
-                        MessageBox.Show("Eliminación no disponible. La consulta que intenta eliminar ya fue realizada.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
 
-                    }
-                    else {
-                        lista.Remove();
-                        ws.EliminarConsulta(id);
-                        MessageBox.Show("Consulta eliminada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                        VeterianriaWinForms.GestionVeterinarioServices.VOConsulta con = ws.ObtenerConsulta(id);
+                        if (con.Realizada)
+                        {
+                            MessageBox.Show("Eliminación no disponible. La consulta que intenta eliminar ya fue realizada.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                        else
+                        {
+                            DialogResult dialogResult = MessageBox.Show("¿Desea eliminar la consulta?", "Eliminar Consulta", MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                lista.Remove();
+                                ws.EliminarConsulta(id);
+                                MessageBox.Show("Consulta eliminada con exito", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
                     
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Hubo un error al intentar eliminar la consulta. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un objeto de la lista", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -99,15 +126,14 @@ namespace VeterianriaWinForms.Forms
                     int numeroConsulta = int.Parse(lista.Text);
                     EditarConsulta FrmEditarConsulta;
                     FrmEditarConsulta = new EditarConsulta(numeroConsulta);
-                    FrmEditarConsulta.Owner = this;  // <-- This is the important thing
+                    FrmEditarConsulta.Owner = this;
                     FrmEditarConsulta.ShowDialog();
                     CargarConsultas();
                 }
             }
             else
             {
-                MessageBox.Show("Para acceder a editar una consulta es necesario seleccionarla", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                MessageBox.Show("Seleccione un objeto de la lista", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

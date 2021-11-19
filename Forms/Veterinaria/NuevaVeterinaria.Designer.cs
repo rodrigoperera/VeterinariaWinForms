@@ -103,7 +103,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.textBoxTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTelefono.Location = new System.Drawing.Point(143, 106);
-            this.textBoxTelefono.MaxLength = 10;
+            this.textBoxTelefono.MaxLength = 9;
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(261, 26);
             this.textBoxTelefono.TabIndex = 57;

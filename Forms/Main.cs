@@ -62,10 +62,12 @@ namespace VeterianriaWinForms.Forms
         {
             GestionVeterinarias FrmGestionVeterinarias;
             FrmGestionVeterinarias = new GestionVeterinarias();
-            FrmGestionVeterinarias.Owner = this;  // <-- This is the important thing
+            FrmGestionVeterinarias.Owner = this;
+            this.Hide();
             FrmGestionVeterinarias.ShowDialog();
             btnIngresar.Enabled = false;
             CargarLista();
+            this.Show();
         }
 
         private void comboBox_SelectedIndexChanged(object sender, EventArgs e)

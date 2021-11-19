@@ -81,7 +81,7 @@ namespace VeterianriaWinForms.Forms
                     int id = int.Parse(lista.Text);
                     try
                     {
-                        DialogResult dialogResult = MessageBox.Show("¿Desea eliminar la mascota?", "Eliminar Veterinaria", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = MessageBox.Show("¿Desea eliminar la mascota?", "Eliminar Mascota", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
                         {
                             lista.Remove();
@@ -142,8 +142,10 @@ namespace VeterianriaWinForms.Forms
                     int id = int.Parse(lista.Text);
                     GestionConsultas FrmGestionConsultas;
                     FrmGestionConsultas = new GestionConsultas(id);
-                    FrmGestionConsultas.Owner = this;  // <-- This is the important thing
+                    FrmGestionConsultas.Owner = this;
+                    this.Hide();
                     FrmGestionConsultas.ShowDialog();
+                    this.Show();
                 }
             }
             else 

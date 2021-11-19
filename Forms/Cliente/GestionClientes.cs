@@ -112,7 +112,9 @@ namespace VeterianriaWinForms.Forms
                     GestionMascotas FrmGestionMascotas;
                     FrmGestionMascotas = new GestionMascotas(cedula);
                     FrmGestionMascotas.Owner = this;
+                    this.Hide();
                     FrmGestionMascotas.ShowDialog();
+                    this.Show();
                 }
             }
             else 
