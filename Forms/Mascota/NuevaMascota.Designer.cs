@@ -240,7 +240,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(196)))), ((int)(((byte)(71)))));
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(707, 496);
             this.Controls.Add(this.comboBoxRaza);
             this.Controls.Add(this.comboBoxTipo);

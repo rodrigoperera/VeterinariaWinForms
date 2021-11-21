@@ -58,7 +58,7 @@ namespace VeterianriaWinForms.Forms
             this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox.Location = new System.Drawing.Point(230, 26);
-            this.comboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(163, 21);
             this.comboBox.TabIndex = 1;
@@ -71,7 +71,7 @@ namespace VeterianriaWinForms.Forms
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.Location = new System.Drawing.Point(147, 86);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(146, 30);
             this.btnIngresar.TabIndex = 2;
@@ -85,7 +85,7 @@ namespace VeterianriaWinForms.Forms
             this.btnConfiguraciones.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnConfiguraciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfiguraciones.Location = new System.Drawing.Point(147, 122);
-            this.btnConfiguraciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConfiguraciones.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfiguraciones.Name = "btnConfiguraciones";
             this.btnConfiguraciones.Size = new System.Drawing.Size(146, 30);
             this.btnConfiguraciones.TabIndex = 3;
@@ -99,7 +99,7 @@ namespace VeterianriaWinForms.Forms
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(147, 158);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 30);
             this.button1.TabIndex = 4;
@@ -111,7 +111,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(196)))), ((int)(((byte)(71)))));
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(440, 212);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnConfiguraciones);
@@ -120,7 +120,7 @@ namespace VeterianriaWinForms.Forms
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";

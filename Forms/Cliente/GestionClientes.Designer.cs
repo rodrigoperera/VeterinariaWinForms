@@ -171,7 +171,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(196)))), ((int)(((byte)(71)))));
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(692, 393);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnListadoMascotas);
