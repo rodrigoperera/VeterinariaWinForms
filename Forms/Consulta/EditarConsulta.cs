@@ -37,10 +37,10 @@ namespace VeterianriaWinForms.Forms.Consulta
 
                 comboBoxVeterinario.SelectedIndex = comboBoxVeterinario.FindStringExact(voconsulta.Veterinario.Nombre.ToString());
 
-                comboBoxMascota.DataSource = ws.ObtenerMascotas(voconsulta.Mascota.cedulaCliente);
-                comboBoxMascota.DisplayMember = "nombre";//String.Format("{0}:{1}-{2}", voconsulta.Mascota.Id, voconsulta.Mascota.Animal, voconsulta.Mascota.Raza);
-                comboBoxMascota.ValueMember = "id";
-
+                textBoxMascotaId.Text = voconsulta.Mascota.Id.ToString();
+                textBoxMascotaId.ReadOnly = true;
+                textBoxMascota.Text = voconsulta.Mascota.Nombre;
+                textBoxMascota.ReadOnly = true;
                 textBoxDetalle.Text = voconsulta.Descripcion;
                 textBoxDetalle.Focus();
 
@@ -98,10 +98,14 @@ namespace VeterianriaWinForms.Forms.Consulta
         private VeterianriaWinForms.GestionVeterinarioServices.VOConsulta CrearVO()
         {
             VeterianriaWinForms.GestionVeterinarioServices.VOConsulta voconsulta = new VeterianriaWinForms.GestionVeterinarioServices.VOConsulta();
+
+            GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
+
+
             voconsulta.Numero = Convert.ToInt32(lblNumConsultaValor.Text);
             voconsulta.Fecha = DTFecha.Value;
             voconsulta.Veterinario = (GestionVeterinarioServices.VOVeterinario)comboBoxVeterinario.SelectedItem;
-            voconsulta.Mascota= (GestionVeterinarioServices.VOMascota)comboBoxMascota.SelectedItem;
+            voconsulta.Mascota = ws.ObtenerMascota(Convert.ToInt32(textBoxMascotaId.Text));
             voconsulta.Descripcion = textBoxDetalle.Text;
             voconsulta.Realizada = checkBoxRealizada.Checked;
             voconsulta.Importe = Convert.ToDouble(textBoxImporte.Text);

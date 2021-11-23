@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeterianriaWinForms.Forms.Consulta;
 
 namespace VeterianriaWinForms.Forms
 {
@@ -40,6 +41,8 @@ namespace VeterianriaWinForms.Forms
         {
             try
             {
+                listView1.Items.Clear();
+
                 VeterianriaWinForms.GestionVeterinarioServices.VOMascota[] lista;
                 GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
                 lista = ws.ObtenerMascotas(this.cedula);
@@ -168,6 +171,15 @@ namespace VeterianriaWinForms.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnNueva_Click(object sender, EventArgs e)
+        {
+            NuevaConsulta FrmNuevaConsulta;
+            FrmNuevaConsulta = new NuevaConsulta(this.cedula);
+            FrmNuevaConsulta.Owner = this;
+            FrmNuevaConsulta.ShowDialog();
+            CargarLista();
         }
     }
 }
