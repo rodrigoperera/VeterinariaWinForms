@@ -63,7 +63,7 @@ namespace VeterianriaWinForms.Forms
             this.listView1.HideSelection = false;
             this.listView1.HoverSelection = true;
             this.listView1.Location = new System.Drawing.Point(10, 58);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(743, 166);
             this.listView1.TabIndex = 0;
@@ -133,7 +133,7 @@ namespace VeterianriaWinForms.Forms
             this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEliminar.Location = new System.Drawing.Point(222, 237);
-            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(101, 29);
             this.BtnEliminar.TabIndex = 16;
@@ -146,7 +146,7 @@ namespace VeterianriaWinForms.Forms
             this.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEditar.Location = new System.Drawing.Point(117, 237);
-            this.BtnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(101, 29);
             this.BtnEditar.TabIndex = 18;
@@ -159,7 +159,7 @@ namespace VeterianriaWinForms.Forms
             this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Location = new System.Drawing.Point(12, 237);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(101, 29);
             this.btnNuevo.TabIndex = 17;
@@ -172,7 +172,7 @@ namespace VeterianriaWinForms.Forms
             this.BtnConsultas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConsultas.Location = new System.Drawing.Point(471, 237);
-            this.BtnConsultas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnConsultas.Margin = new System.Windows.Forms.Padding(2);
             this.BtnConsultas.Name = "BtnConsultas";
             this.BtnConsultas.Size = new System.Drawing.Size(141, 29);
             this.BtnConsultas.TabIndex = 19;
@@ -185,7 +185,7 @@ namespace VeterianriaWinForms.Forms
             this.BtnCarnet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCarnet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCarnet.Location = new System.Drawing.Point(616, 237);
-            this.BtnCarnet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnCarnet.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCarnet.Name = "BtnCarnet";
             this.BtnCarnet.Size = new System.Drawing.Size(100, 29);
             this.BtnCarnet.TabIndex = 20;
@@ -198,7 +198,7 @@ namespace VeterianriaWinForms.Forms
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(652, 320);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 29);
             this.button1.TabIndex = 21;
@@ -211,7 +211,7 @@ namespace VeterianriaWinForms.Forms
             this.btnNueva.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNueva.Location = new System.Drawing.Point(327, 237);
-            this.btnNueva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNueva.Margin = new System.Windows.Forms.Padding(2);
             this.btnNueva.Name = "btnNueva";
             this.btnNueva.Size = new System.Drawing.Size(140, 29);
             this.btnNueva.TabIndex = 26;
@@ -237,7 +237,7 @@ namespace VeterianriaWinForms.Forms
             this.Controls.Add(this.listView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "GestionMascotas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

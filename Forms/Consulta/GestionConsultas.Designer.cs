@@ -77,7 +77,7 @@ namespace VeterianriaWinForms.Forms
             this.lblMascotaNombre.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblMascotaNombre.Location = new System.Drawing.Point(350, 20);
             this.lblMascotaNombre.Name = "lblMascotaNombre";
-            this.lblMascotaNombre.Size = new System.Drawing.Size(110, 29);
+            this.lblMascotaNombre.Size = new System.Drawing.Size(87, 24);
             this.lblMascotaNombre.TabIndex = 23;
             this.lblMascotaNombre.Text = "mascota";
             // 
@@ -87,7 +87,7 @@ namespace VeterianriaWinForms.Forms
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(421, 29);
+            this.label1.Size = new System.Drawing.Size(335, 24);
             this.label1.TabIndex = 22;
             this.label1.Text = "Listado de consultas de la mascota";
             // 
@@ -167,7 +167,7 @@ namespace VeterianriaWinForms.Forms
             // 
             // GestionConsultas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1035, 385);
