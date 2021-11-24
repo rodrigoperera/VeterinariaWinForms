@@ -46,6 +46,7 @@ namespace VeterianriaWinForms.Forms
             this.BtnConsultas = new System.Windows.Forms.Button();
             this.BtnCarnet = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnNueva = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -130,8 +131,9 @@ namespace VeterianriaWinForms.Forms
             // 
             this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminar.Location = new System.Drawing.Point(339, 292);
-            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+
+            this.BtnEliminar.Location = new System.Drawing.Point(222, 237);
+            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(135, 36);
             this.BtnEliminar.TabIndex = 16;
@@ -143,8 +145,9 @@ namespace VeterianriaWinForms.Forms
             // 
             this.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEditar.Location = new System.Drawing.Point(176, 292);
-            this.BtnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+
+            this.BtnEditar.Location = new System.Drawing.Point(117, 237);
+            this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(135, 36);
             this.BtnEditar.TabIndex = 18;
@@ -169,12 +172,13 @@ namespace VeterianriaWinForms.Forms
             // 
             this.BtnConsultas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnConsultas.Location = new System.Drawing.Point(716, 292);
-            this.BtnConsultas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+
+            this.BtnConsultas.Location = new System.Drawing.Point(471, 237);
+            this.BtnConsultas.Margin = new System.Windows.Forms.Padding(2);
             this.BtnConsultas.Name = "BtnConsultas";
-            this.BtnConsultas.Size = new System.Drawing.Size(135, 36);
+            this.BtnConsultas.Size = new System.Drawing.Size(141, 29);
             this.BtnConsultas.TabIndex = 19;
-            this.BtnConsultas.Text = "Consultas";
+            this.BtnConsultas.Text = "Listar consultas";
             this.BtnConsultas.UseVisualStyleBackColor = true;
             this.BtnConsultas.Click += new System.EventHandler(this.BtnConsultas_Click);
             // 
@@ -182,12 +186,13 @@ namespace VeterianriaWinForms.Forms
             // 
             this.BtnCarnet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCarnet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCarnet.Location = new System.Drawing.Point(869, 292);
-            this.BtnCarnet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+
+            this.BtnCarnet.Location = new System.Drawing.Point(616, 237);
+            this.BtnCarnet.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCarnet.Name = "BtnCarnet";
-            this.BtnCarnet.Size = new System.Drawing.Size(135, 36);
+            this.BtnCarnet.Size = new System.Drawing.Size(100, 29);
             this.BtnCarnet.TabIndex = 20;
-            this.BtnCarnet.Text = "Carnet";
+            this.BtnCarnet.Text = "Ver Carnet";
             this.BtnCarnet.UseVisualStyleBackColor = true;
             this.BtnCarnet.Click += new System.EventHandler(this.BtnCarnet_Click);
             // 
@@ -204,12 +209,27 @@ namespace VeterianriaWinForms.Forms
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnNueva
+            // 
+            this.btnNueva.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNueva.Location = new System.Drawing.Point(327, 237);
+            this.btnNueva.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNueva.Name = "btnNueva";
+            this.btnNueva.Size = new System.Drawing.Size(140, 29);
+            this.btnNueva.TabIndex = 26;
+            this.btnNueva.Text = "Nueva consulta";
+            this.btnNueva.UseVisualStyleBackColor = true;
+            this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
+            // 
             // GestionMascotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1025, 443);
+
+            this.ClientSize = new System.Drawing.Size(769, 360);
+            this.Controls.Add(this.btnNueva);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnCarnet);
             this.Controls.Add(this.BtnConsultas);
@@ -249,5 +269,6 @@ namespace VeterianriaWinForms.Forms
         private System.Windows.Forms.Button BtnConsultas;
         private System.Windows.Forms.Button BtnCarnet;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNueva;
     }
 }

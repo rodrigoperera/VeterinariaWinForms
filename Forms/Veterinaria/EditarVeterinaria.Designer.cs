@@ -30,6 +30,7 @@ namespace VeterianriaWinForms.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarVeterinaria));
             this.lblIdValor = new System.Windows.Forms.Label();
             this.lblCedula = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -199,6 +200,7 @@ namespace VeterianriaWinForms.Forms
             this.Controls.Add(this.label5);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditarVeterinaria";

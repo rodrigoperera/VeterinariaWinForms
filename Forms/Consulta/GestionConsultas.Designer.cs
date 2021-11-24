@@ -31,7 +31,6 @@ namespace VeterianriaWinForms.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionConsultas));
             this.BtnEditar = new System.Windows.Forms.Button();
-            this.btnNueva = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.lblMascotaNombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,7 +50,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEditar.Location = new System.Drawing.Point(122, 342);
+            this.BtnEditar.Location = new System.Drawing.Point(22, 342);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(84, 29);
             this.BtnEditar.TabIndex = 26;
@@ -59,23 +58,11 @@ namespace VeterianriaWinForms.Forms
             this.BtnEditar.UseVisualStyleBackColor = true;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
-            // btnNueva
-            // 
-            this.btnNueva.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNueva.Location = new System.Drawing.Point(18, 342);
-            this.btnNueva.Name = "btnNueva";
-            this.btnNueva.Size = new System.Drawing.Size(84, 29);
-            this.btnNueva.TabIndex = 25;
-            this.btnNueva.Text = "Nueva";
-            this.btnNueva.UseVisualStyleBackColor = true;
-            this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
-            // 
             // BtnEliminar
             // 
             this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminar.Location = new System.Drawing.Point(226, 342);
+            this.BtnEliminar.Location = new System.Drawing.Point(126, 342);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(84, 29);
             this.BtnEliminar.TabIndex = 24;
@@ -186,7 +173,6 @@ namespace VeterianriaWinForms.Forms
             this.ClientSize = new System.Drawing.Size(1035, 385);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.BtnEditar);
-            this.Controls.Add(this.btnNueva);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.lblMascotaNombre);
             this.Controls.Add(this.label1);
@@ -206,7 +192,6 @@ namespace VeterianriaWinForms.Forms
 
         #endregion
         private System.Windows.Forms.Button BtnEditar;
-        private System.Windows.Forms.Button btnNueva;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Label lblMascotaNombre;
         private System.Windows.Forms.Label label1;

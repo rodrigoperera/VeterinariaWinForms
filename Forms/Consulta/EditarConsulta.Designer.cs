@@ -38,7 +38,6 @@ namespace VeterianriaWinForms.Forms.Consulta
             this.lblDetalle = new System.Windows.Forms.Label();
             this.DTFecha = new System.Windows.Forms.DateTimePicker();
             this.comboBoxVeterinario = new System.Windows.Forms.ComboBox();
-            this.comboBoxMascota = new System.Windows.Forms.ComboBox();
             this.textBoxDetalle = new System.Windows.Forms.TextBox();
             this.lblNumConsultaValor = new System.Windows.Forms.Label();
             this.lblRealizada = new System.Windows.Forms.Label();
@@ -50,6 +49,8 @@ namespace VeterianriaWinForms.Forms.Consulta
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label5 = new System.Windows.Forms.Label();
+            this.textBoxMascotaId = new System.Windows.Forms.TextBox();
+            this.textBoxMascota = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,15 +122,7 @@ namespace VeterianriaWinForms.Forms.Consulta
             this.comboBoxVeterinario.Size = new System.Drawing.Size(343, 33);
             this.comboBoxVeterinario.TabIndex = 6;
             // 
-            // comboBoxMascota
-            // 
-            this.comboBoxMascota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMascota.FormattingEnabled = true;
-            this.comboBoxMascota.Location = new System.Drawing.Point(198, 181);
-            this.comboBoxMascota.Name = "comboBoxMascota";
-            this.comboBoxMascota.Size = new System.Drawing.Size(343, 33);
-            this.comboBoxMascota.TabIndex = 7;
-            // 
+
             // textBoxDetalle
             // 
             this.textBoxDetalle.Location = new System.Drawing.Point(198, 229);
@@ -239,12 +232,28 @@ namespace VeterianriaWinForms.Forms.Consulta
             this.label5.TabIndex = 67;
             this.label5.Text = "Editar consulta";
             // 
+            // textBoxMascotaId
+            // 
+            this.textBoxMascotaId.Location = new System.Drawing.Point(198, 182);
+            this.textBoxMascotaId.Name = "textBoxMascotaId";
+            this.textBoxMascotaId.Size = new System.Drawing.Size(36, 26);
+            this.textBoxMascotaId.TabIndex = 68;
+            // 
+            // textBoxMascota
+            // 
+            this.textBoxMascota.Location = new System.Drawing.Point(240, 182);
+            this.textBoxMascota.Name = "textBoxMascota";
+            this.textBoxMascota.Size = new System.Drawing.Size(301, 26);
+            this.textBoxMascota.TabIndex = 69;
+            // 
             // EditarConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(564, 685);
+            this.Controls.Add(this.textBoxMascota);
+            this.Controls.Add(this.textBoxMascotaId);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnCancelar);
@@ -255,7 +264,6 @@ namespace VeterianriaWinForms.Forms.Consulta
             this.Controls.Add(this.lblRealizada);
             this.Controls.Add(this.lblNumConsultaValor);
             this.Controls.Add(this.textBoxDetalle);
-            this.Controls.Add(this.comboBoxMascota);
             this.Controls.Add(this.comboBoxVeterinario);
             this.Controls.Add(this.DTFecha);
             this.Controls.Add(this.lblDetalle);
@@ -286,7 +294,6 @@ namespace VeterianriaWinForms.Forms.Consulta
         private System.Windows.Forms.Label lblDetalle;
         private System.Windows.Forms.DateTimePicker DTFecha;
         private System.Windows.Forms.ComboBox comboBoxVeterinario;
-        private System.Windows.Forms.ComboBox comboBoxMascota;
         private System.Windows.Forms.TextBox textBoxDetalle;
         private System.Windows.Forms.Label lblNumConsultaValor;
         private System.Windows.Forms.Label lblRealizada;
@@ -298,5 +305,7 @@ namespace VeterianriaWinForms.Forms.Consulta
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxMascota;
+        private System.Windows.Forms.TextBox textBoxMascotaId;
     }
 }
