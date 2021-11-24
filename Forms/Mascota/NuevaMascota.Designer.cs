@@ -181,6 +181,7 @@ namespace VeterianriaWinForms.Forms
             this.textBoxEdad.Name = "textBoxEdad";
             this.textBoxEdad.Size = new System.Drawing.Size(69, 26);
             this.textBoxEdad.TabIndex = 63;
+            this.textBoxEdad.TextChanged += new System.EventHandler(this.textBoxEdad_TextChanged);
             // 
             // checkBox
             // 
