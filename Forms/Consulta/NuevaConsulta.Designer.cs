@@ -55,11 +55,14 @@ namespace VeterianriaWinForms.Forms.Consulta
             // 
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.Black;
-            this.btnConfirmar.Location = new System.Drawing.Point(296, 598);
+            this.btnConfirmar.Image = global::VeterianriaWinForms.Properties.Resources.ok2;
+            this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfirmar.Location = new System.Drawing.Point(311, 604);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(146, 29);
+            this.btnConfirmar.Size = new System.Drawing.Size(135, 37);
             this.btnConfirmar.TabIndex = 65;
             this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
@@ -67,11 +70,14 @@ namespace VeterianriaWinForms.Forms.Consulta
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Red;
-            this.btnCancelar.Location = new System.Drawing.Point(143, 598);
+            this.btnCancelar.Image = global::VeterianriaWinForms.Properties.Resources.cancelar;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(156, 604);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(136, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(135, 37);
             this.btnCancelar.TabIndex = 64;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -93,6 +99,7 @@ namespace VeterianriaWinForms.Forms.Consulta
             this.textBoxImporte.Size = new System.Drawing.Size(182, 26);
             this.textBoxImporte.TabIndex = 62;
             this.textBoxImporte.Text = "0";
+            this.textBoxImporte.TextChanged += new System.EventHandler(this.textBoxImporte_TextChanged);
             // 
             // lblCosto
             // 
@@ -100,9 +107,9 @@ namespace VeterianriaWinForms.Forms.Consulta
             this.lblCosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCosto.Location = new System.Drawing.Point(22, 505);
             this.lblCosto.Name = "lblCosto";
-            this.lblCosto.Size = new System.Drawing.Size(56, 20);
+            this.lblCosto.Size = new System.Drawing.Size(80, 20);
             this.lblCosto.TabIndex = 61;
-            this.lblCosto.Text = "Costo";
+            this.lblCosto.Text = "Costo (*)";
             // 
             // checkBoxRealizada
             // 

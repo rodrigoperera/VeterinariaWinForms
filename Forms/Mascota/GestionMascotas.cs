@@ -181,5 +181,10 @@ namespace VeterianriaWinForms.Forms
             FrmNuevaConsulta.ShowDialog();
             CargarLista();
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

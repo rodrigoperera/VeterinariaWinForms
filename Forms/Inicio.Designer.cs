@@ -66,8 +66,8 @@ namespace VeterianriaWinForms.Forms
             this.salirToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1139, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(854, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -76,14 +76,14 @@ namespace VeterianriaWinForms.Forms
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.trabajarConClientesToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.clientesToolStripMenuItem.Text = "&Clientes";
             // 
             // trabajarConClientesToolStripMenuItem
             // 
             this.trabajarConClientesToolStripMenuItem.Name = "trabajarConClientesToolStripMenuItem";
             this.trabajarConClientesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.trabajarConClientesToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
+            this.trabajarConClientesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.trabajarConClientesToolStripMenuItem.Text = "Gestionar Clientes";
             this.trabajarConClientesToolStripMenuItem.Click += new System.EventHandler(this.trabajarConClientesToolStripMenuItem_Click);
             // 
@@ -92,20 +92,20 @@ namespace VeterianriaWinForms.Forms
             this.veterinariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.trabajarConVeterinariosToolStripMenuItem});
             this.veterinariosToolStripMenuItem.Name = "veterinariosToolStripMenuItem";
-            this.veterinariosToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
+            this.veterinariosToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.veterinariosToolStripMenuItem.Text = "&Veterinarios";
             // 
             // trabajarConVeterinariosToolStripMenuItem
             // 
             this.trabajarConVeterinariosToolStripMenuItem.Name = "trabajarConVeterinariosToolStripMenuItem";
-            this.trabajarConVeterinariosToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.trabajarConVeterinariosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.trabajarConVeterinariosToolStripMenuItem.Text = "Gestionar Veterinarios";
             this.trabajarConVeterinariosToolStripMenuItem.Click += new System.EventHandler(this.trabajarConVeterinariosToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "&Ayuda";
             this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
@@ -113,7 +113,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
             this.salirToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(52, 24);
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem1.Text = "&Salir";
             this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem1_Click);
             // 
@@ -129,10 +129,10 @@ namespace VeterianriaWinForms.Forms
             this.Importe});
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(16, 124);
-            this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView1.Location = new System.Drawing.Point(12, 117);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1111, 267);
+            this.listView1.Size = new System.Drawing.Size(834, 218);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -180,10 +180,10 @@ namespace VeterianriaWinForms.Forms
             this.comboBoxVeterinario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVeterinario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxVeterinario.FormattingEnabled = true;
-            this.comboBoxVeterinario.Location = new System.Drawing.Point(16, 73);
-            this.comboBoxVeterinario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxVeterinario.Location = new System.Drawing.Point(12, 65);
+            this.comboBoxVeterinario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxVeterinario.Name = "comboBoxVeterinario";
-            this.comboBoxVeterinario.Size = new System.Drawing.Size(305, 28);
+            this.comboBoxVeterinario.Size = new System.Drawing.Size(230, 24);
             this.comboBoxVeterinario.TabIndex = 7;
             // 
             // button1
@@ -192,10 +192,10 @@ namespace VeterianriaWinForms.Forms
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(651, 62);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(489, 61);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 37);
+            this.button1.Size = new System.Drawing.Size(101, 30);
             this.button1.TabIndex = 8;
             this.button1.Text = "Filtrar";
             this.button1.UseVisualStyleBackColor = true;
@@ -205,9 +205,10 @@ namespace VeterianriaWinForms.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 48);
+            this.label1.Location = new System.Drawing.Point(12, 45);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 20);
+            this.label1.Size = new System.Drawing.Size(80, 16);
             this.label1.TabIndex = 9;
             this.label1.Text = "Veterinarios";
             // 
@@ -216,29 +217,30 @@ namespace VeterianriaWinForms.Forms
             this.DPDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DPDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DPDesde.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.DPDesde.Location = new System.Drawing.Point(341, 74);
-            this.DPDesde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DPDesde.Location = new System.Drawing.Point(256, 66);
+            this.DPDesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DPDesde.Name = "DPDesde";
-            this.DPDesde.Size = new System.Drawing.Size(135, 26);
+            this.DPDesde.Size = new System.Drawing.Size(102, 22);
             this.DPDesde.TabIndex = 10;
             // 
             // DPHasta
             // 
             this.DPHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DPHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DPHasta.Location = new System.Drawing.Point(491, 73);
-            this.DPHasta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DPHasta.Location = new System.Drawing.Point(368, 65);
+            this.DPHasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DPHasta.Name = "DPHasta";
-            this.DPHasta.Size = new System.Drawing.Size(126, 26);
+            this.DPHasta.Size = new System.Drawing.Size(96, 22);
             this.DPHasta.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(341, 48);
+            this.label2.Location = new System.Drawing.Point(256, 45);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 20);
+            this.label2.Size = new System.Drawing.Size(49, 16);
             this.label2.TabIndex = 12;
             this.label2.Text = "Desde";
             // 
@@ -246,9 +248,10 @@ namespace VeterianriaWinForms.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(491, 48);
+            this.label3.Location = new System.Drawing.Point(368, 45);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 20);
+            this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 13;
             this.label3.Text = "Hasta";
             // 
@@ -256,18 +259,19 @@ namespace VeterianriaWinForms.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 398);
+            this.label4.Location = new System.Drawing.Point(12, 339);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(512, 18);
+            this.label4.Size = new System.Drawing.Size(425, 15);
             this.label4.TabIndex = 14;
             this.label4.Text = "Al iniciar la pantalla por defecto muestra las consultsa de los próximos 7 días";
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1139, 441);
+            this.ClientSize = new System.Drawing.Size(854, 385);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -280,7 +284,7 @@ namespace VeterianriaWinForms.Forms
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

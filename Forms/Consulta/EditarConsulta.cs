@@ -28,22 +28,19 @@ namespace VeterianriaWinForms.Forms.Consulta
             {
                 GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
                 VeterianriaWinForms.GestionVeterinarioServices.VOConsulta voconsulta = ws.ObtenerConsulta(numero);
-                lblNumConsultaValor.Text = voconsulta.Numero.ToString();
 
+                lblNumConsultaValor.Text = voconsulta.Numero.ToString();
                 DTFecha.Value = voconsulta.Fecha;
                 comboBoxVeterinario.DataSource = ws.ObtenerVeterinarios(Global.IdVeterinaria);
-                comboBoxVeterinario.DisplayMember = "nombre";//String.Format("{0}({1})", voconsulta.Veterinario.Cedula, voconsulta.Veterinario.Nombre);
+                comboBoxVeterinario.DisplayMember = "nombre";
                 comboBoxVeterinario.ValueMember = "cedula";
-
                 comboBoxVeterinario.SelectedIndex = comboBoxVeterinario.FindStringExact(voconsulta.Veterinario.Nombre.ToString());
-
                 textBoxMascotaId.Text = voconsulta.Mascota.Id.ToString();
                 textBoxMascotaId.ReadOnly = true;
                 textBoxMascota.Text = voconsulta.Mascota.Nombre;
                 textBoxMascota.ReadOnly = true;
                 textBoxDetalle.Text = voconsulta.Descripcion;
                 textBoxDetalle.Focus();
-
                 checkBoxRealizada.Checked = voconsulta.Realizada;
                 textBoxImporte.Text = voconsulta.Importe.ToString();
             }
@@ -79,7 +76,7 @@ namespace VeterianriaWinForms.Forms.Consulta
 
         private bool ValidarDatos()
         {
-            return ValidarDetalle(); ;
+            return (ValidarDetalle() && ValidarImporte());
         }
 
         private bool ValidarDetalle()
@@ -95,12 +92,23 @@ namespace VeterianriaWinForms.Forms.Consulta
             return bStatus;
         }
 
+        private bool ValidarImporte()
+        {
+            bool bStatus = true;
+            if (textBoxImporte.Text == "")
+            {
+                errorProvider1.SetError(textBoxDetalle, "Por favor ingrese el costo de la consulta");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(textBoxDetalle, "");
+            return bStatus;
+        }
+        
         private VeterianriaWinForms.GestionVeterinarioServices.VOConsulta CrearVO()
         {
             VeterianriaWinForms.GestionVeterinarioServices.VOConsulta voconsulta = new VeterianriaWinForms.GestionVeterinarioServices.VOConsulta();
-
             GestionVeterinarioServices.WebServiceVeterinariasSoapClient ws = new GestionVeterinarioServices.WebServiceVeterinariasSoapClient();
-
 
             voconsulta.Numero = Convert.ToInt32(lblNumConsultaValor.Text);
             voconsulta.Fecha = DTFecha.Value;
@@ -110,6 +118,14 @@ namespace VeterianriaWinForms.Forms.Consulta
             voconsulta.Realizada = checkBoxRealizada.Checked;
             voconsulta.Importe = Convert.ToDouble(textBoxImporte.Text);
             return voconsulta;
+        }
+
+        private void textBoxImporte_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBoxImporte.Text, "[^0-9]"))
+            {
+                textBoxImporte.Text = textBoxImporte.Text.Remove(textBoxImporte.Text.Length - 1);
+            }
         }
     }
 }

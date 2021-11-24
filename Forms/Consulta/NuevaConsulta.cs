@@ -78,7 +78,7 @@ namespace VeterianriaWinForms.Forms.Consulta
 
         private bool ValidarDatos()
         {
-            return ValidarDetalle(); ;
+            return (ValidarDetalle() && ValidarImporte());
         }
 
         private bool ValidarDetalle()
@@ -87,6 +87,19 @@ namespace VeterianriaWinForms.Forms.Consulta
             if (textBoxDetalle.Text == "")
             {
                 errorProvider1.SetError(textBoxDetalle, "Por favor ingrese la descripcion de la consulta");
+                bStatus = false;
+            }
+            else
+                errorProvider1.SetError(textBoxDetalle, "");
+            return bStatus;
+        }
+
+        private bool ValidarImporte()
+        {
+            bool bStatus = true;
+            if (textBoxImporte.Text == "")
+            {
+                errorProvider1.SetError(textBoxDetalle, "Por favor ingrese el costo de la consulta");
                 bStatus = false;
             }
             else
@@ -105,6 +118,14 @@ namespace VeterianriaWinForms.Forms.Consulta
             voconsulta.Importe = Convert.ToDouble(textBoxImporte.Text);
             voconsulta.Calificacion = 0;
             return voconsulta;
+        }
+
+        private void textBoxImporte_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBoxImporte.Text, "[^0-9]"))
+            {
+                textBoxImporte.Text = textBoxImporte.Text.Remove(textBoxImporte.Text.Length - 1);
+            }
         }
     }
 }
