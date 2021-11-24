@@ -52,7 +52,7 @@ namespace VeterianriaWinForms.Forms
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 216);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 16);
+            this.label1.Size = new System.Drawing.Size(343, 20);
             this.label1.TabIndex = 27;
             this.label1.Text = "Los campos indicados con * son obligatorios";
             // 
@@ -60,45 +60,45 @@ namespace VeterianriaWinForms.Forms
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 11);
+            this.label5.Location = new System.Drawing.Point(11, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 24);
+            this.label5.Size = new System.Drawing.Size(213, 29);
             this.label5.TabIndex = 26;
             this.label5.Text = "Editar veterinario";
             // 
             // lblHorario
             // 
             this.lblHorario.AutoSize = true;
-            this.lblHorario.Location = new System.Drawing.Point(24, 174);
+            this.lblHorario.Location = new System.Drawing.Point(11, 174);
             this.lblHorario.Name = "lblHorario";
-            this.lblHorario.Size = new System.Drawing.Size(92, 20);
+            this.lblHorario.Size = new System.Drawing.Size(113, 25);
             this.lblHorario.TabIndex = 25;
             this.lblHorario.Text = "Horario (*)";
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(24, 131);
+            this.lblTelefono.Location = new System.Drawing.Point(11, 131);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(103, 20);
+            this.lblTelefono.Size = new System.Drawing.Size(128, 25);
             this.lblTelefono.TabIndex = 24;
             this.lblTelefono.Text = "Telefono (*)";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(24, 91);
+            this.lblNombre.Location = new System.Drawing.Point(11, 91);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(95, 20);
+            this.lblNombre.Size = new System.Drawing.Size(118, 25);
             this.lblNombre.TabIndex = 23;
             this.lblNombre.Text = "Nombre (*)";
             // 
             // lblCedula
             // 
             this.lblCedula.AutoSize = true;
-            this.lblCedula.Location = new System.Drawing.Point(24, 54);
+            this.lblCedula.Location = new System.Drawing.Point(11, 54);
             this.lblCedula.Name = "lblCedula";
-            this.lblCedula.Size = new System.Drawing.Size(65, 20);
+            this.lblCedula.Size = new System.Drawing.Size(81, 25);
             this.lblCedula.TabIndex = 22;
             this.lblCedula.Text = "Cedula";
             // 
@@ -109,7 +109,7 @@ namespace VeterianriaWinForms.Forms
             this.lblCedulaValor.ForeColor = System.Drawing.Color.DimGray;
             this.lblCedulaValor.Location = new System.Drawing.Point(139, 54);
             this.lblCedulaValor.Name = "lblCedulaValor";
-            this.lblCedulaValor.Size = new System.Drawing.Size(20, 17);
+            this.lblCedulaValor.Size = new System.Drawing.Size(21, 20);
             this.lblCedulaValor.TabIndex = 31;
             this.lblCedulaValor.Text = "...";
             // 
@@ -119,7 +119,7 @@ namespace VeterianriaWinForms.Forms
             this.textBoxHorario.Location = new System.Drawing.Point(139, 171);
             this.textBoxHorario.MaxLength = 30;
             this.textBoxHorario.Name = "textBoxHorario";
-            this.textBoxHorario.Size = new System.Drawing.Size(261, 26);
+            this.textBoxHorario.Size = new System.Drawing.Size(261, 30);
             this.textBoxHorario.TabIndex = 30;
             // 
             // textBoxTelefono
@@ -128,28 +128,31 @@ namespace VeterianriaWinForms.Forms
             this.textBoxTelefono.Location = new System.Drawing.Point(139, 128);
             this.textBoxTelefono.MaxLength = 9;
             this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(261, 26);
+            this.textBoxTelefono.Size = new System.Drawing.Size(261, 30);
             this.textBoxTelefono.TabIndex = 29;
             this.textBoxTelefono.TextChanged += new System.EventHandler(this.textBoxTelefono_TextChanged);
             // 
             // textBoxNombre
             // 
             this.textBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNombre.Location = new System.Drawing.Point(139, 87);
+            this.textBoxNombre.Location = new System.Drawing.Point(139, 88);
             this.textBoxNombre.MaxLength = 30;
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(261, 26);
+            this.textBoxNombre.Size = new System.Drawing.Size(261, 30);
             this.textBoxNombre.TabIndex = 28;
             // 
             // btnConfirmar
             // 
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirmar.Image = global::VeterianriaWinForms.Properties.Resources.ok2;
+            this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfirmar.Location = new System.Drawing.Point(229, 262);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(162, 29);
+            this.btnConfirmar.Size = new System.Drawing.Size(135, 37);
             this.btnConfirmar.TabIndex = 33;
             this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click_1);
             // 
@@ -157,11 +160,14 @@ namespace VeterianriaWinForms.Forms
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Red;
+            this.btnCancelar.Image = global::VeterianriaWinForms.Properties.Resources.cancelar;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.Location = new System.Drawing.Point(58, 262);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(152, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(135, 37);
             this.btnCancelar.TabIndex = 32;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -171,7 +177,7 @@ namespace VeterianriaWinForms.Forms
             // 
             // EditarVeterinario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(443, 312);

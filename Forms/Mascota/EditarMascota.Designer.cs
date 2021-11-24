@@ -47,6 +47,7 @@ namespace VeterianriaWinForms.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -56,9 +57,9 @@ namespace VeterianriaWinForms.Forms
             this.comboBoxRaza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRaza.FormattingEnabled = true;
-            this.comboBoxRaza.Location = new System.Drawing.Point(188, 120);
+            this.comboBoxRaza.Location = new System.Drawing.Point(188, 101);
             this.comboBoxRaza.Name = "comboBoxRaza";
-            this.comboBoxRaza.Size = new System.Drawing.Size(216, 28);
+            this.comboBoxRaza.Size = new System.Drawing.Size(216, 33);
             this.comboBoxRaza.TabIndex = 86;
             // 
             // comboBoxTipo
@@ -66,9 +67,9 @@ namespace VeterianriaWinForms.Forms
             this.comboBoxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTipo.FormattingEnabled = true;
-            this.comboBoxTipo.Location = new System.Drawing.Point(188, 80);
+            this.comboBoxTipo.Location = new System.Drawing.Point(188, 64);
             this.comboBoxTipo.Name = "comboBoxTipo";
-            this.comboBoxTipo.Size = new System.Drawing.Size(216, 28);
+            this.comboBoxTipo.Size = new System.Drawing.Size(216, 33);
             this.comboBoxTipo.TabIndex = 85;
             // 
             // imagen
@@ -84,73 +85,73 @@ namespace VeterianriaWinForms.Forms
             // 
             this.checkBox.AutoSize = true;
             this.checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox.Location = new System.Drawing.Point(188, 241);
+            this.checkBox.Location = new System.Drawing.Point(188, 229);
             this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(15, 14);
+            this.checkBox.Size = new System.Drawing.Size(18, 17);
             this.checkBox.TabIndex = 82;
             this.checkBox.UseVisualStyleBackColor = true;
             // 
             // textBoxEdad
             // 
             this.textBoxEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEdad.Location = new System.Drawing.Point(188, 198);
+            this.textBoxEdad.Location = new System.Drawing.Point(188, 179);
             this.textBoxEdad.MaxLength = 3;
             this.textBoxEdad.Name = "textBoxEdad";
-            this.textBoxEdad.Size = new System.Drawing.Size(69, 26);
+            this.textBoxEdad.Size = new System.Drawing.Size(69, 30);
             this.textBoxEdad.TabIndex = 81;
             this.textBoxEdad.TextChanged += new System.EventHandler(this.textBoxEdad_TextChanged);
             // 
             // textBoxNombre
             // 
             this.textBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNombre.Location = new System.Drawing.Point(188, 158);
+            this.textBoxNombre.Location = new System.Drawing.Point(188, 139);
             this.textBoxNombre.MaxLength = 30;
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(216, 26);
+            this.textBoxNombre.Size = new System.Drawing.Size(216, 30);
             this.textBoxNombre.TabIndex = 80;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 237);
+            this.label7.Location = new System.Drawing.Point(9, 225);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(137, 20);
+            this.label7.Size = new System.Drawing.Size(167, 25);
             this.label7.TabIndex = 77;
             this.label7.Text = "Vacunas al dia?";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 194);
+            this.label6.Location = new System.Drawing.Point(9, 182);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 20);
+            this.label6.Size = new System.Drawing.Size(93, 25);
             this.label6.TabIndex = 76;
             this.label6.Text = "Edad (*)";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 154);
+            this.label4.Location = new System.Drawing.Point(9, 142);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 20);
+            this.label4.Size = new System.Drawing.Size(118, 25);
             this.label4.TabIndex = 75;
             this.label4.Text = "Nombre (*)";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 117);
+            this.label3.Location = new System.Drawing.Point(9, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
+            this.label3.Size = new System.Drawing.Size(61, 25);
             this.label3.TabIndex = 74;
             this.label3.Text = "Raza";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 80);
+            this.label2.Location = new System.Drawing.Point(9, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 20);
+            this.label2.Size = new System.Drawing.Size(172, 25);
             this.label2.TabIndex = 73;
             this.label2.Text = "Tipo de mascota";
             // 
@@ -159,11 +160,14 @@ namespace VeterianriaWinForms.Forms
             this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirmar.Image = global::VeterianriaWinForms.Properties.Resources.ok2;
+            this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfirmar.Location = new System.Drawing.Point(340, 348);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(162, 29);
+            this.btnConfirmar.Size = new System.Drawing.Size(135, 37);
             this.btnConfirmar.TabIndex = 72;
             this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
@@ -172,20 +176,24 @@ namespace VeterianriaWinForms.Forms
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Red;
+            this.btnCancelar.Image = global::VeterianriaWinForms.Properties.Resources.cancelar;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.Location = new System.Drawing.Point(169, 348);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(152, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(135, 37);
             this.btnCancelar.TabIndex = 71;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 283);
+            this.label1.Location = new System.Drawing.Point(9, 271);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 16);
+            this.label1.Size = new System.Drawing.Size(343, 20);
             this.label1.TabIndex = 70;
             this.label1.Text = "Los campos indicados con * son obligatorios";
             // 
@@ -193,9 +201,9 @@ namespace VeterianriaWinForms.Forms
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 23);
+            this.label5.Location = new System.Drawing.Point(9, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 24);
+            this.label5.Size = new System.Drawing.Size(186, 29);
             this.label5.TabIndex = 69;
             this.label5.Text = "Editar mascota";
             // 
@@ -203,12 +211,23 @@ namespace VeterianriaWinForms.Forms
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(467, 260);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(152, 20);
+            this.label10.TabIndex = 87;
+            this.label10.Text = "Foto de la mascota";
+            // 
             // EditarMascota
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(676, 417);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.comboBoxRaza);
             this.Controls.Add(this.comboBoxTipo);
             this.Controls.Add(this.imagen);
@@ -255,5 +274,6 @@ namespace VeterianriaWinForms.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label10;
     }
 }
