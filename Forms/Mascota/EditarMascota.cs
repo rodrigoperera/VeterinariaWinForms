@@ -149,6 +149,11 @@ namespace VeterianriaWinForms.Forms
                 textBoxEdad.Text = textBoxEdad.Text.Remove(textBoxEdad.Text.Length - 1);
             }
         }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

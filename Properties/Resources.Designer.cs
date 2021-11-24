@@ -63,6 +63,16 @@ namespace VeterianriaWinForms.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancelar {
+            get {
+                object obj = ResourceManager.GetObject("cancelar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Carné_de_mascotas {
             get {
                 object obj = ResourceManager.GetObject("Carné de mascotas", resourceCulture);
@@ -86,6 +96,36 @@ namespace VeterianriaWinForms.Properties {
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lupa2 {
+            get {
+                object obj = ResourceManager.GetObject("lupa2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lupa21 {
+            get {
+                object obj = ResourceManager.GetObject("lupa21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ok2 {
+            get {
+                object obj = ResourceManager.GetObject("ok2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

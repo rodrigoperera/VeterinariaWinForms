@@ -131,5 +131,10 @@ namespace VeterianriaWinForms.Forms
                 errorProvider1.SetError(textBoxCorreo, "");
             return bStatus;
         }
+
+        private void EditarCliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
