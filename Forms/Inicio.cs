@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeterianriaWinForms.Clases;
+using VeterianriaWinForms.Forms.Empresa;
 
 namespace VeterianriaWinForms.Forms
 {
@@ -97,22 +98,45 @@ namespace VeterianriaWinForms.Forms
                 DPHasta.Value.Hour.Equals(23);
                 DPHasta.Value.Minute.Equals(59);
                 lista = ws.ObtenerConsultasPorVeterinario(voveterinario.Cedula, DPDesde.Value.Date, DPHasta.Value);
-                foreach (var item in lista)
+                if (lista.Length > 0)
                 {
-                    ListViewItem listado = new ListViewItem(item.Numero.ToString());
-                    listado.SubItems.Add(item.Realizada ? "SI" : "NO");
-                    listado.SubItems.Add(item.Fecha.ToString());
-                    listado.SubItems.Add(item.Veterinario.Nombre);
-                    listado.SubItems.Add(String.Format("{0}-{1}", item.Mascota.Id.ToString(), item.Mascota.Nombre));
-                    listado.SubItems.Add(item.Descripcion);
-                    listado.SubItems.Add(item.Importe.ToString());
-                    listView1.Items.Add(listado);
+                    foreach (var item in lista)
+                    {
+                        ListViewItem listado = new ListViewItem(item.Numero.ToString());
+                        listado.SubItems.Add(item.Realizada ? "SI" : "NO");
+                        listado.SubItems.Add(item.Fecha.ToString());
+                        listado.SubItems.Add(item.Veterinario.Nombre);
+                        listado.SubItems.Add(String.Format("{0}-{1}", item.Mascota.Id.ToString(), item.Mascota.Nombre));
+                        listado.SubItems.Add(item.Descripcion);
+                        listado.SubItems.Add(item.Importe.ToString());
+                        listView1.Items.Add(listado);
+                    }
                 }
+                else {
+                    MessageBox.Show("No se encontraron datos que cumplan con los filtros seleccionados.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+
             }
             catch
             {
                 MessageBox.Show("Hubo un problema al intentar filtrar. Contacte a un administrador.", "Gestion Veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+    
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AcercaDe FrmAcercaDe;
+            FrmAcercaDe = new AcercaDe();
+            FrmAcercaDe.Owner = this;
+            FrmAcercaDe.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
