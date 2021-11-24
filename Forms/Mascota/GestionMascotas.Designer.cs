@@ -66,7 +66,7 @@ namespace VeterianriaWinForms.Forms
             this.listView1.Location = new System.Drawing.Point(13, 71);
             this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(989, 203);
+            this.listView1.Size = new System.Drawing.Size(884, 203);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -131,8 +131,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            this.BtnEliminar.Location = new System.Drawing.Point(222, 237);
+            this.BtnEliminar.Location = new System.Drawing.Point(295, 289);
             this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(135, 36);
@@ -145,8 +144,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            this.BtnEditar.Location = new System.Drawing.Point(117, 237);
+            this.BtnEditar.Location = new System.Drawing.Point(156, 289);
             this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(135, 36);
@@ -159,7 +157,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(16, 292);
+            this.btnNuevo.Location = new System.Drawing.Point(16, 289);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(135, 36);
@@ -172,11 +170,10 @@ namespace VeterianriaWinForms.Forms
             // 
             this.BtnConsultas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            this.BtnConsultas.Location = new System.Drawing.Point(471, 237);
+            this.BtnConsultas.Location = new System.Drawing.Point(695, 289);
             this.BtnConsultas.Margin = new System.Windows.Forms.Padding(2);
             this.BtnConsultas.Name = "BtnConsultas";
-            this.BtnConsultas.Size = new System.Drawing.Size(141, 29);
+            this.BtnConsultas.Size = new System.Drawing.Size(201, 36);
             this.BtnConsultas.TabIndex = 19;
             this.BtnConsultas.Text = "Listar consultas";
             this.BtnConsultas.UseVisualStyleBackColor = true;
@@ -186,11 +183,10 @@ namespace VeterianriaWinForms.Forms
             // 
             this.BtnCarnet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCarnet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            this.BtnCarnet.Location = new System.Drawing.Point(616, 237);
+            this.BtnCarnet.Location = new System.Drawing.Point(727, 332);
             this.BtnCarnet.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCarnet.Name = "BtnCarnet";
-            this.BtnCarnet.Size = new System.Drawing.Size(100, 29);
+            this.BtnCarnet.Size = new System.Drawing.Size(169, 36);
             this.BtnCarnet.TabIndex = 20;
             this.BtnCarnet.Text = "Ver Carnet";
             this.BtnCarnet.UseVisualStyleBackColor = true;
@@ -200,7 +196,7 @@ namespace VeterianriaWinForms.Forms
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(869, 394);
+            this.button1.Location = new System.Drawing.Point(761, 399);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 36);
@@ -213,10 +209,10 @@ namespace VeterianriaWinForms.Forms
             // 
             this.btnNueva.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNueva.Location = new System.Drawing.Point(327, 237);
+            this.btnNueva.Location = new System.Drawing.Point(556, 289);
             this.btnNueva.Margin = new System.Windows.Forms.Padding(2);
             this.btnNueva.Name = "btnNueva";
-            this.btnNueva.Size = new System.Drawing.Size(140, 29);
+            this.btnNueva.Size = new System.Drawing.Size(135, 36);
             this.btnNueva.TabIndex = 26;
             this.btnNueva.Text = "Nueva consulta";
             this.btnNueva.UseVisualStyleBackColor = true;
@@ -227,8 +223,7 @@ namespace VeterianriaWinForms.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-
-            this.ClientSize = new System.Drawing.Size(769, 360);
+            this.ClientSize = new System.Drawing.Size(907, 471);
             this.Controls.Add(this.btnNueva);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnCarnet);
